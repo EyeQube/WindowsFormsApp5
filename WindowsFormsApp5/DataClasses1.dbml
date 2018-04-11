@@ -15,6 +15,7 @@
       <Column Name="Email" Type="System.String" DbType="VarChar(320)" CanBeNull="true" />
       <Column Name="Mobile" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Notes" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Member="Address" Type="System.String" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

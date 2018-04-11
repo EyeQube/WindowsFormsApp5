@@ -106,6 +106,8 @@ namespace WindowsFormsApp5
 		
 		private string _Notes;
 		
+		private string _Address;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -136,6 +138,8 @@ namespace WindowsFormsApp5
     partial void OnMobileChanged();
     partial void OnNotesChanging(string value);
     partial void OnNotesChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
     #endregion
 		
 		public BizContact()
@@ -399,6 +403,26 @@ namespace WindowsFormsApp5
 					this._Notes = value;
 					this.SendPropertyChanged("Notes");
 					this.OnNotesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", CanBeNull=false)]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
 				}
 			}
 		}
