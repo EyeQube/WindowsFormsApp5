@@ -78,7 +78,7 @@ namespace WindowsFormsApp5
             // businessToolStripMenuItem
             // 
             this.businessToolStripMenuItem.Name = "businessToolStripMenuItem";
-            this.businessToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.businessToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.businessToolStripMenuItem.Text = "Beslut";
             this.businessToolStripMenuItem.Click += new System.EventHandler(this.businessToolStripMenuItem_Click);
             // 
@@ -95,21 +95,21 @@ namespace WindowsFormsApp5
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.cascadeToolStripMenuItem.Text = "Cascade";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
             // 
             // tileVerticalToolStripMenuItem
             // 
             this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.tileVerticalToolStripMenuItem.Text = "Tile Vertical";
             this.tileVerticalToolStripMenuItem.Click += new System.EventHandler(this.tileVerticalToolStripMenuItem_Click);
             // 
             // tileHorizontalToolStripMenuItem
             // 
             this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.tileHorizontalToolStripMenuItem.Text = "Tile Horizontal";
             this.tileHorizontalToolStripMenuItem.Click += new System.EventHandler(this.tileHorizontalToolStripMenuItem_Click);
             // 
@@ -194,7 +194,6 @@ namespace WindowsFormsApp5
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "Stödsystem, Vård och Omsorg - Robin Bitoreq";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.Main_Load);
             this.MdiChildActivate += new System.EventHandler(this.businessToolStripMenuItem_Click);
             this.menuStrip1.ResumeLayout(false);

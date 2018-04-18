@@ -51,6 +51,8 @@ namespace WindowsFormsApp5
                 dataAdapter.Fill(table); //fill the data table
                 bindingSource1.DataSource = table; //set the data source on the binding source to the table
                 dataGridView1.Columns[0].ReadOnly = true; //this helps prevent the idfield from being changed
+                dataGridView1.Columns[1].Visible = false;
+
             }
             catch(SqlException ex)
             {
@@ -64,9 +66,9 @@ namespace WindowsFormsApp5
         {
             SqlCommand command;//declares a new sql command object
             //field names in the table
-            string insert = @"insert into BizContacts(Date_Added, Company, Website, Title, First_Name, Last_Name, Address, City, State, Postal_Code, Mobile, Notes, Image)
+            string insert = @"insert into BizContacts(Beslut, Beslutsdatum, Insatskategori, Beslutsfattare, Organisation, Orsak, Anteckningar, Foto)
             
-                              values(@Date_Added, @Company, @Website, @Title, @First_Name, @Last_Name, @Address, @City, @State, @Postal_Code, @Mobile, @Notes, @Image)"; //parameter names
+                              values(@Beslut, @Beslutsdatum, @Insatskategori, @Beslutsfattare, @Organisation, @Orsak, @Notes, @Image)"; //parameter names
 
             using(conn = new SqlConnection(connString)) //using allows disposing of low level resources
             {
@@ -74,17 +76,12 @@ namespace WindowsFormsApp5
                 {
                     conn.Open(); //open the connection
                     command = new SqlCommand(insert, conn);//create the new sql command object
-                    command.Parameters.AddWithValue(@"Date_Added", dateTimePicker1.Value.Date); //read value from form and save to table
-                    command.Parameters.AddWithValue(@"Company", txtCompany.Text);
-                    command.Parameters.AddWithValue(@"Website", txtWebsite.Text);
-                    command.Parameters.AddWithValue(@"Title", txtTitle.Text);
-                    command.Parameters.AddWithValue(@"First_Name", txtFName.Text);
-                    command.Parameters.AddWithValue(@"Last_Name", txtLName.Text);
-                    command.Parameters.AddWithValue(@"Address", txtAddress.Text);
-                    command.Parameters.AddWithValue(@"City", txtCity.Text);
-                    command.Parameters.AddWithValue(@"State", txtState.Text);
-                    command.Parameters.AddWithValue(@"Postal_Code", txtPostalCode.Text);
-                    command.Parameters.AddWithValue(@"Mobile", txtMobile.Text);
+                    command.Parameters.AddWithValue(@"Beslut", cboBeslut.Text);
+                    command.Parameters.AddWithValue(@"Beslutsdatum", dateTimePicker2.Value.Date); //read value from form and save to table
+                    command.Parameters.AddWithValue(@"Insatskategori", cboInsatsK.Text);
+                    command.Parameters.AddWithValue(@"Beslutsfattare", cboBeslutsfattare.Text);
+                    command.Parameters.AddWithValue(@"Organisation", cboOrganisation.Text);
+                    command.Parameters.AddWithValue(@"Orsak", cboOrsak.Text);
                     command.Parameters.AddWithValue(@"Notes", txtNotes.Text);
                     if (dlgOpenImage.FileName != "") //check whether file name is not empty
                         command.Parameters.AddWithValue(@"Image", File.ReadAllBytes(dlgOpenImage.FileName));//convert images to bytes for saving
@@ -124,9 +121,10 @@ namespace WindowsFormsApp5
         {
             DataGridViewRow row = dataGridView1.CurrentCell.OwningRow; //grab a reference to the current row
             string value = row.Cells["ID"].Value.ToString();//grab the value from the id field of the selected record
-            string fname = row.Cells["First_Name"].Value.ToString();//grab the value from the name field of the selected record
-            string lname = row.Cells["Last_Name"].Value.ToString();//grab the value from the last name field of the selected record
-            DialogResult result = MessageBox.Show("Do you really want to delete " + fname + " " + lname + ", record " + value, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            string fname = row.Cells["Förnamn"].Value.ToString();//grab the value from the name field of the selected record
+            string lname = row.Cells["Efternamn"].Value.ToString();//grab the value from the last name field of the selected record
+            string pname = row.Cells["Personnummer"].Value.ToString();
+            DialogResult result = MessageBox.Show("Do you really want to delete " + fname + " " + lname + ", Personnummer: " +pname + ", record " + value, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             string deleteState = @"Delete from BizContacts where id = '"+value+"'";//this is the sql to delete the records from the sql table
 
@@ -153,16 +151,16 @@ namespace WindowsFormsApp5
         {
             switch(cboSearch.SelectedItem.ToString())//present because we have a combo box
             {
-                case "First Name":
-                    GetData("select * from BizContacts where lower(first_name) like '%" + txtSearch.Text.ToLower() + "%'");
+                case "Personnummer":
+                    GetData("select * from BizContacts where lower(personnummer) like '%" + txtSearch.Text.ToLower() + "%'");
                     break;
 
-                case "Last Name":
-                    GetData("select * from BizContacts where lower(last_name) like '%" + txtSearch.Text.ToLower() + "%'");
+                case "Förnamn":
+                    GetData("select * from BizContacts where lower(förnamn) like '%" + txtSearch.Text.ToLower() + "%'");
                     break;
 
-                case "Company":
-                    GetData("select * from BizContacts where lower(company) like '%" + txtSearch.Text.ToLower() + "%'");
+                case "Efternamn":
+                    GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
                     break;
             }
         }
@@ -294,5 +292,10 @@ namespace WindowsFormsApp5
             }
 
         }
+
+        /* private void label1_Click(object sender, EventArgs e)
+        {
+
+        }*/
     }
 }
