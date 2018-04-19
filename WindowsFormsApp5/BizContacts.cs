@@ -32,7 +32,7 @@ namespace WindowsFormsApp5
 
         private void BizContacts_Load(object sender, EventArgs e)
         {
-            cboSearch.SelectedIndex = 0; //first item in combobox is selected when the form loads
+            cboOrganisation.SelectedIndex = 0; //first item in combobox is selected when the form loads
             dataGridView1.DataSource = bindingSource1; //sets the source of the data to be displayed in the grid view
 
             //Line below calls a method called GetData
@@ -50,8 +50,11 @@ namespace WindowsFormsApp5
                 table.Locale = System.Globalization.CultureInfo.InvariantCulture;
                 dataAdapter.Fill(table); //fill the data table
                 bindingSource1.DataSource = table; //set the data source on the binding source to the table
-                dataGridView1.Columns[0].ReadOnly = true; //this helps prevent the idfield from being changed
-                dataGridView1.Columns[1].Visible = false;
+                //dataGridView1.Columns[0].ReadOnly = true; //this helps prevent the idfield from being changed
+               // dataGridView1.Columns[0].Visible = false;
+               // dataGridView1.Columns[1].Visible = false;
+                //dataGridView1.Columns[10].Visible = false;
+                //dataGridView1.Columns[11].Visible = false;
 
             }
             catch(SqlException ex)
@@ -66,9 +69,9 @@ namespace WindowsFormsApp5
         {
             SqlCommand command;//declares a new sql command object
             //field names in the table
-            string insert = @"insert into BizContacts(Beslut, Beslutsdatum, Insatskategori, Beslutsfattare, Organisation, Orsak, Anteckningar, Foto)
+            string insert = @"insert into BizContacts(Beslut, Beslutsdatum, Insatskategori, Beslutsfattare, Organisation, Orsak, Anteckningar)
             
-                              values(@Beslut, @Beslutsdatum, @Insatskategori, @Beslutsfattare, @Organisation, @Orsak, @Notes, @Image)"; //parameter names
+                              values(@Beslut, @Beslutsdatum, @Insatskategori, @Beslutsfattare, @Organisation, @Orsak, @Notes)"; //parameter names
 
             using(conn = new SqlConnection(connString)) //using allows disposing of low level resources
             {
@@ -80,13 +83,13 @@ namespace WindowsFormsApp5
                     command.Parameters.AddWithValue(@"Beslutsdatum", dateTimePicker2.Value.Date); //read value from form and save to table
                     command.Parameters.AddWithValue(@"Insatskategori", cboInsatsK.Text);
                     command.Parameters.AddWithValue(@"Beslutsfattare", cboBeslutsfattare.Text);
-                    command.Parameters.AddWithValue(@"Organisation", cboOrganisation.Text);
+                    command.Parameters.AddWithValue(@"Organisation", txtOrganisation.Text);
                     command.Parameters.AddWithValue(@"Orsak", cboOrsak.Text);
                     command.Parameters.AddWithValue(@"Notes", txtNotes.Text);
-                    if (dlgOpenImage.FileName != "") //check whether file name is not empty
+                   /* if (dlgOpenImage.FileName != "") //check whether file name is not empty
                         command.Parameters.AddWithValue(@"Image", File.ReadAllBytes(dlgOpenImage.FileName));//convert images to bytes for saving
                     else
-                        command.Parameters.Add("@Image", SqlDbType.VarBinary).Value = DBNull.Value;//Save null to database
+                        command.Parameters.Add("@Image", SqlDbType.VarBinary).Value = DBNull.Value;//Save null to database*/
                     command.ExecuteNonQuery();//push stuff into the table
                 }
                 catch(Exception ex)
@@ -149,7 +152,7 @@ namespace WindowsFormsApp5
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            switch(cboSearch.SelectedItem.ToString())//present because we have a combo box
+            switch(txtSearch.Text)  //(cboSearch.SelectedItem.ToString())//present because we have a combo box
             {
                 case "Personnummer":
                     GetData("select * from BizContacts where lower(personnummer) like '%" + txtSearch.Text.ToLower() + "%'");
@@ -165,21 +168,21 @@ namespace WindowsFormsApp5
             }
         }
 
-        private void btnGetImage_Click(object sender, EventArgs e)
+       /* private void btnGetImage_Click(object sender, EventArgs e)
         {
             if (dlgOpenImage.ShowDialog() == DialogResult.OK) //use if in case user cancels getting image and FileName is blank
                // dlgOpenImage.ShowDialog(); //show box for selecting image from drive
             pictureBox1.Load(dlgOpenImage.FileName); //loads image from drive using the file name property of the dialog box
 
-        }
+        }*/
 
-        private void pictureBox1_DoubleClick(object sender, EventArgs e)
+        /*private void pictureBox1_DoubleClick(object sender, EventArgs e)
         {
             Form frm = new Form(); //make a new form
             frm.BackgroundImage = pictureBox1.Image;//set background image of new, preview form of image
             frm.Size = pictureBox1.Image.Size;//sets the size of the form to the size of the image so the image is wholly visible
             frm.Show();//show form with image
-        }
+        }*/
 
         private void btnExportOpen_Click(object sender, EventArgs e)
         {
@@ -292,6 +295,50 @@ namespace WindowsFormsApp5
             }
 
         }
+
+        private void txtNotes_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+            //switch (cboSearch.SelectedItem.ToString())//present because we have a combo box
+           // {
+                //case cboSearch.SelectedItem.ToString()://"Smart Assistans":
+                    GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.SelectedItem.ToString().ToLower() + "%'");
+             //       break;
+
+               /* case "Anders":
+                    GetData("select * from BizContacts where lower(förnamn) like '%" + cboSearch.SelectedItem.ToString().ToLower() + "%'");
+                    break;
+
+                case "Efternamn":
+                    GetData("select * from BizContacts where lower(efternamn) like '%" + cboSearch.SelectedItem.ToString().ToLower() + "%'");
+                    break;*/
+           // }
+        }
+
+         private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+            int n;
+            bool isNumeric = int.TryParse(txtSearch.Text.ToLower(), out n);
+
+            if(isNumeric)
+            GetData("select * from BizContacts where lower(personnummer) like '%" + txtSearch.Text.ToLower() + "%'");
+                    
+            else  
+            GetData("select * from BizContacts where lower(förnamn) like '%" + txtSearch.Text.ToLower() + "%'");
+                   
+
+                  //  GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
+                    
+            
+        }
+
 
         /* private void label1_Click(object sender, EventArgs e)
         {
