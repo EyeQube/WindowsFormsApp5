@@ -24,6 +24,7 @@ namespace WindowsFormsApp5
         //SqlCommandBuilder commandBuilder; //declare a new sql command builder object
         SqlConnection conn;//declares a variable to hold the sql connection
         string selectionStatement = "Select * from BizContacts";
+        //string selectionOrg = "select * from BizContacts where lower(organisation)";
 
         public BizContacts()
         {
@@ -32,7 +33,7 @@ namespace WindowsFormsApp5
 
         private void BizContacts_Load(object sender, EventArgs e)
         {
-            cboOrganisation.SelectedIndex = 0; //first item in combobox is selected when the form loads
+            //cboOrganisation.SelectedIndex = 0; //first item in combobox is selected when the form loads
             dataGridView1.DataSource = bindingSource1; //sets the source of the data to be displayed in the grid view
 
             //Line below calls a method called GetData
@@ -86,10 +87,24 @@ namespace WindowsFormsApp5
                     command.Parameters.AddWithValue(@"Organisation", txtOrganisation.Text);
                     command.Parameters.AddWithValue(@"Orsak", cboOrsak.Text);
                     command.Parameters.AddWithValue(@"Notes", txtNotes.Text);
-                   /* if (dlgOpenImage.FileName != "") //check whether file name is not empty
-                        command.Parameters.AddWithValue(@"Image", File.ReadAllBytes(dlgOpenImage.FileName));//convert images to bytes for saving
-                    else
-                        command.Parameters.Add("@Image", SqlDbType.VarBinary).Value = DBNull.Value;//Save null to database*/
+
+                    if(!(String.IsNullOrWhiteSpace(txtOrganisation.Text)) && !(cboOrganisation.Items.Contains(txtOrganisation.Text.ToString())))
+                    cboOrganisation.Items.Add(txtOrganisation.Text.ToString());
+
+
+                    /*System.Object[] ItemObject = new System.Object[50];
+                    for (int i = 0; i < ItemObject.Count(); i++)
+                    {
+                        ItemObject[i] = txtOrganisation.Text.ToString();
+                    }
+                    cboOrganisation.Items.AddRange(ItemObject);*/
+
+
+
+                    /* if (dlgOpenImage.FileName != "") //check whether file name is not empty
+                         command.Parameters.AddWithValue(@"Image", File.ReadAllBytes(dlgOpenImage.FileName));//convert images to bytes for saving
+                     else
+                         command.Parameters.Add("@Image", SqlDbType.VarBinary).Value = DBNull.Value;//Save null to database*/
                     command.ExecuteNonQuery();//push stuff into the table
                 }
                 catch(Exception ex)
@@ -148,6 +163,10 @@ namespace WindowsFormsApp5
                     }
                 }
             }
+
+
+            
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -306,9 +325,16 @@ namespace WindowsFormsApp5
 
 
             //switch (cboSearch.SelectedItem.ToString())//present because we have a combo box
-           // {
-                //case cboSearch.SelectedItem.ToString()://"Smart Assistans":
-                    GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.SelectedItem.ToString().ToLower() + "%'");
+            // {
+            //case cboSearch.SelectedItem.ToString()://"Smart Assistans":
+
+            if (cboOrganisation.SelectedItem.ToString().ToLower() == "alla organisationer")
+                GetData("select * from BizContacts");
+            else
+            {
+                GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.SelectedItem.ToString().ToLower() + "%'");
+            }
+           
              //       break;
 
                /* case "Anders":
