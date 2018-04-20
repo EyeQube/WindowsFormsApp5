@@ -12,6 +12,7 @@ using System.IO;//needed for file use
 using System.Diagnostics;//needed to open up excel from our code using Process.Start
 using Microsoft.Office.Interop.Excel;//needed to make an excel object in our code
 using Microsoft.Office.Interop.Word;
+using System.Collections;
 
 namespace WindowsFormsApp5
 {
@@ -29,12 +30,43 @@ namespace WindowsFormsApp5
         public BizContacts()
         {
             InitializeComponent();
+            refreshdata();
         }
+
+         public void refreshdata()
+        {
+            DataRow dr;
+
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-V4R7G9G\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from BizContacts", con);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            System.Data.DataTable dt = new System.Data.DataTable();
+            sda.Fill(dt);
+
+            dr = dt.NewRow();
+            dr.ItemArray = new object[] { 0, "Organisation" };
+            dt.Rows.InsertAt(dr, 0);
+
+            cboOrganisation.ValueMember = "ID";
+
+            cboOrganisation.DisplayMember = "Organisation";
+            cboOrganisation.DataSource = dt;
+
+            con.Close();
+        } 
+
 
         private void BizContacts_Load(object sender, EventArgs e)
         {
-            //cboOrganisation.SelectedIndex = 0; //first item in combobox is selected when the form loads
+            refreshdata();
+
             dataGridView1.DataSource = bindingSource1; //sets the source of the data to be displayed in the grid view
+
+           // cboOrganisation.SelectedIndex = 0; //first item in combobox is selected when the form loads
+
+            //cboOrganisation.DisplayMember = "Organisation";
+            //cboOrganisation.ValueMember = "Organisation";
 
             //Line below calls a method called GetData
             //The argument is a string that represents an sql query
@@ -88,8 +120,8 @@ namespace WindowsFormsApp5
                     command.Parameters.AddWithValue(@"Orsak", cboOrsak.Text);
                     command.Parameters.AddWithValue(@"Notes", txtNotes.Text);
 
-                    if(!(String.IsNullOrWhiteSpace(txtOrganisation.Text)) && !(cboOrganisation.Items.Contains(txtOrganisation.Text.ToString())))
-                    cboOrganisation.Items.Add(txtOrganisation.Text.ToString());
+                  /*  if(!(String.IsNullOrWhiteSpace(txtOrganisation.Text)) && !(cboOrganisation.Items.Contains(txtOrganisation.Text.ToString())))
+                    cboOrganisation.Items.Add(txtOrganisation.Text.ToString()); */
 
 
                     /*System.Object[] ItemObject = new System.Object[50];
@@ -115,6 +147,7 @@ namespace WindowsFormsApp5
             }
 
             GetData(selectionStatement);
+            refreshdata();
             dataGridView1.Update(); //Redraws the data grid view so the new record is visible on the bottom
         }
 
@@ -138,35 +171,112 @@ namespace WindowsFormsApp5
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = dataGridView1.CurrentCell.OwningRow; //grab a reference to the current row
-            string value = row.Cells["ID"].Value.ToString();//grab the value from the id field of the selected record
-            string fname = row.Cells["Förnamn"].Value.ToString();//grab the value from the name field of the selected record
-            string lname = row.Cells["Efternamn"].Value.ToString();//grab the value from the last name field of the selected record
-            string pname = row.Cells["Personnummer"].Value.ToString();
-            DialogResult result = MessageBox.Show("Do you really want to delete " + fname + " " + lname + ", Personnummer: " +pname + ", record " + value, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            string deleteState = @"Delete from BizContacts where id = '"+value+"'";//this is the sql to delete the records from the sql table
 
-            if(result==DialogResult.Yes) //check whether user really wants to delete records
+           //DataGridViewSelectedRowCollection rows = dataGridView1.SelectedRows;
+            List<DataGridViewRow> lst = dataGridView1.SelectedRows.Cast<DataGridViewRow>().ToList();
+
+
+
+
+            //rows.Clear();
+            //rows[0].Cells
+
+
+            /*   foreach(DataGridViewRow ro in lst)
+               {
+
+                   //DataRow myRow = (row.DataBoundItem as DataRowView).Row;
+
+                   string values = ro.Cells["ID"].Value.ToString();  //Cells["ID"].Value.ToString();//grab the value from the id field of the selected record
+                   string deleteStates = @"Delete from BizContacts where id = '" + values + "'";//this is the sql to delete the records from the sql table
+
+               } */
+
+
+            if (lst.Count > 1)
             {
-                 using(conn = new SqlConnection(connString))
+
+
+                DataGridViewSelectedRowCollection SelectRowsSet = dataGridView1.SelectedRows;
+
+                DataGridViewRow rowz;
+
+                IEnumerator Enumerator = SelectRowsSet.GetEnumerator();
+
+                Enumerator.Reset();
+
+                DialogResult res = MessageBox.Show("Do you really want to delete selected rows?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (res == DialogResult.Yes) //check whether user really wants to delete records
                 {
-                    try
+
+
+                    while (Enumerator.MoveNext())
                     {
-                        conn.Open();//try to open connection
-                        SqlCommand comm = new SqlCommand(deleteState, conn);
-                        comm.ExecuteNonQuery();//this line actually causes the deletion to run
-                        GetData(selectionStatement);//get the data again;
-                        dataGridView1.Update();//redraw the data grid view with updated information
-                    } catch(Exception ex)
+
+                        rowz = (DataGridViewRow)Enumerator.Current;
+
+                        string values = rowz.Cells["ID"].Value.ToString();
+                        string deleteStates = @"Delete from BizContacts where id = '" + values + "'";
+
+                        if (res == DialogResult.Yes)
+                        {
+                            using (conn = new SqlConnection(connString))
+                            {
+                                try
+                                {
+                                    conn.Open();//try to open connection
+                                    SqlCommand comm = new SqlCommand(deleteStates, conn);
+                                    comm.ExecuteNonQuery();//this line actually causes the deletion to run                                 
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message);//runs when something is wrong with the connection
+                                }
+                            }
+                        }
+                    }
+
+                    GetData(selectionStatement);//get the data again;
+                    dataGridView1.Update();//redraw the data grid view with updated information
+                  }
+                }
+                else
+                {
+                    string value = row.Cells["ID"].Value.ToString();//grab the value from the id field of the selected record
+                    string fname = row.Cells["Förnamn"].Value.ToString();//grab the value from the name field of the selected record
+                    string lname = row.Cells["Efternamn"].Value.ToString();//grab the value from the last name field of the selected record
+                    string pname = row.Cells["Personnummer"].Value.ToString();
+                    string org = row.Cells["Organisation"].Value.ToString();
+                    DialogResult result = MessageBox.Show("Do you really want to delete " + fname + " " + lname + ", Personnummer: " + pname + ", record " + value, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    string deleteState = @"Delete from BizContacts where id = '" + value + "'";//this is the sql to delete the records from the sql table
+
+                    if (result == DialogResult.Yes) //check whether user really wants to delete records
                     {
-                        MessageBox.Show(ex.Message);//runs when something is wrong with the connection
+                        using (conn = new SqlConnection(connString))
+                        {
+                            try
+                            {
+                                conn.Open();//try to open connection
+                                SqlCommand comm = new SqlCommand(deleteState, conn);
+                                comm.ExecuteNonQuery();//this line actually causes the deletion to run
+                                GetData(selectionStatement);//get the data again;
+                                dataGridView1.Update();//redraw the data grid view with updated information
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);//runs when something is wrong with the connection
+                            }
+                        }
                     }
                 }
-            }
 
 
+                refreshdata();
+                //cboOrganisation.Items.Remove(org);
             
-
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -320,31 +430,22 @@ namespace WindowsFormsApp5
 
         }
 
+        
+
         private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
+         
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //if (cboOrganisation.SelectedItem.ToString().ToLower() == "alla organisationer")
+            //    GetData("select * from BizContacts");
 
-
-            //switch (cboSearch.SelectedItem.ToString())//present because we have a combo box
-            // {
-            //case cboSearch.SelectedItem.ToString()://"Smart Assistans":
-
-            if (cboOrganisation.SelectedItem.ToString().ToLower() == "alla organisationer")
-                GetData("select * from BizContacts");
+            if (String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
+               GetData("select * from BizContacts");
             else
-            {
-                GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.SelectedItem.ToString().ToLower() + "%'");
+            {  
+               GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() + "%'");
             }
-           
-             //       break;
-
-               /* case "Anders":
-                    GetData("select * from BizContacts where lower(förnamn) like '%" + cboSearch.SelectedItem.ToString().ToLower() + "%'");
-                    break;
-
-                case "Efternamn":
-                    GetData("select * from BizContacts where lower(efternamn) like '%" + cboSearch.SelectedItem.ToString().ToLower() + "%'");
-                    break;*/
-           // }
+                     
         }
 
          private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -364,6 +465,12 @@ namespace WindowsFormsApp5
                     
             
         }
+
+
+
+
+
+
 
 
         /* private void label1_Click(object sender, EventArgs e)
