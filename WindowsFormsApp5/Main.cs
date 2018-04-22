@@ -17,7 +17,7 @@ namespace WindowsFormsApp5
         {
             InitializeComponent();
             PopulateTreeView();
-            this.treeView1.NodeMouseClick += new TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+            //this.treeView1.NodeMouseClick += new TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
         }
 
         private void PopulateTreeView()
@@ -42,19 +42,19 @@ namespace WindowsFormsApp5
              //frm.MdiParent = this; //set the main form as the parent of each business form
              frm.Show(); //show the new form
              
-            //frm.BringToFront();
+             //frm.BringToFront();
 
 
-           /* BizContacts frm = new BizContacts();
-           // frm.MdiParent = this;
+            /*BizContacts frm = new BizContacts();
+             frm.MdiParent = this;
 
             //frm.TopMost = true;
             //frm.BringToFront();
             SendToBack();
-            frm.Show(); */
+            //frm.Show(); 
 
             /* BizContacts frm = new BizContacts(); //make a new business contacts form
-             //Form1 frm = new Form1(); // Child form's object
+             
              Main p = new Main(); // Run time a panel is created
              p.Controls.Add(frm); // add child form in panel
              this.Controls.Add(p); // 'this' means MDI so, add panel inside MDI
@@ -128,7 +128,7 @@ namespace WindowsFormsApp5
             }
 
        
-            void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+         /*   void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
             {
                 TreeNode newSelected = e.Node;
                 listView1.Items.Clear();
@@ -152,20 +152,9 @@ namespace WindowsFormsApp5
                 }
 
                 listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            }
+            }*/
 
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
-        }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
+       
     }
 }
