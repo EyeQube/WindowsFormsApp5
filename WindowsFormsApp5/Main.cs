@@ -13,20 +13,20 @@ namespace WindowsFormsApp5
 {
     public partial class Main : Form
     {
-        private object tabControl;
+        
 
         public Main()
         {
             InitializeComponent();
             PopulateTreeView();
-            //this.treeView1.NodeMouseClick += new TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+            this.treeView1.NodeMouseClick += new TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
         }
 
         private void PopulateTreeView()
         {
             TreeNode rootNode;
 
-            DirectoryInfo info = new DirectoryInfo(@"C:\Users\bitoreq_sattar\source\repos\WindowsFormsApp5\Mina Brukare"); //../..");
+            DirectoryInfo info = new DirectoryInfo(@"C:\Users\satman\Source\Repos\WindowsFormsApp5\WindowsFormsApp5\Mina Brukare"); //../..");
             if (info.Exists)
             {
                 rootNode = new TreeNode(info.Name);
@@ -111,76 +111,96 @@ namespace WindowsFormsApp5
                 }
             } */
 
-                private void GetDirectories(DirectoryInfo[] subDirs, TreeNode nodeToAddTo)
+              
+
+
+        private void Form1_MdiChildActivate(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ActiveMdiChild_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ((sender as Form).Tag as TabPage).Dispose();
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((tabControl1.SelectedTab != null) &&
+                (tabControl1.SelectedTab.Tag != null))
+                (tabControl1.SelectedTab.Tag as Form).Select();
+        }
+
+
+
+        /* private void tabBeslut_Click(object sender, EventArgs e)
+         {
+
+             BizContacts frm = new BizContacts();
+             frm.TopLevel = false;
+             tabBeslut.Controls.Add(frm);
+             frm.Dock = DockStyle.Fill;
+             frm.Show();
+
+
+           //  BizContacts frmChild = new BizContacts();
+             //AddNewTab(frmChild);
+
+
+            //BizContacts frm = new BizContacts(); //make a new business contacts form
+            // frmChild.MdiParent = this; //set the main form as the parent of each business form //
+             //frmChild.ShowDialog(this); //show the new form
+
+            // tabControl1.SelectedTab = BizContacts.ActiveForm.
+
+
+         }
+
+         private void AddNewTab(BizContacts frm)
+         {
+             BizContacts myTabPage = new BizContacts();
+             tabBeslut = new TabPage();
+             tabBeslut.Dock = DockStyle.Fill;
+             tabBeslut.Controls.Add(tabBeslut);
+            // tabControl1.TabPages.Add(myTabPage);
+
+             /*TabPage tab = new TabPage(frm.Text);
+
+             frm.TopLevel = false;
+
+             frm.Parent = tab;
+
+             frm.Visible = true;
+
+             tabControl1.TabPages.Add(tab);
+
+             frm.Location = new Point((tab.Width - frm.Width) / 2, (tab.Height - frm.Height) / 2);
+
+             tabControl1.SelectedTab = tab;
+
+    } */
+
+
+        private void GetDirectories(DirectoryInfo[] subDirs, TreeNode nodeToAddTo)
+        {
+            TreeNode aNode;
+            DirectoryInfo[] subSubDirs;
+            foreach (DirectoryInfo subDir in subDirs)
             {
-                TreeNode aNode;
-                DirectoryInfo[] subSubDirs;
-                foreach (DirectoryInfo subDir in subDirs)
+                aNode = new TreeNode(subDir.Name, 0, 0);
+                aNode.Tag = subDir;
+                aNode.ImageKey = "folder";
+                subSubDirs = subDir.GetDirectories();
+                if (subSubDirs.Length != 0)
                 {
-                    aNode = new TreeNode(subDir.Name, 0, 0);
-                    aNode.Tag = subDir;
-                    aNode.ImageKey = "folder";
-                    subSubDirs = subDir.GetDirectories();
-                    if (subSubDirs.Length != 0)
-                    {
-                        GetDirectories(subSubDirs, aNode);
-                    }
-                    nodeToAddTo.Nodes.Add(aNode);
+                    GetDirectories(subSubDirs, aNode);
                 }
+                nodeToAddTo.Nodes.Add(aNode);
             }
-
-
-
-        private void tabBeslut_Click(object sender, EventArgs e)
-        {
-
-            BizContacts frm = new BizContacts();
-            frm.TopLevel = false;
-            tabBeslut.Controls.Add(frm);
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-
-
-          //  BizContacts frmChild = new BizContacts();
-            //AddNewTab(frmChild);
-
-
-           //BizContacts frm = new BizContacts(); //make a new business contacts form
-           // frmChild.MdiParent = this; //set the main form as the parent of each business form //
-            //frmChild.ShowDialog(this); //show the new form
-
-           // tabControl1.SelectedTab = BizContacts.ActiveForm.
-
-           
-        }
-
-        private void AddNewTab(BizContacts frm)
-        {
-            BizContacts myTabPage = new BizContacts();
-            tabBeslut = new TabPage();
-            tabBeslut.Dock = DockStyle.Fill;
-            tabBeslut.Controls.Add(tabBeslut);
-           // tabControl1.TabPages.Add(myTabPage);
-
-            /*TabPage tab = new TabPage(frm.Text);
-
-            frm.TopLevel = false;
-
-            frm.Parent = tab;
-
-            frm.Visible = true;
-
-            tabControl1.TabPages.Add(tab);
-
-            frm.Location = new Point((tab.Width - frm.Width) / 2, (tab.Height - frm.Height) / 2);
-
-            tabControl1.SelectedTab = tab;*/
-
         }
 
 
-
-        /*   void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
            {
                TreeNode newSelected = e.Node;
                listView1.Items.Clear();
@@ -204,8 +224,18 @@ namespace WindowsFormsApp5
                }
 
                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-           }*/
+           }
 
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
 
 
     }

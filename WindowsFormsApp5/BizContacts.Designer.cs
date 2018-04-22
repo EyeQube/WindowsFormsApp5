@@ -645,6 +645,7 @@
             this.Name = "BizContacts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Beslut";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.BizContacts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
