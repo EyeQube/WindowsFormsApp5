@@ -52,7 +52,7 @@ namespace WindowsFormsApp5
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabBeslut = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
@@ -72,13 +72,17 @@ namespace WindowsFormsApp5
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStrip4 = new System.Windows.Forms.ToolStrip();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -162,13 +166,17 @@ namespace WindowsFormsApp5
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(248)))), ((int)(((byte)(253)))));
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
+            this.splitContainer1.Panel1.Controls.Add(this.button6);
+            this.splitContainer1.Panel1.Controls.Add(this.button5);
+            this.splitContainer1.Panel1.Controls.Add(this.button4);
+            this.splitContainer1.Panel1.Controls.Add(this.button3);
             this.splitContainer1.Panel1.Controls.Add(this.textBox3);
             this.splitContainer1.Panel1.Controls.Add(this.button2);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.textBox2);
             this.splitContainer1.Panel1.Controls.Add(this.textBox1);
-            this.splitContainer1.Panel1.Controls.Add(this.toolStrip4);
             this.splitContainer1.Panel1.Controls.Add(this.toolStrip3);
             this.splitContainer1.Panel1.Controls.Add(this.toolStrip2);
             this.splitContainer1.Panel1.Controls.Add(this.treeView1);
@@ -177,18 +185,21 @@ namespace WindowsFormsApp5
             // 
             this.splitContainer1.Panel2.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(1184, 691);
+            this.splitContainer1.Size = new System.Drawing.Size(1184, 631);
             this.splitContainer1.SplitterDistance = 289;
             this.splitContainer1.TabIndex = 2;
             // 
             // treeView1
             // 
+            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.treeView1.ImageIndex = 0;
             this.treeView1.ImageList = this.imageList1;
-            this.treeView1.Location = new System.Drawing.Point(3, 96);
+            this.treeView1.Location = new System.Drawing.Point(0, 96);
             this.treeView1.Name = "treeView1";
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(283, 583);
+            this.treeView1.Size = new System.Drawing.Size(289, 535);
             this.treeView1.TabIndex = 0;
             // 
             // imageList1
@@ -200,8 +211,11 @@ namespace WindowsFormsApp5
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabBeslut);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(2, 25);
             this.tabControl1.Name = "tabControl1";
@@ -211,6 +225,7 @@ namespace WindowsFormsApp5
             // 
             // tabPage1
             // 
+            this.tabPage1.AutoScroll = true;
             this.tabPage1.Controls.Add(this.linkLabel6);
             this.tabPage1.Controls.Add(this.linkLabel5);
             this.tabPage1.Controls.Add(this.linkLabel4);
@@ -297,22 +312,24 @@ namespace WindowsFormsApp5
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Datum";
             // 
-            // tabPage2
+            // tabBeslut
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(768, 470);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Beslut";
+            this.tabBeslut.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabBeslut.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.tabBeslut.Location = new System.Drawing.Point(4, 22);
+            this.tabBeslut.Name = "tabBeslut";
+            this.tabBeslut.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBeslut.Size = new System.Drawing.Size(881, 662);
+            this.tabBeslut.TabIndex = 1;
+            this.tabBeslut.Text = "Beslut";
+            this.tabBeslut.Click += new System.EventHandler(this.tabBeslut_Click);
             // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(768, 470);
+            this.tabPage3.Size = new System.Drawing.Size(881, 662);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Mappar/filer";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -495,16 +512,6 @@ namespace WindowsFormsApp5
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             // 
-            // toolStrip4
-            // 
-            this.toolStrip4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(248)))), ((int)(((byte)(253)))));
-            this.toolStrip4.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip4.Location = new System.Drawing.Point(0, 50);
-            this.toolStrip4.Name = "toolStrip4";
-            this.toolStrip4.Size = new System.Drawing.Size(289, 25);
-            this.toolStrip4.TabIndex = 3;
-            this.toolStrip4.Text = "toolStrip4";
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(99, 70);
@@ -562,12 +569,71 @@ namespace WindowsFormsApp5
             this.textBox3.TabIndex = 9;
             this.textBox3.Tag = "";
             // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.button3.FlatAppearance.BorderSize = 100;
+            this.button3.Location = new System.Drawing.Point(0, 516);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(289, 32);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Mina Ärenden";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Location = new System.Drawing.Point(0, 545);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(289, 34);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Mina Brukare";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Location = new System.Drawing.Point(0, 576);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(289, 32);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "Mina Sidor";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.Location = new System.Drawing.Point(0, 608);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(289, 23);
+            this.button6.TabIndex = 13;
+            this.button6.Text = "Handläggare";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label2.Location = new System.Drawing.Point(3, 613);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "RobBit";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1184, 712);
+            this.ClientSize = new System.Drawing.Size(1184, 652);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
@@ -619,9 +685,8 @@ namespace WindowsFormsApp5
         private LinkLabel linkLabel3;
         private LinkLabel linkLabel2;
         private LinkLabel linkLabel1;
-        private TabPage tabPage2;
+        private TabPage tabBeslut;
         private TabPage tabPage3;
-        private ToolStrip toolStrip4;
         private ToolStrip toolStrip3;
         private ToolStripButton toolStripButton9;
         private ToolStripButton toolStripButton10;
@@ -646,6 +711,11 @@ namespace WindowsFormsApp5
         private Label label1;
         private TextBox textBox2;
         private TextBox textBox1;
+        private Button button6;
+        private Button button5;
+        private Button button4;
+        private Button button3;
+        private Label label2;
     }
 }
 

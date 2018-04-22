@@ -13,6 +13,8 @@ namespace WindowsFormsApp5
 {
     public partial class Main : Form
     {
+        private object tabControl;
+
         public Main()
         {
             InitializeComponent();
@@ -127,34 +129,84 @@ namespace WindowsFormsApp5
                 }
             }
 
-       
-         /*   void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-            {
-                TreeNode newSelected = e.Node;
-                listView1.Items.Clear();
-                DirectoryInfo nodeDirInfo = (DirectoryInfo)newSelected.Tag;
-                ListViewItem.ListViewSubItem[] subItems;
-                ListViewItem item = null;
-
-                foreach (DirectoryInfo dir in nodeDirInfo.GetDirectories())
-                {
-                    item = new ListViewItem(dir.Name, 0);
-                    subItems = new ListViewItem.ListViewSubItem[] {new ListViewItem.ListViewSubItem(item, "Directory"), new ListViewItem.ListViewSubItem(item, dir.LastAccessTime.ToShortDateString())};
-                    item.SubItems.AddRange(subItems);
-                    listView1.Items.Add(item);
-                }
-                foreach (FileInfo file in nodeDirInfo.GetFiles())
-                {
-                    item = new ListViewItem(file.Name, 1);
-                    subItems = new ListViewItem.ListViewSubItem[] { new ListViewItem.ListViewSubItem(item, "File"), new ListViewItem.ListViewSubItem(item, file.LastAccessTime.ToShortDateString())};
-                    item.SubItems.AddRange(subItems);
-                    listView1.Items.Add(item);
-                }
-
-                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            }*/
 
 
-       
+        private void tabBeslut_Click(object sender, EventArgs e)
+        {
+
+            BizContacts frm = new BizContacts();
+            frm.TopLevel = false;
+            tabBeslut.Controls.Add(frm);
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+
+
+          //  BizContacts frmChild = new BizContacts();
+            //AddNewTab(frmChild);
+
+
+           //BizContacts frm = new BizContacts(); //make a new business contacts form
+           // frmChild.MdiParent = this; //set the main form as the parent of each business form //
+            //frmChild.ShowDialog(this); //show the new form
+
+           // tabControl1.SelectedTab = BizContacts.ActiveForm.
+
+           
+        }
+
+        private void AddNewTab(BizContacts frm)
+        {
+            BizContacts myTabPage = new BizContacts();
+            tabBeslut = new TabPage();
+            tabBeslut.Dock = DockStyle.Fill;
+            tabBeslut.Controls.Add(tabBeslut);
+           // tabControl1.TabPages.Add(myTabPage);
+
+            /*TabPage tab = new TabPage(frm.Text);
+
+            frm.TopLevel = false;
+
+            frm.Parent = tab;
+
+            frm.Visible = true;
+
+            tabControl1.TabPages.Add(tab);
+
+            frm.Location = new Point((tab.Width - frm.Width) / 2, (tab.Height - frm.Height) / 2);
+
+            tabControl1.SelectedTab = tab;*/
+
+        }
+
+
+
+        /*   void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+           {
+               TreeNode newSelected = e.Node;
+               listView1.Items.Clear();
+               DirectoryInfo nodeDirInfo = (DirectoryInfo)newSelected.Tag;
+               ListViewItem.ListViewSubItem[] subItems;
+               ListViewItem item = null;
+
+               foreach (DirectoryInfo dir in nodeDirInfo.GetDirectories())
+               {
+                   item = new ListViewItem(dir.Name, 0);
+                   subItems = new ListViewItem.ListViewSubItem[] {new ListViewItem.ListViewSubItem(item, "Directory"), new ListViewItem.ListViewSubItem(item, dir.LastAccessTime.ToShortDateString())};
+                   item.SubItems.AddRange(subItems);
+                   listView1.Items.Add(item);
+               }
+               foreach (FileInfo file in nodeDirInfo.GetFiles())
+               {
+                   item = new ListViewItem(file.Name, 1);
+                   subItems = new ListViewItem.ListViewSubItem[] { new ListViewItem.ListViewSubItem(item, "File"), new ListViewItem.ListViewSubItem(item, file.LastAccessTime.ToShortDateString())};
+                   item.SubItems.AddRange(subItems);
+                   listView1.Items.Add(item);
+               }
+
+               listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+           }*/
+
+
+
     }
 }
