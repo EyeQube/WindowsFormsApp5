@@ -18,7 +18,7 @@ namespace WindowsFormsApp5
 {
     public partial class BizContacts : Form
     {
-        string connString = @"Data Source=DESKTOP-V4R7G9G\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        string connString = @"Data Source=SAK\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         SqlDataAdapter dataAdapter; //this object here allows us to build the connection between the program and the database
         System.Data.DataTable table;//table to hold the information so we can fill the datagrid view
@@ -37,7 +37,7 @@ namespace WindowsFormsApp5
         {
             DataRow dr;
 
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-V4R7G9G\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            SqlConnection con = new SqlConnection(@"Data Source=SAK\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from BizContacts", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
