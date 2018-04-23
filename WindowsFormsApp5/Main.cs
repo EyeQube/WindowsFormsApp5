@@ -18,16 +18,156 @@ namespace WindowsFormsApp5
 {
     public partial class Main : Form
     {
-        
+        string connString = @"Data Source=SAK\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
+        SqlDataAdapter dataAdapter; //this object here allows us to build the connection between the program and the database
+        System.Data.DataTable table;//table to hold the information so we can fill the datagrid view
+        //SqlCommandBuilder commandBuilder; //declare a new sql command builder object
+        SqlConnection conn;//declares a variable to hold the sql connection
+        string selectionStatement = "Select * from BizContacts";
+        //string selectionOrg = "select * from BizContacts where lower(organisation)";
+
 
         public Main()
-        {
+        {        
             InitializeComponent();
+           
+
             PopulateTreeView();
             this.treeView1.NodeMouseClick += new TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
 
-           // refreshdata();
+            refreshdata();
+            refresh();
         }
+
+        
+
+        public void refreshdata()
+        {
+
+            DataRow dr;
+
+            SqlConnection con = new SqlConnection(@"Data Source=SAK\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from BizContacts", con);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            System.Data.DataTable dt = new System.Data.DataTable();
+            sda.Fill(dt);
+
+            dr = dt.NewRow();
+            dr.ItemArray = new object[] { 0, "Organisation" };
+            dt.Rows.InsertAt(dr, 0);
+
+            cboOrganisation.ValueMember = "ID";
+
+            cboOrganisation.DisplayMember = "Organisation";
+            cboOrganisation.DataSource = dt;
+        
+
+           // con.Close();
+        }
+
+
+         private void TabPage11(object sender, EventArgs e)
+        {       
+            refreshdata();
+
+            dataGridView1.DataSource = bindingSource1; //sets the source of the data to be displayed in the grid view
+
+            // cboOrganisation.SelectedIndex = 0; //first item in combobox is selected when the form loads
+
+            //cboOrganisation.DisplayMember = "Organisation";
+            //cboOrganisation.ValueMember = "Organisation";
+
+            //Line below calls a method called GetData
+            //The argument is a string that represents an sql query
+            //select * from BizContacts means select all the data from the biz contacts table
+            GetData(selectionStatement);
+
+        }
+
+
+
+
+        public void refresh()
+        {
+            dataGridView1.DataSource = bindingSource1; //sets the source of the data to be displayed in the grid view
+
+            // cboOrganisation.SelectedIndex = 0; //first item in combobox is selected when the form loads
+
+            //cboOrganisation.DisplayMember = "Organisation";
+            //cboOrganisation.ValueMember = "Organisation";
+
+            //Line below calls a method called GetData
+            //The argument is a string that represents an sql query
+            //select * from BizContacts means select all the data from the biz contacts table
+            GetData(selectionStatement);
+        }
+
+            
+      /*  private void Main_Load(object sender, EventArgs e)
+        {
+            refreshdata();
+
+            dataGridView1.DataSource = bindingSource1; //sets the source of the data to be displayed in the grid view
+
+            // cboOrganisation.SelectedIndex = 0; //first item in combobox is selected when the form loads
+
+            //cboOrganisation.DisplayMember = "Organisation";
+            //cboOrganisation.ValueMember = "Organisation";
+
+            //Line below calls a method called GetData
+            //The argument is a string that represents an sql query
+            //select * from BizContacts means select all the data from the biz contacts table
+            GetData(selectionStatement);
+        }*/
+            
+
+    /*    private void tabPage11_Click(object sender, EventArgs e)
+        {    
+
+            refreshdata();
+
+            dataGridView1.DataSource = bindingSource1; //sets the source of the data to be displayed in the grid view
+
+            // cboOrganisation.SelectedIndex = 0; //first item in combobox is selected when the form loads
+
+            //cboOrganisation.DisplayMember = "Organisation";
+            //cboOrganisation.ValueMember = "Organisation";
+
+            //Line below calls a method called GetData
+            //The argument is a string that represents an sql query
+            //select * from BizContacts means select all the data from the biz contacts table
+            GetData(selectionStatement);
+
+
+            //tabBeslut3.Update();
+        } */
+
+        private void GetData(string selectCommand)
+        {
+            try
+            {
+                dataAdapter = new SqlDataAdapter(selectCommand, connString);//pass in the select command and the connection string
+                table = new System.Data.DataTable(); //make a new data table object
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter.Fill(table); //fill the data table
+                bindingSource1.DataSource = table; //set the data source on the binding source to the table
+                                                   //dataGridView1.Columns[0].ReadOnly = true; //this helps prevent the idfield from being changed
+                                                   // dataGridView1.Columns[0].Visible = false;
+                                                   // dataGridView1.Columns[1].Visible = false;
+                                                   //dataGridView1.Columns[10].Visible = false;
+                                                   //dataGridView1.Columns[11].Visible = false;
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);//show a useful message to the user of the program
+            }
+
+
+        }
+
 
         private void PopulateTreeView()
         {
@@ -239,20 +379,8 @@ namespace WindowsFormsApp5
 
         }
 
-        private void Main_Load(object sender, EventArgs e)
-        {
-
-        }
-
-/*
-        string connString = @"Data Source=SAK\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
-        SqlDataAdapter dataAdapter; //this object here allows us to build the connection between the program and the database
-        System.Data.DataTable table;//table to hold the information so we can fill the datagrid view
-        //SqlCommandBuilder commandBuilder; //declare a new sql command builder object
-        SqlConnection conn;//declares a variable to hold the sql connection
-        string selectionStatement = "Select * from BizContacts";
-        //string selectionOrg = "select * from BizContacts where lower(organisation)";
+      
+       
 
        /* public BizContacts()
         {
@@ -261,72 +389,9 @@ namespace WindowsFormsApp5
         }*/
 
 
-            /*
+            
 
-        public void refreshdata()
-        {
-            DataRow dr;
-
-            SqlConnection con = new SqlConnection(@"Data Source=SAK\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select * from BizContacts", con);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            System.Data.DataTable dt = new System.Data.DataTable();
-            sda.Fill(dt);
-
-            dr = dt.NewRow();
-            dr.ItemArray = new object[] { 0, "Organisation" };
-            dt.Rows.InsertAt(dr, 0);
-
-            cboOrganisation.ValueMember = "ID";
-
-            cboOrganisation.DisplayMember = "Organisation";
-            cboOrganisation.DataSource = dt;
-
-            con.Close();
-        }
-
-
-        private void BizContacts_Load(object sender, EventArgs e)
-        {
-            refreshdata();
-
-            dataGridView1.DataSource = bindingSource1; //sets the source of the data to be displayed in the grid view
-
-            // cboOrganisation.SelectedIndex = 0; //first item in combobox is selected when the form loads
-
-            //cboOrganisation.DisplayMember = "Organisation";
-            //cboOrganisation.ValueMember = "Organisation";
-
-            //Line below calls a method called GetData
-            //The argument is a string that represents an sql query
-            //select * from BizContacts means select all the data from the biz contacts table
-            GetData(selectionStatement);
-        }
-
-        private void GetData(string selectCommand)
-        {
-            try
-            {
-                dataAdapter = new SqlDataAdapter(selectCommand, connString);//pass in the select command and the connection string
-                table = new System.Data.DataTable(); //make a new data table object
-                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
-                dataAdapter.Fill(table); //fill the data table
-                bindingSource1.DataSource = table; //set the data source on the binding source to the table
-                                                   //dataGridView1.Columns[0].ReadOnly = true; //this helps prevent the idfield from being changed
-                                                   // dataGridView1.Columns[0].Visible = false;
-                                                   // dataGridView1.Columns[1].Visible = false;
-                                                   //dataGridView1.Columns[10].Visible = false;
-                                                   //dataGridView1.Columns[11].Visible = false;
-
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);//show a useful message to the user of the program
-            }
-
-
-        }
+     
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -367,7 +432,7 @@ namespace WindowsFormsApp5
                          command.Parameters.AddWithValue(@"Image", File.ReadAllBytes(dlgOpenImage.FileName));//convert images to bytes for saving
                      else
                          command.Parameters.Add("@Image", SqlDbType.VarBinary).Value = DBNull.Value;//Save null to database*/
-    /*                command.ExecuteNonQuery();//push stuff into the table
+                    command.ExecuteNonQuery();//push stuff into the table
                 }
                 catch (Exception ex)
                 {
@@ -423,7 +488,7 @@ namespace WindowsFormsApp5
 
                } */
 
-/*
+
             if (lst.Count > 1)
             {
 
@@ -510,7 +575,8 @@ namespace WindowsFormsApp5
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
-        {
+        {         
+
             switch (txtSearch.Text)  //(cboSearch.SelectedItem.ToString())//present because we have a combo box
             {
                 case "Personnummer":
@@ -543,7 +609,7 @@ namespace WindowsFormsApp5
             frm.Show();//show form with image
         }*/
 
-  /*      private void btnExportOpen_Click(object sender, EventArgs e)
+        private void btnExportOpen_Click(object sender, EventArgs e)
         {
             Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application(); //make a new excel object
             _Workbook workbook = excel.Workbooks.Add(Type.Missing);//make a work book
@@ -662,24 +728,10 @@ namespace WindowsFormsApp5
 
 
 
-        private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //if (cboOrganisation.SelectedItem.ToString().ToLower() == "alla organisationer")
-            //    GetData("select * from BizContacts");
-
-            if (String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
-                GetData("select * from BizContacts");
-            else
-            {
-                GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() + "%'");
-            }
-
-        }
-
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            //TabPage fre = new TabPage();
+          
 
             int n;
             bool isNumeric = int.TryParse(txtSearch.Text.ToLower(), out n);
@@ -693,12 +745,31 @@ namespace WindowsFormsApp5
 
             //  GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
 
+        }
 
+       
+
+        private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
+                GetData("select * from BizContacts");
+            else
+            {
+                GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() + "%'");
+            }
+        }
+
+        private void tabPage11_MouseHover(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
+                GetData("select * from BizContacts");
+            else
+            {
+                GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() + "%'");
+            }
         }
 
 
-
-        */
 
 
 

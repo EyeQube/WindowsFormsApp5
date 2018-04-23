@@ -37,6 +37,13 @@ namespace WindowsFormsApp5
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.contactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.businessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redigeraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verktygToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.windowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tileVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tileHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hjälpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,7 +77,7 @@ namespace WindowsFormsApp5
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabBeslut = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -78,29 +85,8 @@ namespace WindowsFormsApp5
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabBeslut3 = new System.Windows.Forms.TabControl();
             this.tabPage11 = new System.Windows.Forms.TabPage();
-            this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.tabPage13 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.redigeraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verktygToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.windowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tileVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tileHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hjälpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtOrganisation = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
@@ -150,6 +136,20 @@ namespace WindowsFormsApp5
             this.label4 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -160,13 +160,13 @@ namespace WindowsFormsApp5
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            this.tabBeslut.SuspendLayout();
             this.tabPage10.SuspendLayout();
-            this.tabControl3.SuspendLayout();
+            this.tabBeslut3.SuspendLayout();
             this.tabPage11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -203,6 +203,52 @@ namespace WindowsFormsApp5
             this.businessToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.businessToolStripMenuItem.Text = "Beslut";
             this.businessToolStripMenuItem.Click += new System.EventHandler(this.businessToolStripMenuItem_Click);
+            // 
+            // redigeraToolStripMenuItem
+            // 
+            this.redigeraToolStripMenuItem.Name = "redigeraToolStripMenuItem";
+            this.redigeraToolStripMenuItem.Size = new System.Drawing.Size(73, 21);
+            this.redigeraToolStripMenuItem.Text = "Redigera";
+            // 
+            // verktygToolStripMenuItem
+            // 
+            this.verktygToolStripMenuItem.Name = "verktygToolStripMenuItem";
+            this.verktygToolStripMenuItem.Size = new System.Drawing.Size(63, 21);
+            this.verktygToolStripMenuItem.Text = "Verktyg";
+            // 
+            // windowsToolStripMenuItem
+            // 
+            this.windowsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cascadeToolStripMenuItem,
+            this.tileVerticalToolStripMenuItem,
+            this.tileHorizontalToolStripMenuItem});
+            this.windowsToolStripMenuItem.Name = "windowsToolStripMenuItem";
+            this.windowsToolStripMenuItem.Size = new System.Drawing.Size(63, 21);
+            this.windowsToolStripMenuItem.Text = "Fönster";
+            // 
+            // cascadeToolStripMenuItem
+            // 
+            this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.cascadeToolStripMenuItem.Text = "Cascade";
+            // 
+            // tileVerticalToolStripMenuItem
+            // 
+            this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
+            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.tileVerticalToolStripMenuItem.Text = "Tile Vertical";
+            // 
+            // tileHorizontalToolStripMenuItem
+            // 
+            this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
+            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.tileHorizontalToolStripMenuItem.Text = "Tile Horizontal";
+            // 
+            // hjälpToolStripMenuItem
+            // 
+            this.hjälpToolStripMenuItem.Name = "hjälpToolStripMenuItem";
+            this.hjälpToolStripMenuItem.Size = new System.Drawing.Size(50, 21);
+            this.hjälpToolStripMenuItem.Text = "Hjälp";
             // 
             // splitContainer1
             // 
@@ -481,6 +527,7 @@ namespace WindowsFormsApp5
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1060, 792);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.Click += new System.EventHandler(this.cboSearch_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -573,7 +620,7 @@ namespace WindowsFormsApp5
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.tabControl2);
+            this.tabPage6.Controls.Add(this.tabBeslut);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -582,23 +629,23 @@ namespace WindowsFormsApp5
             this.tabPage6.Text = "Beslut";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // tabControl2
+            // tabBeslut
             // 
-            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabBeslut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl2.Controls.Add(this.tabPage3);
-            this.tabControl2.Controls.Add(this.tabPage4);
-            this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Controls.Add(this.tabPage7);
-            this.tabControl2.Controls.Add(this.tabPage8);
-            this.tabControl2.Controls.Add(this.tabPage9);
-            this.tabControl2.Controls.Add(this.tabPage10);
-            this.tabControl2.Location = new System.Drawing.Point(0, 0);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1056, 688);
-            this.tabControl2.TabIndex = 0;
+            this.tabBeslut.Controls.Add(this.tabPage3);
+            this.tabBeslut.Controls.Add(this.tabPage4);
+            this.tabBeslut.Controls.Add(this.tabPage5);
+            this.tabBeslut.Controls.Add(this.tabPage7);
+            this.tabBeslut.Controls.Add(this.tabPage8);
+            this.tabBeslut.Controls.Add(this.tabPage9);
+            this.tabBeslut.Controls.Add(this.tabPage10);
+            this.tabBeslut.Location = new System.Drawing.Point(0, 0);
+            this.tabBeslut.Name = "tabBeslut";
+            this.tabBeslut.SelectedIndex = 0;
+            this.tabBeslut.Size = new System.Drawing.Size(1056, 688);
+            this.tabBeslut.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -662,7 +709,7 @@ namespace WindowsFormsApp5
             // 
             // tabPage10
             // 
-            this.tabPage10.Controls.Add(this.tabControl3);
+            this.tabPage10.Controls.Add(this.tabBeslut3);
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
@@ -671,19 +718,19 @@ namespace WindowsFormsApp5
             this.tabPage10.Text = "Beslut";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
-            // tabControl3
+            // tabBeslut3
             // 
-            this.tabControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabBeslut3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl3.Controls.Add(this.tabPage11);
-            this.tabControl3.Controls.Add(this.tabPage12);
-            this.tabControl3.Controls.Add(this.tabPage13);
-            this.tabControl3.Location = new System.Drawing.Point(-4, 0);
-            this.tabControl3.Name = "tabControl3";
-            this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(1063, 675);
-            this.tabControl3.TabIndex = 0;
+            this.tabBeslut3.Controls.Add(this.tabPage11);
+            this.tabBeslut3.Controls.Add(this.tabPage12);
+            this.tabBeslut3.Controls.Add(this.tabPage13);
+            this.tabBeslut3.Location = new System.Drawing.Point(-4, 0);
+            this.tabBeslut3.Name = "tabBeslut3";
+            this.tabBeslut3.SelectedIndex = 0;
+            this.tabBeslut3.Size = new System.Drawing.Size(1063, 675);
+            this.tabBeslut3.TabIndex = 0;
             // 
             // tabPage11
             // 
@@ -743,6 +790,476 @@ namespace WindowsFormsApp5
             this.tabPage11.Size = new System.Drawing.Size(1055, 649);
             this.tabPage11.TabIndex = 0;
             this.tabPage11.Text = "Beslut";
+            this.tabPage11.MouseEnter += new System.EventHandler(this.cboSearch_SelectedIndexChanged);
+            this.tabPage11.MouseLeave += new System.EventHandler(this.cboSearch_SelectedIndexChanged);
+            this.tabPage11.MouseHover += new System.EventHandler(this.tabPage11_MouseHover);
+            // 
+            // txtOrganisation
+            // 
+            this.txtOrganisation.Location = new System.Drawing.Point(132, 222);
+            this.txtOrganisation.Name = "txtOrganisation";
+            this.txtOrganisation.Size = new System.Drawing.Size(204, 20);
+            this.txtOrganisation.TabIndex = 154;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label18.Location = new System.Drawing.Point(12, 222);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(99, 20);
+            this.label18.TabIndex = 153;
+            this.label18.Text = "Organisation";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(542, 583);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(100, 23);
+            this.button7.TabIndex = 152;
+            this.button7.Text = "Visa Underlag";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.BackColor = System.Drawing.SystemColors.Menu;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(435, 556);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(207, 21);
+            this.comboBox6.TabIndex = 151;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.BackColor = System.Drawing.SystemColors.Menu;
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(541, 529);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(101, 21);
+            this.comboBox5.TabIndex = 150;
+            this.comboBox5.Text = "Vecka";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.BackColor = System.Drawing.SystemColors.Menu;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(541, 500);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(101, 21);
+            this.comboBox4.TabIndex = 149;
+            this.comboBox4.Text = "Vecka";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.BackColor = System.Drawing.SystemColors.Menu;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(541, 469);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(101, 21);
+            this.comboBox3.TabIndex = 148;
+            this.comboBox3.Text = "Vecka";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.SystemColors.Menu;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(541, 441);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(101, 21);
+            this.comboBox2.TabIndex = 147;
+            this.comboBox2.Text = "Dag";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.Menu;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(541, 411);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(101, 21);
+            this.comboBox1.TabIndex = 146;
+            this.comboBox1.Text = "Månad";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(435, 530);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 145;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(435, 501);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 144;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(435, 470);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 143;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(435, 442);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(100, 20);
+            this.textBox7.TabIndex = 142;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(435, 412);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(100, 20);
+            this.textBox8.TabIndex = 141;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(399, 559);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(29, 13);
+            this.label17.TabIndex = 140;
+            this.label17.Text = "Nivå";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(389, 533);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(40, 13);
+            this.label16.TabIndex = 139;
+            this.label16.Text = "Belopp";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(396, 504);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(32, 13);
+            this.label15.TabIndex = 138;
+            this.label15.Text = "Dygn";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(392, 473);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(37, 13);
+            this.label14.TabIndex = 137;
+            this.label14.Text = "Besök";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(399, 445);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(31, 13);
+            this.label12.TabIndex = 136;
+            this.label12.Text = "Antal";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(388, 415);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 13);
+            this.label11.TabIndex = 135;
+            this.label11.Text = "Timmar";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(435, 357);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(200, 17);
+            this.checkBox2.TabIndex = 134;
+            this.checkBox2.Text = "Beslutet kommer aldrig att verkställas";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(435, 322);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(114, 17);
+            this.checkBox1.TabIndex = 133;
+            this.checkBox1.Text = "Utredning avslutas";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // cboBeslut
+            // 
+            this.cboBeslut.FormattingEnabled = true;
+            this.cboBeslut.Location = new System.Drawing.Point(132, 92);
+            this.cboBeslut.Name = "cboBeslut";
+            this.cboBeslut.Size = new System.Drawing.Size(204, 21);
+            this.cboBeslut.TabIndex = 132;
+            this.cboBeslut.Text = "Bifall LSS 3 Kap 1 § Ledsagarservice";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label3.Location = new System.Drawing.Point(581, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(167, 16);
+            this.label3.TabIndex = 130;
+            this.label3.Text = "Personer som omfattas";
+            // 
+            // cboOrsak
+            // 
+            this.cboOrsak.FormattingEnabled = true;
+            this.cboOrsak.Location = new System.Drawing.Point(132, 255);
+            this.cboOrsak.Name = "cboOrsak";
+            this.cboOrsak.Size = new System.Drawing.Size(204, 21);
+            this.cboOrsak.TabIndex = 129;
+            this.cboOrsak.Text = "Ansökan";
+            // 
+            // cboBeslutsfattare
+            // 
+            this.cboBeslutsfattare.FormattingEnabled = true;
+            this.cboBeslutsfattare.Items.AddRange(new object[] {
+            "Hjertstrand, Marjam"});
+            this.cboBeslutsfattare.Location = new System.Drawing.Point(132, 186);
+            this.cboBeslutsfattare.Name = "cboBeslutsfattare";
+            this.cboBeslutsfattare.Size = new System.Drawing.Size(204, 21);
+            this.cboBeslutsfattare.TabIndex = 128;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(132, 154);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(204, 20);
+            this.dateTimePicker3.TabIndex = 127;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.AllowDrop = true;
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(132, 124);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(204, 20);
+            this.dateTimePicker2.TabIndex = 126;
+            // 
+            // cboInsatsK
+            // 
+            this.cboInsatsK.FormattingEnabled = true;
+            this.cboInsatsK.Location = new System.Drawing.Point(132, 56);
+            this.cboInsatsK.Name = "cboInsatsK";
+            this.cboInsatsK.Size = new System.Drawing.Size(204, 21);
+            this.cboInsatsK.TabIndex = 125;
+            this.cboInsatsK.Text = "Ledsagarservice";
+            // 
+            // btnOpenWord
+            // 
+            this.btnOpenWord.Location = new System.Drawing.Point(74, 579);
+            this.btnOpenWord.Name = "btnOpenWord";
+            this.btnOpenWord.Size = new System.Drawing.Size(120, 23);
+            this.btnOpenWord.TabIndex = 124;
+            this.btnOpenWord.Text = "Öppna i Word";
+            this.btnOpenWord.UseVisualStyleBackColor = true;
+            // 
+            // btnSaveToText
+            // 
+            this.btnSaveToText.Location = new System.Drawing.Point(213, 579);
+            this.btnSaveToText.Name = "btnSaveToText";
+            this.btnSaveToText.Size = new System.Drawing.Size(123, 23);
+            this.btnSaveToText.TabIndex = 123;
+            this.btnSaveToText.Text = "Spara i textfil";
+            this.btnSaveToText.UseVisualStyleBackColor = true;
+            // 
+            // btnExportOpen
+            // 
+            this.btnExportOpen.Location = new System.Drawing.Point(74, 608);
+            this.btnExportOpen.Name = "btnExportOpen";
+            this.btnExportOpen.Size = new System.Drawing.Size(262, 23);
+            this.btnExportOpen.TabIndex = 122;
+            this.btnExportOpen.Text = "Exportera/Öppna i Excel";
+            this.btnExportOpen.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(394, 56);
+            this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Size = new System.Drawing.Size(533, 195);
+            this.dataGridView1.TabIndex = 121;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(946, 184);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 120;
+            this.btnDelete.Text = "Ta bort";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(946, 155);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 119;
+            this.btnAdd.Text = "Lägg till";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(946, 126);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 118;
+            this.btnEdit.Text = "Redigera";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(584, 255);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(58, 23);
+            this.btnSearch.TabIndex = 117;
+            this.btnSearch.Text = "Sök";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // cboOrganisation
+            // 
+            this.cboOrganisation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboOrganisation.FormattingEnabled = true;
+            this.cboOrganisation.Location = new System.Drawing.Point(772, 255);
+            this.cboOrganisation.Name = "cboOrganisation";
+            this.cboOrganisation.Size = new System.Drawing.Size(155, 21);
+            this.cboOrganisation.TabIndex = 116;
+            this.cboOrganisation.Text = "Organisation";
+            // 
+            // txtNotes
+            // 
+            this.txtNotes.Location = new System.Drawing.Point(74, 355);
+            this.txtNotes.Multiline = true;
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.Size = new System.Drawing.Size(262, 218);
+            this.txtNotes.TabIndex = 115;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label13.Location = new System.Drawing.Point(128, 332);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(103, 20);
+            this.label13.TabIndex = 114;
+            this.label13.Text = "Anteckningar";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(429, 256);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(149, 20);
+            this.txtSearch.TabIndex = 113;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label10.Location = new System.Drawing.Point(391, 259);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(32, 16);
+            this.label10.TabIndex = 112;
+            this.label10.Text = "Sök";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label8.Location = new System.Drawing.Point(12, 256);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 20);
+            this.label8.TabIndex = 111;
+            this.label8.Text = "Orsak";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label6.Location = new System.Drawing.Point(12, 187);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(109, 20);
+            this.label6.TabIndex = 110;
+            this.label6.Text = "Beslutsfattare";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label5.Location = new System.Drawing.Point(12, 154);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 20);
+            this.label5.TabIndex = 109;
+            this.label5.Text = "Gäller t.o.m.";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label7.Location = new System.Drawing.Point(682, 258);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 16);
+            this.label7.TabIndex = 108;
+            this.label7.Text = "Organisation";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label4.Location = new System.Drawing.Point(12, 125);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 20);
+            this.label4.TabIndex = 107;
+            this.label4.Text = "Gäller fr.o.m.";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label19.Location = new System.Drawing.Point(12, 92);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(54, 20);
+            this.label19.TabIndex = 106;
+            this.label19.Text = "Beslut";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label20.Location = new System.Drawing.Point(11, 56);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(110, 20);
+            this.label20.TabIndex = 105;
+            this.label20.Text = "Insatskategori";
             // 
             // tabPage12
             // 
@@ -881,519 +1398,6 @@ namespace WindowsFormsApp5
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // redigeraToolStripMenuItem
-            // 
-            this.redigeraToolStripMenuItem.Name = "redigeraToolStripMenuItem";
-            this.redigeraToolStripMenuItem.Size = new System.Drawing.Size(73, 21);
-            this.redigeraToolStripMenuItem.Text = "Redigera";
-            // 
-            // verktygToolStripMenuItem
-            // 
-            this.verktygToolStripMenuItem.Name = "verktygToolStripMenuItem";
-            this.verktygToolStripMenuItem.Size = new System.Drawing.Size(63, 21);
-            this.verktygToolStripMenuItem.Text = "Verktyg";
-            // 
-            // windowsToolStripMenuItem
-            // 
-            this.windowsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cascadeToolStripMenuItem,
-            this.tileVerticalToolStripMenuItem,
-            this.tileHorizontalToolStripMenuItem});
-            this.windowsToolStripMenuItem.Name = "windowsToolStripMenuItem";
-            this.windowsToolStripMenuItem.Size = new System.Drawing.Size(63, 21);
-            this.windowsToolStripMenuItem.Text = "Fönster";
-            // 
-            // cascadeToolStripMenuItem
-            // 
-            this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.cascadeToolStripMenuItem.Text = "Cascade";
-            // 
-            // tileVerticalToolStripMenuItem
-            // 
-            this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.tileVerticalToolStripMenuItem.Text = "Tile Vertical";
-            // 
-            // tileHorizontalToolStripMenuItem
-            // 
-            this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.tileHorizontalToolStripMenuItem.Text = "Tile Horizontal";
-            // 
-            // hjälpToolStripMenuItem
-            // 
-            this.hjälpToolStripMenuItem.Name = "hjälpToolStripMenuItem";
-            this.hjälpToolStripMenuItem.Size = new System.Drawing.Size(50, 21);
-            this.hjälpToolStripMenuItem.Text = "Hjälp";
-            // 
-            // txtOrganisation
-            // 
-            this.txtOrganisation.Location = new System.Drawing.Point(132, 222);
-            this.txtOrganisation.Name = "txtOrganisation";
-            this.txtOrganisation.Size = new System.Drawing.Size(204, 20);
-            this.txtOrganisation.TabIndex = 154;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label18.Location = new System.Drawing.Point(12, 222);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(99, 20);
-            this.label18.TabIndex = 153;
-            this.label18.Text = "Organisation";
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(501, 554);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(100, 23);
-            this.button7.TabIndex = 152;
-            this.button7.Text = "Visa Underlag";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.BackColor = System.Drawing.SystemColors.Menu;
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(394, 527);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(207, 21);
-            this.comboBox6.TabIndex = 151;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.BackColor = System.Drawing.SystemColors.Menu;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(500, 500);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(101, 21);
-            this.comboBox5.TabIndex = 150;
-            this.comboBox5.Text = "Vecka";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.BackColor = System.Drawing.SystemColors.Menu;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(500, 471);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(101, 21);
-            this.comboBox4.TabIndex = 149;
-            this.comboBox4.Text = "Vecka";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.BackColor = System.Drawing.SystemColors.Menu;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(500, 440);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(101, 21);
-            this.comboBox3.TabIndex = 148;
-            this.comboBox3.Text = "Vecka";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.SystemColors.Menu;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(500, 412);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(101, 21);
-            this.comboBox2.TabIndex = 147;
-            this.comboBox2.Text = "Dag";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(500, 382);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(101, 21);
-            this.comboBox1.TabIndex = 146;
-            this.comboBox1.Text = "Månad";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(394, 501);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 145;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(394, 472);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 144;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(394, 441);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 143;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(394, 413);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 142;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(394, 383);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 141;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(358, 530);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(29, 13);
-            this.label17.TabIndex = 140;
-            this.label17.Text = "Nivå";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(348, 504);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(40, 13);
-            this.label16.TabIndex = 139;
-            this.label16.Text = "Belopp";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(355, 475);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(32, 13);
-            this.label15.TabIndex = 138;
-            this.label15.Text = "Dygn";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(351, 444);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(37, 13);
-            this.label14.TabIndex = 137;
-            this.label14.Text = "Besök";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(358, 416);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(31, 13);
-            this.label12.TabIndex = 136;
-            this.label12.Text = "Antal";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(347, 386);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 135;
-            this.label11.Text = "Timmar";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(394, 339);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(200, 17);
-            this.checkBox2.TabIndex = 134;
-            this.checkBox2.Text = "Beslutet kommer aldrig att verkställas";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(394, 304);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(114, 17);
-            this.checkBox1.TabIndex = 133;
-            this.checkBox1.Text = "Utredning avslutas";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // cboBeslut
-            // 
-            this.cboBeslut.FormattingEnabled = true;
-            this.cboBeslut.Location = new System.Drawing.Point(132, 92);
-            this.cboBeslut.Name = "cboBeslut";
-            this.cboBeslut.Size = new System.Drawing.Size(204, 21);
-            this.cboBeslut.TabIndex = 132;
-            this.cboBeslut.Text = "Bifall LSS 3 Kap 1 § Ledsagarservice";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(581, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 16);
-            this.label3.TabIndex = 130;
-            this.label3.Text = "Personer som omfattas";
-            // 
-            // cboOrsak
-            // 
-            this.cboOrsak.FormattingEnabled = true;
-            this.cboOrsak.Location = new System.Drawing.Point(132, 255);
-            this.cboOrsak.Name = "cboOrsak";
-            this.cboOrsak.Size = new System.Drawing.Size(204, 21);
-            this.cboOrsak.TabIndex = 129;
-            this.cboOrsak.Text = "Ansökan";
-            // 
-            // cboBeslutsfattare
-            // 
-            this.cboBeslutsfattare.FormattingEnabled = true;
-            this.cboBeslutsfattare.Items.AddRange(new object[] {
-            "Hjertstrand, Marjam"});
-            this.cboBeslutsfattare.Location = new System.Drawing.Point(132, 186);
-            this.cboBeslutsfattare.Name = "cboBeslutsfattare";
-            this.cboBeslutsfattare.Size = new System.Drawing.Size(204, 21);
-            this.cboBeslutsfattare.TabIndex = 128;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(132, 154);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(204, 20);
-            this.dateTimePicker3.TabIndex = 127;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.AllowDrop = true;
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(132, 124);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(204, 20);
-            this.dateTimePicker2.TabIndex = 126;
-            // 
-            // cboInsatsK
-            // 
-            this.cboInsatsK.FormattingEnabled = true;
-            this.cboInsatsK.Location = new System.Drawing.Point(132, 56);
-            this.cboInsatsK.Name = "cboInsatsK";
-            this.cboInsatsK.Size = new System.Drawing.Size(204, 21);
-            this.cboInsatsK.TabIndex = 125;
-            this.cboInsatsK.Text = "Ledsagarservice";
-            // 
-            // btnOpenWord
-            // 
-            this.btnOpenWord.Location = new System.Drawing.Point(888, 328);
-            this.btnOpenWord.Name = "btnOpenWord";
-            this.btnOpenWord.Size = new System.Drawing.Size(133, 23);
-            this.btnOpenWord.TabIndex = 124;
-            this.btnOpenWord.Text = "Öppna i Word";
-            this.btnOpenWord.UseVisualStyleBackColor = true;
-            // 
-            // btnSaveToText
-            // 
-            this.btnSaveToText.Location = new System.Drawing.Point(888, 386);
-            this.btnSaveToText.Name = "btnSaveToText";
-            this.btnSaveToText.Size = new System.Drawing.Size(133, 23);
-            this.btnSaveToText.TabIndex = 123;
-            this.btnSaveToText.Text = "Spara i textfil";
-            this.btnSaveToText.UseVisualStyleBackColor = true;
-            // 
-            // btnExportOpen
-            // 
-            this.btnExportOpen.Location = new System.Drawing.Point(888, 357);
-            this.btnExportOpen.Name = "btnExportOpen";
-            this.btnExportOpen.Size = new System.Drawing.Size(133, 23);
-            this.btnExportOpen.TabIndex = 122;
-            this.btnExportOpen.Text = "Exportera/Öppna i Excel";
-            this.btnExportOpen.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(394, 81);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Size = new System.Drawing.Size(533, 195);
-            this.dataGridView1.TabIndex = 121;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(946, 184);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 120;
-            this.btnDelete.Text = "Ta bort";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(946, 155);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 119;
-            this.btnAdd.Text = "Lägg till";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(946, 126);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 118;
-            this.btnEdit.Text = "Redigera";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(584, 54);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(58, 23);
-            this.btnSearch.TabIndex = 117;
-            this.btnSearch.Text = "Sök";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // cboOrganisation
-            // 
-            this.cboOrganisation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboOrganisation.FormattingEnabled = true;
-            this.cboOrganisation.Location = new System.Drawing.Point(812, 53);
-            this.cboOrganisation.Name = "cboOrganisation";
-            this.cboOrganisation.Size = new System.Drawing.Size(115, 21);
-            this.cboOrganisation.TabIndex = 116;
-            this.cboOrganisation.Text = "Organisation";
-            // 
-            // txtNotes
-            // 
-            this.txtNotes.Location = new System.Drawing.Point(636, 330);
-            this.txtNotes.Multiline = true;
-            this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(242, 218);
-            this.txtNotes.TabIndex = 115;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label13.Location = new System.Drawing.Point(703, 307);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(103, 20);
-            this.label13.TabIndex = 114;
-            this.label13.Text = "Anteckningar";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(429, 55);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(149, 20);
-            this.txtSearch.TabIndex = 113;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label10.Location = new System.Drawing.Point(391, 56);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 16);
-            this.label10.TabIndex = 112;
-            this.label10.Text = "Sök";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label8.Location = new System.Drawing.Point(12, 256);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 20);
-            this.label8.TabIndex = 111;
-            this.label8.Text = "Orsak";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label6.Location = new System.Drawing.Point(12, 187);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 20);
-            this.label6.TabIndex = 110;
-            this.label6.Text = "Beslutsfattare";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(12, 154);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 20);
-            this.label5.TabIndex = 109;
-            this.label5.Text = "Gäller t.o.m.";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label7.Location = new System.Drawing.Point(722, 56);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 16);
-            this.label7.TabIndex = 108;
-            this.label7.Text = "Organisation";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Location = new System.Drawing.Point(12, 125);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 20);
-            this.label4.TabIndex = 107;
-            this.label4.Text = "Gäller fr.o.m.";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label19.Location = new System.Drawing.Point(12, 92);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(54, 20);
-            this.label19.TabIndex = 106;
-            this.label19.Text = "Beslut";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label20.Location = new System.Drawing.Point(11, 56);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(110, 20);
-            this.label20.TabIndex = 105;
-            this.label20.Text = "Insatskategori";
-            // 
             // bindingSource1
             // 
             this.bindingSource1.DataSource = typeof(WindowsFormsApp5.BizContacts);
@@ -1427,15 +1431,15 @@ namespace WindowsFormsApp5
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage6.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
+            this.tabBeslut.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
-            this.tabControl3.ResumeLayout(false);
+            this.tabBeslut3.ResumeLayout(false);
             this.tabPage11.ResumeLayout(false);
             this.tabPage11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1492,7 +1496,7 @@ namespace WindowsFormsApp5
         private LinkLabel linkLabel2;
         private LinkLabel linkLabel1;
         private TabPage tabPage6;
-        private TabControl tabControl2;
+        private TabControl tabBeslut;
         private TabPage tabPage3;
         private TabPage tabPage4;
         private TabPage tabPage5;
@@ -1500,7 +1504,7 @@ namespace WindowsFormsApp5
         private TabPage tabPage8;
         private TabPage tabPage9;
         private TabPage tabPage10;
-        private TabControl tabControl3;
+        private TabControl tabBeslut3;
         private TabPage tabPage11;
         private TabPage tabPage12;
         private TabPage tabPage13;
