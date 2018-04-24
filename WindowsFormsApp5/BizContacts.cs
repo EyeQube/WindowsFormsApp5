@@ -450,27 +450,23 @@ namespace WindowsFormsApp5
 
          private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-
+           
             int n;
             bool isNumeric = int.TryParse(txtSearch.Text.ToLower(), out n);
 
             if(isNumeric)
             GetData("select * from BizContacts where lower(personnummer) like '%" + txtSearch.Text.ToLower() + "%'");
                     
-            else  
-            GetData("select * from BizContacts where lower(förnamn) like '%" + txtSearch.Text.ToLower() + "%'");
+            
+            GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
                    
 
-                  //  GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
-                    
+           /* else 
+                GetData("select * from BizContacts where lower(förnamn) like '%" + txtSearch.Text.ToLower() + "%'"); */
             
+            //  GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
+
         }
-
-
-
-
-
-
 
 
         /* private void label1_Click(object sender, EventArgs e)

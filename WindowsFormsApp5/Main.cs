@@ -740,7 +740,7 @@ namespace WindowsFormsApp5
                 GetData("select * from BizContacts where lower(personnummer) like '%" + txtSearch.Text.ToLower() + "%'");
 
             else
-                GetData("select * from BizContacts where lower(förnamn) like '%" + txtSearch.Text.ToLower() + "%'");
+                GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
 
 
             //  GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
@@ -767,10 +767,19 @@ namespace WindowsFormsApp5
             {
                 GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() + "%'");
             }
+
+            int n;
+            bool isNumeric = int.TryParse(txtSearch.Text.ToLower(), out n);
+
+            if (isNumeric && !String.IsNullOrWhiteSpace(txtSearch.Text.ToLower()))
+                GetData("select * from BizContacts where lower(personnummer) like '%" + txtSearch.Text.ToLower() + "%'");
+
+            else if(!String.IsNullOrWhiteSpace(txtSearch.Text.ToLower()))
+                GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
+
+
+
         }
-
-
-
 
 
 

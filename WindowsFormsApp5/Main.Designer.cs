@@ -729,7 +729,7 @@ namespace WindowsFormsApp5
             this.tabBeslut3.Location = new System.Drawing.Point(-4, 0);
             this.tabBeslut3.Name = "tabBeslut3";
             this.tabBeslut3.SelectedIndex = 0;
-            this.tabBeslut3.Size = new System.Drawing.Size(1063, 675);
+            this.tabBeslut3.Size = new System.Drawing.Size(1059, 675);
             this.tabBeslut3.TabIndex = 0;
             // 
             // tabPage11
@@ -787,11 +787,11 @@ namespace WindowsFormsApp5
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(1055, 649);
+            this.tabPage11.Size = new System.Drawing.Size(1051, 649);
             this.tabPage11.TabIndex = 0;
             this.tabPage11.Text = "Beslut";
             this.tabPage11.MouseEnter += new System.EventHandler(this.cboSearch_SelectedIndexChanged);
-            this.tabPage11.MouseLeave += new System.EventHandler(this.cboSearch_SelectedIndexChanged);
+            this.tabPage11.MouseLeave += new System.EventHandler(this.tabPage11_MouseHover);
             this.tabPage11.MouseHover += new System.EventHandler(this.tabPage11_MouseHover);
             // 
             // txtOrganisation
@@ -1172,6 +1172,7 @@ namespace WindowsFormsApp5
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(149, 20);
             this.txtSearch.TabIndex = 113;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label10
             // 
@@ -1266,7 +1267,7 @@ namespace WindowsFormsApp5
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(1055, 649);
+            this.tabPage12.Size = new System.Drawing.Size(1051, 649);
             this.tabPage12.TabIndex = 1;
             this.tabPage12.Text = "Beslutsmeddelande";
             this.tabPage12.UseVisualStyleBackColor = true;
@@ -1276,7 +1277,7 @@ namespace WindowsFormsApp5
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage13.Size = new System.Drawing.Size(1055, 649);
+            this.tabPage13.Size = new System.Drawing.Size(1051, 649);
             this.tabPage13.TabIndex = 2;
             this.tabPage13.Text = "Delgivning";
             this.tabPage13.UseVisualStyleBackColor = true;
