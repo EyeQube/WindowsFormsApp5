@@ -152,7 +152,7 @@
             // 
             this.cboOrganisation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboOrganisation.FormattingEnabled = true;
-            this.cboOrganisation.Location = new System.Drawing.Point(952, 105);
+            this.cboOrganisation.Location = new System.Drawing.Point(952, 106);
             this.cboOrganisation.Name = "cboOrganisation";
             this.cboOrganisation.Size = new System.Drawing.Size(150, 21);
             this.cboOrganisation.TabIndex = 61;
@@ -181,7 +181,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(602, 106);
+            this.txtSearch.Location = new System.Drawing.Point(602, 107);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(141, 20);
             this.txtSearch.TabIndex = 54;
@@ -236,7 +236,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label7.Location = new System.Drawing.Point(862, 110);
+            this.label7.Location = new System.Drawing.Point(862, 108);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 16);
             this.label7.TabIndex = 43;
@@ -647,6 +647,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Beslut";
             this.Load += new System.EventHandler(this.BizContacts_Load);
+            this.MouseEnter += new System.EventHandler(this.txtSearch_TextChanged);
+            this.MouseLeave += new System.EventHandler(this.txtSearch_TextChanged);
+            this.MouseHover += new System.EventHandler(this.txtSearch_TextChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
