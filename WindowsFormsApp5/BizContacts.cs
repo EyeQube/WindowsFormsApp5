@@ -442,28 +442,39 @@ namespace WindowsFormsApp5
             if (String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
                GetData("select * from BizContacts");
             else
-            {  
-               GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() + "%'");
+            {
+                //GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() + "%'");
+                GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() +
+                        "%'and lower(efternamn) like '%" + txtSearch.Text.ToString().ToLower() + "%'"
+                    );
             }
                      
         }
 
          private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-           
+
             int n;
             bool isNumeric = int.TryParse(txtSearch.Text.ToLower(), out n);
 
-            if(isNumeric)
-            GetData("select * from BizContacts where lower(personnummer) like '%" + txtSearch.Text.ToLower() + "%'");
-                    
-            
-            GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
-                   
 
-           /* else 
-                GetData("select * from BizContacts where lower(förnamn) like '%" + txtSearch.Text.ToLower() + "%'"); */
-            
+            if (isNumeric)
+                GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() +
+                            "%'and lower(personnummer) like '%" + txtSearch.Text.ToString().ToLower() + "%'"
+                        );
+
+            else if(!String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
+            {
+                GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToString().ToLower() +
+                        "%'and lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() + "%'"
+                        );
+            }
+            else
+                GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToString().ToLower() + "%'");
+
+            /* else 
+                 GetData("select * from BizContacts where lower(förnamn) like '%" + txtSearch.Text.ToLower() + "%'"); */
+
             //  GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
 
         }
