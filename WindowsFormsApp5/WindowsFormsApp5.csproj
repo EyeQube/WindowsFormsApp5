@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>7DCC7D27347D1C2D40233AE04F425352FE9F03C7</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>C8D31608C947EEBAAECD456920F1DE1872402A13</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>WindowsFormsApp5_TemporaryKey.pfx</ManifestKeyFile>
@@ -95,6 +95,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BizContacts.resx">
+      <DependentUpon>BizContacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BizContacts.sv.resx">
       <DependentUpon>BizContacts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">

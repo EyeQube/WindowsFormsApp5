@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BizContacts));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -95,7 +95,9 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(567, 141);
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -105,481 +107,316 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Size = new System.Drawing.Size(535, 182);
-            this.dataGridView1.TabIndex = 66;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(1108, 199);
+            resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 65;
-            this.btnDelete.Text = "Ta bort";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(1108, 170);
+            resources.ApplyResources(this.btnAdd, "btnAdd");
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 64;
-            this.btnAdd.Text = "Lägg till";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(1108, 141);
+            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 63;
-            this.btnEdit.Text = "Redigera";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnDataGridView1_CellEndEdit);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(749, 105);
+            resources.ApplyResources(this.btnSearch, "btnSearch");
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 62;
-            this.btnSearch.Text = "Sök";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnSearch.MouseHover += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // cboOrganisation
             // 
-            this.cboOrganisation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.cboOrganisation, "cboOrganisation");
             this.cboOrganisation.FormattingEnabled = true;
-            this.cboOrganisation.Location = new System.Drawing.Point(952, 106);
             this.cboOrganisation.Name = "cboOrganisation";
-            this.cboOrganisation.Size = new System.Drawing.Size(150, 21);
-            this.cboOrganisation.TabIndex = 61;
-            this.cboOrganisation.Text = "Organisation";
             this.cboOrganisation.SelectedIndexChanged += new System.EventHandler(this.cboSearch_SelectedIndexChanged);
+            this.cboOrganisation.MouseEnter += new System.EventHandler(this.txtSearch_TextChanged);
+            this.cboOrganisation.MouseLeave += new System.EventHandler(this.txtSearch_TextChanged);
+            this.cboOrganisation.MouseHover += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(63, 428);
-            this.txtNotes.Multiline = true;
+            resources.ApplyResources(this.txtNotes, "txtNotes");
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(416, 131);
-            this.txtNotes.TabIndex = 60;
             this.txtNotes.TextChanged += new System.EventHandler(this.txtNotes_TextChanged);
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label13, "label13");
             this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label13.Location = new System.Drawing.Point(62, 405);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(103, 20);
-            this.label13.TabIndex = 58;
-            this.label13.Text = "Anteckningar";
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(602, 107);
+            resources.ApplyResources(this.txtSearch, "txtSearch");
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(141, 20);
-            this.txtSearch.TabIndex = 54;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.MouseEnter += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.MouseLeave += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.MouseHover += new System.EventHandler(this.txtNotes_TextChanged);
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label10, "label10");
             this.label10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label10.Location = new System.Drawing.Point(564, 110);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 16);
-            this.label10.TabIndex = 53;
-            this.label10.Text = "Sök";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label8, "label8");
             this.label8.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label8.Location = new System.Drawing.Point(62, 327);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 20);
-            this.label8.TabIndex = 49;
-            this.label8.Text = "Orsak";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label6, "label6");
             this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label6.Location = new System.Drawing.Point(62, 255);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 20);
-            this.label6.TabIndex = 46;
-            this.label6.Text = "Beslutsfattare";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label5, "label5");
             this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(62, 220);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 20);
-            this.label5.TabIndex = 44;
-            this.label5.Text = "Gäller t.o.m.";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label7, "label7");
             this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label7.Location = new System.Drawing.Point(862, 108);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 16);
-            this.label7.TabIndex = 43;
-            this.label7.Text = "Organisation";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label4, "label4");
             this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Location = new System.Drawing.Point(62, 183);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 20);
-            this.label4.TabIndex = 41;
-            this.label4.Text = "Gäller fr.o.m.";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label2, "label2");
             this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(62, 144);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 20);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Beslut";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label1, "label1");
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(62, 111);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 20);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Insatskategori";
             // 
             // saveFileDialog1
             // 
-            this.saveFileDialog1.Filter = "Excel Files (*.xlsx)|*.xlsx|Text Files (*.txt)|*.txt|Word Files (*.docx)|*.docx";
+            resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
             // 
             // btnExportOpen
             // 
-            this.btnExportOpen.Location = new System.Drawing.Point(177, 575);
+            resources.ApplyResources(this.btnExportOpen, "btnExportOpen");
             this.btnExportOpen.Name = "btnExportOpen";
-            this.btnExportOpen.Size = new System.Drawing.Size(133, 23);
-            this.btnExportOpen.TabIndex = 69;
-            this.btnExportOpen.Text = "Exportera/Öppna i Excel";
             this.btnExportOpen.UseVisualStyleBackColor = true;
-            this.btnExportOpen.Click += new System.EventHandler(this.btnExportOpen_Click);
             // 
             // btnSaveToText
             // 
-            this.btnSaveToText.Location = new System.Drawing.Point(63, 575);
+            resources.ApplyResources(this.btnSaveToText, "btnSaveToText");
             this.btnSaveToText.Name = "btnSaveToText";
-            this.btnSaveToText.Size = new System.Drawing.Size(108, 23);
-            this.btnSaveToText.TabIndex = 70;
-            this.btnSaveToText.Text = "Spara i textfil";
             this.btnSaveToText.UseVisualStyleBackColor = true;
             this.btnSaveToText.Click += new System.EventHandler(this.btnSaveToText_Click);
             // 
             // btnOpenWord
             // 
-            this.btnOpenWord.Location = new System.Drawing.Point(316, 575);
+            resources.ApplyResources(this.btnOpenWord, "btnOpenWord");
             this.btnOpenWord.Name = "btnOpenWord";
-            this.btnOpenWord.Size = new System.Drawing.Size(130, 23);
-            this.btnOpenWord.TabIndex = 71;
-            this.btnOpenWord.Text = "Öppna i Word";
             this.btnOpenWord.UseVisualStyleBackColor = true;
-            this.btnOpenWord.Click += new System.EventHandler(this.btnOpenWord_Click);
             // 
             // cboInsatsK
             // 
             this.cboInsatsK.FormattingEnabled = true;
-            this.cboInsatsK.Location = new System.Drawing.Point(197, 110);
+            resources.ApplyResources(this.cboInsatsK, "cboInsatsK");
             this.cboInsatsK.Name = "cboInsatsK";
-            this.cboInsatsK.Size = new System.Drawing.Size(282, 21);
-            this.cboInsatsK.TabIndex = 72;
-            this.cboInsatsK.Text = "Ledsagarservice";
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.AllowDrop = true;
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(197, 182);
+            resources.ApplyResources(this.dateTimePicker2, "dateTimePicker2");
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(282, 20);
-            this.dateTimePicker2.TabIndex = 74;
             // 
             // dateTimePicker3
             // 
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(197, 220);
+            resources.ApplyResources(this.dateTimePicker3, "dateTimePicker3");
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(282, 20);
-            this.dateTimePicker3.TabIndex = 75;
             // 
             // cboBeslutsfattare
             // 
             this.cboBeslutsfattare.FormattingEnabled = true;
             this.cboBeslutsfattare.Items.AddRange(new object[] {
-            "Hjertstrand, Marjam"});
-            this.cboBeslutsfattare.Location = new System.Drawing.Point(197, 255);
+            resources.GetString("cboBeslutsfattare.Items")});
+            resources.ApplyResources(this.cboBeslutsfattare, "cboBeslutsfattare");
             this.cboBeslutsfattare.Name = "cboBeslutsfattare";
-            this.cboBeslutsfattare.Size = new System.Drawing.Size(282, 21);
-            this.cboBeslutsfattare.TabIndex = 76;
             // 
             // cboOrsak
             // 
             this.cboOrsak.FormattingEnabled = true;
-            this.cboOrsak.Location = new System.Drawing.Point(197, 329);
+            resources.ApplyResources(this.cboOrsak, "cboOrsak");
             this.cboOrsak.Name = "cboOrsak";
-            this.cboOrsak.Size = new System.Drawing.Size(282, 21);
-            this.cboOrsak.TabIndex = 78;
-            this.cboOrsak.Text = "Ansökan";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label3, "label3");
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(757, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 16);
-            this.label3.TabIndex = 79;
-            this.label3.Text = "Personer som omfattas";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(510, 23);
+            resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 24);
-            this.label9.TabIndex = 80;
-            this.label9.Text = "Beslut";
             // 
             // cboBeslut
             // 
             this.cboBeslut.FormattingEnabled = true;
-            this.cboBeslut.Location = new System.Drawing.Point(197, 143);
+            resources.ApplyResources(this.cboBeslut, "cboBeslut");
             this.cboBeslut.Name = "cboBeslut";
-            this.cboBeslut.Size = new System.Drawing.Size(282, 21);
-            this.cboBeslut.TabIndex = 81;
-            this.cboBeslut.Text = "Bifall LSS 3 Kap 1 § Ledsagarservice";
             // 
             // checkBox1
             // 
-            this.checkBox1.AutoSize = true;
+            resources.ApplyResources(this.checkBox1, "checkBox1");
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(567, 364);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(114, 17);
-            this.checkBox1.TabIndex = 82;
-            this.checkBox1.Text = "Utredning avslutas";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // checkBox2
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(567, 396);
+            resources.ApplyResources(this.checkBox2, "checkBox2");
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(200, 17);
-            this.checkBox2.TabIndex = 83;
-            this.checkBox2.Text = "Beslutet kommer aldrig att verkställas";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(564, 457);
+            resources.ApplyResources(this.label11, "label11");
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 84;
-            this.label11.Text = "Timmar";
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(575, 487);
+            resources.ApplyResources(this.label12, "label12");
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(31, 13);
-            this.label12.TabIndex = 85;
-            this.label12.Text = "Antal";
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(568, 515);
+            resources.ApplyResources(this.label14, "label14");
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(37, 13);
-            this.label14.TabIndex = 86;
-            this.label14.Text = "Besök";
             // 
             // label15
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(572, 546);
+            resources.ApplyResources(this.label15, "label15");
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(32, 13);
-            this.label15.TabIndex = 87;
-            this.label15.Text = "Dygn";
             // 
             // label16
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(565, 575);
+            resources.ApplyResources(this.label16, "label16");
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(40, 13);
-            this.label16.TabIndex = 88;
-            this.label16.Text = "Belopp";
             // 
             // label17
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(575, 601);
+            resources.ApplyResources(this.label17, "label17");
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(29, 13);
-            this.label17.TabIndex = 89;
-            this.label17.Text = "Nivå";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(611, 454);
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 90;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(611, 484);
+            resources.ApplyResources(this.textBox2, "textBox2");
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 91;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(611, 512);
+            resources.ApplyResources(this.textBox3, "textBox3");
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 92;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(611, 543);
+            resources.ApplyResources(this.textBox4, "textBox4");
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 93;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(611, 572);
+            resources.ApplyResources(this.textBox5, "textBox5");
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 94;
             // 
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(717, 453);
+            resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(101, 21);
-            this.comboBox1.TabIndex = 96;
-            this.comboBox1.Text = "Månad";
             // 
             // comboBox2
             // 
             this.comboBox2.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(717, 483);
+            resources.ApplyResources(this.comboBox2, "comboBox2");
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(101, 21);
-            this.comboBox2.TabIndex = 97;
-            this.comboBox2.Text = "Dag";
             // 
             // comboBox3
             // 
             this.comboBox3.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(717, 511);
+            resources.ApplyResources(this.comboBox3, "comboBox3");
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(101, 21);
-            this.comboBox3.TabIndex = 98;
-            this.comboBox3.Text = "Vecka";
             // 
             // comboBox4
             // 
             this.comboBox4.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(717, 542);
+            resources.ApplyResources(this.comboBox4, "comboBox4");
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(101, 21);
-            this.comboBox4.TabIndex = 99;
-            this.comboBox4.Text = "Vecka";
             // 
             // comboBox5
             // 
             this.comboBox5.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(717, 571);
+            resources.ApplyResources(this.comboBox5, "comboBox5");
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(101, 21);
-            this.comboBox5.TabIndex = 100;
-            this.comboBox5.Text = "Vecka";
             // 
             // comboBox6
             // 
             this.comboBox6.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(611, 598);
+            resources.ApplyResources(this.comboBox6, "comboBox6");
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(207, 21);
-            this.comboBox6.TabIndex = 101;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(824, 596);
+            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
-            this.button1.TabIndex = 102;
-            this.button1.Text = "Visa Underlag";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // label18
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.label18, "label18");
             this.label18.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label18.Location = new System.Drawing.Point(62, 290);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(99, 20);
-            this.label18.TabIndex = 103;
-            this.label18.Text = "Organisation";
             // 
             // txtOrganisation
             // 
-            this.txtOrganisation.Location = new System.Drawing.Point(197, 292);
+            resources.ApplyResources(this.txtOrganisation, "txtOrganisation");
             this.txtOrganisation.Name = "txtOrganisation";
-            this.txtOrganisation.Size = new System.Drawing.Size(282, 20);
-            this.txtOrganisation.TabIndex = 104;
             // 
             // bindingSource1
             // 
@@ -587,11 +424,8 @@
             // 
             // BizContacts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1216, 678);
             this.Controls.Add(this.txtOrganisation);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.button1);
@@ -642,14 +476,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BizContacts";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Beslut";
             this.Load += new System.EventHandler(this.BizContacts_Load);
-            this.MouseEnter += new System.EventHandler(this.txtSearch_TextChanged);
-            this.MouseLeave += new System.EventHandler(this.txtSearch_TextChanged);
-            this.MouseHover += new System.EventHandler(this.txtSearch_TextChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
