@@ -85,6 +85,12 @@
             this.txtOrganisation = new System.Windows.Forms.TextBox();
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtFörnamn = new System.Windows.Forms.TextBox();
+            this.txtEfternamn = new System.Windows.Forms.TextBox();
+            this.txtPersonnummer = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -424,10 +430,49 @@
             // 
             this.bindingSource1.DataSource = typeof(WindowsFormsApp5.BizContacts);
             // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label19.Name = "label19";
+            // 
+            // label20
+            // 
+            resources.ApplyResources(this.label20, "label20");
+            this.label20.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label20.Name = "label20";
+            // 
+            // label21
+            // 
+            resources.ApplyResources(this.label21, "label21");
+            this.label21.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label21.Name = "label21";
+            // 
+            // txtFörnamn
+            // 
+            resources.ApplyResources(this.txtFörnamn, "txtFörnamn");
+            this.txtFörnamn.Name = "txtFörnamn";
+            // 
+            // txtEfternamn
+            // 
+            resources.ApplyResources(this.txtEfternamn, "txtEfternamn");
+            this.txtEfternamn.Name = "txtEfternamn";
+            // 
+            // txtPersonnummer
+            // 
+            resources.ApplyResources(this.txtPersonnummer, "txtPersonnummer");
+            this.txtPersonnummer.Name = "txtPersonnummer";
+            // 
             // BizContacts
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtPersonnummer);
+            this.Controls.Add(this.txtEfternamn);
+            this.Controls.Add(this.txtFörnamn);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.txtOrganisation);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.button1);
@@ -544,5 +589,11 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtOrganisation;
         private System.Windows.Forms.BindingSource bindingSource2;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtFörnamn;
+        private System.Windows.Forms.TextBox txtEfternamn;
+        private System.Windows.Forms.TextBox txtPersonnummer;
     }
 }

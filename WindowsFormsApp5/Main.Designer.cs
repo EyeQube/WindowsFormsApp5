@@ -33,7 +33,7 @@ namespace WindowsFormsApp5
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.contactsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.businessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,6 +87,12 @@ namespace WindowsFormsApp5
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.tabBeslut3 = new System.Windows.Forms.TabControl();
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.txtEfternamn = new System.Windows.Forms.TextBox();
+            this.txtFörnamn = new System.Windows.Forms.TextBox();
+            this.txtPersonnummer = new System.Windows.Forms.TextBox();
+            this.labelPersonN = new System.Windows.Forms.Label();
+            this.LabelFNamn = new System.Windows.Forms.Label();
+            this.LabelEfternamn = new System.Windows.Forms.Label();
             this.txtOrganisation = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
@@ -735,6 +741,12 @@ namespace WindowsFormsApp5
             // tabPage11
             // 
             this.tabPage11.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage11.Controls.Add(this.txtEfternamn);
+            this.tabPage11.Controls.Add(this.txtFörnamn);
+            this.tabPage11.Controls.Add(this.txtPersonnummer);
+            this.tabPage11.Controls.Add(this.labelPersonN);
+            this.tabPage11.Controls.Add(this.LabelFNamn);
+            this.tabPage11.Controls.Add(this.LabelEfternamn);
             this.tabPage11.Controls.Add(this.txtOrganisation);
             this.tabPage11.Controls.Add(this.label18);
             this.tabPage11.Controls.Add(this.button7);
@@ -794,9 +806,63 @@ namespace WindowsFormsApp5
             this.tabPage11.MouseLeave += new System.EventHandler(this.tabPage11_MouseHover);
             this.tabPage11.MouseHover += new System.EventHandler(this.tabPage11_MouseHover);
             // 
+            // txtEfternamn
+            // 
+            this.txtEfternamn.Location = new System.Drawing.Point(133, 126);
+            this.txtEfternamn.Name = "txtEfternamn";
+            this.txtEfternamn.Size = new System.Drawing.Size(204, 20);
+            this.txtEfternamn.TabIndex = 160;
+            // 
+            // txtFörnamn
+            // 
+            this.txtFörnamn.Location = new System.Drawing.Point(133, 93);
+            this.txtFörnamn.Name = "txtFörnamn";
+            this.txtFörnamn.Size = new System.Drawing.Size(204, 20);
+            this.txtFörnamn.TabIndex = 159;
+            // 
+            // txtPersonnummer
+            // 
+            this.txtPersonnummer.Location = new System.Drawing.Point(133, 56);
+            this.txtPersonnummer.Name = "txtPersonnummer";
+            this.txtPersonnummer.Size = new System.Drawing.Size(204, 20);
+            this.txtPersonnummer.TabIndex = 158;
+            // 
+            // labelPersonN
+            // 
+            this.labelPersonN.AutoSize = true;
+            this.labelPersonN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPersonN.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.labelPersonN.Location = new System.Drawing.Point(12, 56);
+            this.labelPersonN.Name = "labelPersonN";
+            this.labelPersonN.Size = new System.Drawing.Size(117, 20);
+            this.labelPersonN.TabIndex = 157;
+            this.labelPersonN.Text = "Personnummer";
+            // 
+            // LabelFNamn
+            // 
+            this.LabelFNamn.AutoSize = true;
+            this.LabelFNamn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelFNamn.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.LabelFNamn.Location = new System.Drawing.Point(11, 93);
+            this.LabelFNamn.Name = "LabelFNamn";
+            this.LabelFNamn.Size = new System.Drawing.Size(73, 20);
+            this.LabelFNamn.TabIndex = 156;
+            this.LabelFNamn.Text = "Förnamn";
+            // 
+            // LabelEfternamn
+            // 
+            this.LabelEfternamn.AutoSize = true;
+            this.LabelEfternamn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelEfternamn.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.LabelEfternamn.Location = new System.Drawing.Point(12, 126);
+            this.LabelEfternamn.Name = "LabelEfternamn";
+            this.LabelEfternamn.Size = new System.Drawing.Size(84, 20);
+            this.LabelEfternamn.TabIndex = 155;
+            this.LabelEfternamn.Text = "Efternamn";
+            // 
             // txtOrganisation
             // 
-            this.txtOrganisation.Location = new System.Drawing.Point(132, 222);
+            this.txtOrganisation.Location = new System.Drawing.Point(133, 318);
             this.txtOrganisation.Name = "txtOrganisation";
             this.txtOrganisation.Size = new System.Drawing.Size(204, 20);
             this.txtOrganisation.TabIndex = 154;
@@ -806,7 +872,7 @@ namespace WindowsFormsApp5
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label18.Location = new System.Drawing.Point(12, 222);
+            this.label18.Location = new System.Drawing.Point(13, 318);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(99, 20);
             this.label18.TabIndex = 153;
@@ -972,7 +1038,7 @@ namespace WindowsFormsApp5
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(435, 357);
+            this.checkBox2.Location = new System.Drawing.Point(394, 356);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(200, 17);
             this.checkBox2.TabIndex = 134;
@@ -984,7 +1050,7 @@ namespace WindowsFormsApp5
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(435, 322);
+            this.checkBox1.Location = new System.Drawing.Point(394, 321);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(114, 17);
             this.checkBox1.TabIndex = 133;
@@ -994,7 +1060,7 @@ namespace WindowsFormsApp5
             // cboBeslut
             // 
             this.cboBeslut.FormattingEnabled = true;
-            this.cboBeslut.Location = new System.Drawing.Point(132, 92);
+            this.cboBeslut.Location = new System.Drawing.Point(133, 184);
             this.cboBeslut.Name = "cboBeslut";
             this.cboBeslut.Size = new System.Drawing.Size(204, 21);
             this.cboBeslut.TabIndex = 132;
@@ -1014,7 +1080,7 @@ namespace WindowsFormsApp5
             // cboOrsak
             // 
             this.cboOrsak.FormattingEnabled = true;
-            this.cboOrsak.Location = new System.Drawing.Point(132, 255);
+            this.cboOrsak.Location = new System.Drawing.Point(133, 353);
             this.cboOrsak.Name = "cboOrsak";
             this.cboOrsak.Size = new System.Drawing.Size(204, 21);
             this.cboOrsak.TabIndex = 129;
@@ -1025,7 +1091,7 @@ namespace WindowsFormsApp5
             this.cboBeslutsfattare.FormattingEnabled = true;
             this.cboBeslutsfattare.Items.AddRange(new object[] {
             "Hjertstrand, Marjam"});
-            this.cboBeslutsfattare.Location = new System.Drawing.Point(132, 186);
+            this.cboBeslutsfattare.Location = new System.Drawing.Point(133, 284);
             this.cboBeslutsfattare.Name = "cboBeslutsfattare";
             this.cboBeslutsfattare.Size = new System.Drawing.Size(204, 21);
             this.cboBeslutsfattare.TabIndex = 128;
@@ -1033,7 +1099,7 @@ namespace WindowsFormsApp5
             // dateTimePicker3
             // 
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(132, 154);
+            this.dateTimePicker3.Location = new System.Drawing.Point(133, 252);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(204, 20);
             this.dateTimePicker3.TabIndex = 127;
@@ -1042,7 +1108,7 @@ namespace WindowsFormsApp5
             // 
             this.dateTimePicker2.AllowDrop = true;
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(132, 124);
+            this.dateTimePicker2.Location = new System.Drawing.Point(133, 219);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(204, 20);
             this.dateTimePicker2.TabIndex = 126;
@@ -1050,7 +1116,7 @@ namespace WindowsFormsApp5
             // cboInsatsK
             // 
             this.cboInsatsK.FormattingEnabled = true;
-            this.cboInsatsK.Location = new System.Drawing.Point(132, 56);
+            this.cboInsatsK.Location = new System.Drawing.Point(133, 154);
             this.cboInsatsK.Name = "cboInsatsK";
             this.cboInsatsK.Size = new System.Drawing.Size(204, 21);
             this.cboInsatsK.TabIndex = 125;
@@ -1058,7 +1124,7 @@ namespace WindowsFormsApp5
             // 
             // btnOpenWord
             // 
-            this.btnOpenWord.Location = new System.Drawing.Point(74, 579);
+            this.btnOpenWord.Location = new System.Drawing.Point(16, 579);
             this.btnOpenWord.Name = "btnOpenWord";
             this.btnOpenWord.Size = new System.Drawing.Size(120, 23);
             this.btnOpenWord.TabIndex = 124;
@@ -1067,7 +1133,7 @@ namespace WindowsFormsApp5
             // 
             // btnSaveToText
             // 
-            this.btnSaveToText.Location = new System.Drawing.Point(213, 579);
+            this.btnSaveToText.Location = new System.Drawing.Point(214, 579);
             this.btnSaveToText.Name = "btnSaveToText";
             this.btnSaveToText.Size = new System.Drawing.Size(123, 23);
             this.btnSaveToText.TabIndex = 123;
@@ -1076,9 +1142,9 @@ namespace WindowsFormsApp5
             // 
             // btnExportOpen
             // 
-            this.btnExportOpen.Location = new System.Drawing.Point(74, 608);
+            this.btnExportOpen.Location = new System.Drawing.Point(16, 608);
             this.btnExportOpen.Name = "btnExportOpen";
-            this.btnExportOpen.Size = new System.Drawing.Size(262, 23);
+            this.btnExportOpen.Size = new System.Drawing.Size(321, 23);
             this.btnExportOpen.TabIndex = 122;
             this.btnExportOpen.Text = "Exportera/Öppna i Excel";
             this.btnExportOpen.UseVisualStyleBackColor = true;
@@ -1090,14 +1156,14 @@ namespace WindowsFormsApp5
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(394, 56);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Size = new System.Drawing.Size(533, 195);
             this.dataGridView1.TabIndex = 121;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
@@ -1105,7 +1171,7 @@ namespace WindowsFormsApp5
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(946, 184);
+            this.btnDelete.Location = new System.Drawing.Point(946, 185);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 120;
@@ -1115,7 +1181,7 @@ namespace WindowsFormsApp5
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(946, 155);
+            this.btnAdd.Location = new System.Drawing.Point(946, 99);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 119;
@@ -1125,7 +1191,7 @@ namespace WindowsFormsApp5
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(946, 126);
+            this.btnEdit.Location = new System.Drawing.Point(946, 141);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 118;
@@ -1153,10 +1219,10 @@ namespace WindowsFormsApp5
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(74, 355);
+            this.txtNotes.Location = new System.Drawing.Point(15, 441);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(262, 218);
+            this.txtNotes.Size = new System.Drawing.Size(322, 132);
             this.txtNotes.TabIndex = 115;
             // 
             // label13
@@ -1164,7 +1230,7 @@ namespace WindowsFormsApp5
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label13.Location = new System.Drawing.Point(128, 332);
+            this.label13.Location = new System.Drawing.Point(13, 412);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(103, 20);
             this.label13.TabIndex = 114;
@@ -1194,7 +1260,7 @@ namespace WindowsFormsApp5
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label8.Location = new System.Drawing.Point(12, 256);
+            this.label8.Location = new System.Drawing.Point(13, 354);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 20);
             this.label8.TabIndex = 111;
@@ -1205,7 +1271,7 @@ namespace WindowsFormsApp5
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label6.Location = new System.Drawing.Point(12, 187);
+            this.label6.Location = new System.Drawing.Point(13, 285);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 20);
             this.label6.TabIndex = 110;
@@ -1216,7 +1282,7 @@ namespace WindowsFormsApp5
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(12, 154);
+            this.label5.Location = new System.Drawing.Point(13, 253);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 20);
             this.label5.TabIndex = 109;
@@ -1238,7 +1304,7 @@ namespace WindowsFormsApp5
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Location = new System.Drawing.Point(12, 125);
+            this.label4.Location = new System.Drawing.Point(13, 220);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 20);
             this.label4.TabIndex = 107;
@@ -1249,7 +1315,7 @@ namespace WindowsFormsApp5
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label19.Location = new System.Drawing.Point(12, 92);
+            this.label19.Location = new System.Drawing.Point(13, 187);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(54, 20);
             this.label19.TabIndex = 106;
@@ -1260,7 +1326,7 @@ namespace WindowsFormsApp5
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label20.Location = new System.Drawing.Point(11, 56);
+            this.label20.Location = new System.Drawing.Point(11, 155);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(110, 20);
             this.label20.TabIndex = 105;
@@ -1571,6 +1637,12 @@ namespace WindowsFormsApp5
         private Label label4;
         private Label label19;
         private Label label20;
+        private TextBox txtEfternamn;
+        private TextBox txtFörnamn;
+        private TextBox txtPersonnummer;
+        private Label labelPersonN;
+        private Label LabelFNamn;
+        private Label LabelEfternamn;
     }
 }
 

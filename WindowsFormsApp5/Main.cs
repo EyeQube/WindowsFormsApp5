@@ -29,9 +29,9 @@ namespace WindowsFormsApp5
 
 
         public Main()
-        {        
+        {
             InitializeComponent();
-           
+
 
             PopulateTreeView();
             this.treeView1.NodeMouseClick += new TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
@@ -40,7 +40,7 @@ namespace WindowsFormsApp5
             refresh();
         }
 
-        
+
 
         public void refreshdata()
         {
@@ -62,14 +62,14 @@ namespace WindowsFormsApp5
 
             cboOrganisation.DisplayMember = "Organisation";
             cboOrganisation.DataSource = dt;
-        
 
-           // con.Close();
+
+            // con.Close();
         }
 
 
-         private void TabPage11(object sender, EventArgs e)
-        {       
+        private void TabPage11(object sender, EventArgs e)
+        {
             refreshdata();
 
             dataGridView1.DataSource = bindingSource1; //sets the source of the data to be displayed in the grid view
@@ -104,45 +104,34 @@ namespace WindowsFormsApp5
             GetData(selectionStatement);
         }
 
-            
-      /*  private void Main_Load(object sender, EventArgs e)
-        {
-            refreshdata();
 
-            dataGridView1.DataSource = bindingSource1; //sets the source of the data to be displayed in the grid view
-
-            // cboOrganisation.SelectedIndex = 0; //first item in combobox is selected when the form loads
-
-            //cboOrganisation.DisplayMember = "Organisation";
-            //cboOrganisation.ValueMember = "Organisation";
-
-            //Line below calls a method called GetData
-            //The argument is a string that represents an sql query
-            //select * from BizContacts means select all the data from the biz contacts table
-            GetData(selectionStatement);
-        }*/
-            
-
-    /*    private void tabPage11_Click(object sender, EventArgs e)
-        {    
-
-            refreshdata();
-
-            dataGridView1.DataSource = bindingSource1; //sets the source of the data to be displayed in the grid view
-
-            // cboOrganisation.SelectedIndex = 0; //first item in combobox is selected when the form loads
-
-            //cboOrganisation.DisplayMember = "Organisation";
-            //cboOrganisation.ValueMember = "Organisation";
-
-            //Line below calls a method called GetData
-            //The argument is a string that represents an sql query
-            //select * from BizContacts means select all the data from the biz contacts table
-            GetData(selectionStatement);
+        /*  private void Main_Load(object sender, EventArgs e)
+          {
+              refreshdata();
+              dataGridView1.DataSource = bindingSource1; //sets the source of the data to be displayed in the grid view
+              // cboOrganisation.SelectedIndex = 0; //first item in combobox is selected when the form loads
+              //cboOrganisation.DisplayMember = "Organisation";
+              //cboOrganisation.ValueMember = "Organisation";
+              //Line below calls a method called GetData
+              //The argument is a string that represents an sql query
+              //select * from BizContacts means select all the data from the biz contacts table
+              GetData(selectionStatement);
+          }*/
 
 
-            //tabBeslut3.Update();
-        } */
+        /*    private void tabPage11_Click(object sender, EventArgs e)
+            {    
+                refreshdata();
+                dataGridView1.DataSource = bindingSource1; //sets the source of the data to be displayed in the grid view
+                // cboOrganisation.SelectedIndex = 0; //first item in combobox is selected when the form loads
+                //cboOrganisation.DisplayMember = "Organisation";
+                //cboOrganisation.ValueMember = "Organisation";
+                //Line below calls a method called GetData
+                //The argument is a string that represents an sql query
+                //select * from BizContacts means select all the data from the biz contacts table
+                GetData(selectionStatement);
+                //tabBeslut3.Update();
+            } */
 
         private void GetData(string selectCommand)
         {
@@ -187,21 +176,19 @@ namespace WindowsFormsApp5
 
         private void businessToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             BizContacts frm = new BizContacts(); //make a new business contacts form
-             //frm.MdiParent = this; //set the main form as the parent of each business form
-             frm.Show(); //show the new form
-             
-             //frm.BringToFront();
+            BizContacts frm = new BizContacts(); //make a new business contacts form
+                                                 //frm.MdiParent = this; //set the main form as the parent of each business form
+            frm.Show(); //show the new form
+
+            //frm.BringToFront();
 
 
             /*BizContacts frm = new BizContacts();
              frm.MdiParent = this;
-
             //frm.TopMost = true;
             //frm.BringToFront();
             SendToBack();
             //frm.Show(); 
-
             /* BizContacts frm = new BizContacts(); //make a new business contacts form
              
              Main p = new Main(); // Run time a panel is created
@@ -210,7 +197,7 @@ namespace WindowsFormsApp5
              p.BringToFront(); // get panel in front or you can focus a control of child form
              p.Show(); // finally show form in MDI  */
 
-        } 
+        }
 
         private void cascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -247,7 +234,6 @@ namespace WindowsFormsApp5
         /*    private void PopulateTreeView(object sender, TreeViewEventArgs e) //PopulateTreeView()
         {
                 TreeNode rootNode;
-
                 DirectoryInfo info = new DirectoryInfo(@"C:\Users\bitoreq_sattar\source\repos\WindowsFormsApp5\Mina Brukare"); //../..");
                 if (info.Exists)
                 {
@@ -258,51 +244,39 @@ namespace WindowsFormsApp5
                 }
             } */
 
-              
 
 
-      /*  private void Form1_MdiChildActivate(object sender, EventArgs e)
-        {
 
-        }
-
-        private void ActiveMdiChild_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ((sender as Form).Tag as TabPage).Dispose();
-        }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if ((tabControl1.SelectedTab != null) &&
-                (tabControl1.SelectedTab.Tag != null))
-                (tabControl1.SelectedTab.Tag as Form).Select();
-        } */
+        /*  private void Form1_MdiChildActivate(object sender, EventArgs e)
+          {
+          }
+          private void ActiveMdiChild_FormClosed(object sender, FormClosedEventArgs e)
+          {
+              ((sender as Form).Tag as TabPage).Dispose();
+          }
+          private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+          {
+              if ((tabControl1.SelectedTab != null) &&
+                  (tabControl1.SelectedTab.Tag != null))
+                  (tabControl1.SelectedTab.Tag as Form).Select();
+          } */
 
 
 
         /* private void tabBeslut_Click(object sender, EventArgs e)
          {
-
              BizContacts frm = new BizContacts();
              frm.TopLevel = false;
              tabBeslut.Controls.Add(frm);
              frm.Dock = DockStyle.Fill;
              frm.Show();
-
-
            //  BizContacts frmChild = new BizContacts();
              //AddNewTab(frmChild);
-
-
             //BizContacts frm = new BizContacts(); //make a new business contacts form
             // frmChild.MdiParent = this; //set the main form as the parent of each business form //
              //frmChild.ShowDialog(this); //show the new form
-
             // tabControl1.SelectedTab = BizContacts.ActiveForm.
-
-
          }
-
          private void AddNewTab(BizContacts frm)
          {
              BizContacts myTabPage = new BizContacts();
@@ -310,21 +284,13 @@ namespace WindowsFormsApp5
              tabBeslut.Dock = DockStyle.Fill;
              tabBeslut.Controls.Add(tabBeslut);
             // tabControl1.TabPages.Add(myTabPage);
-
              /*TabPage tab = new TabPage(frm.Text);
-
              frm.TopLevel = false;
-
              frm.Parent = tab;
-
              frm.Visible = true;
-
              tabControl1.TabPages.Add(tab);
-
              frm.Location = new Point((tab.Width - frm.Width) / 2, (tab.Height - frm.Height) / 2);
-
              tabControl1.SelectedTab = tab;
-
     } */
 
 
@@ -348,30 +314,30 @@ namespace WindowsFormsApp5
 
 
         void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-           {
-               TreeNode newSelected = e.Node;
-               listView1.Items.Clear();
-               DirectoryInfo nodeDirInfo = (DirectoryInfo)newSelected.Tag;
-               ListViewItem.ListViewSubItem[] subItems;
-               ListViewItem item = null;
+        {
+            TreeNode newSelected = e.Node;
+            listView1.Items.Clear();
+            DirectoryInfo nodeDirInfo = (DirectoryInfo)newSelected.Tag;
+            ListViewItem.ListViewSubItem[] subItems;
+            ListViewItem item = null;
 
-               foreach (DirectoryInfo dir in nodeDirInfo.GetDirectories())
-               {
-                   item = new ListViewItem(dir.Name, 0);
-                   subItems = new ListViewItem.ListViewSubItem[] {new ListViewItem.ListViewSubItem(item, "Directory"), new ListViewItem.ListViewSubItem(item, dir.LastAccessTime.ToShortDateString())};
-                   item.SubItems.AddRange(subItems);
-                   listView1.Items.Add(item);
-               }
-               foreach (FileInfo file in nodeDirInfo.GetFiles())
-               {
-                   item = new ListViewItem(file.Name, 1);
-                   subItems = new ListViewItem.ListViewSubItem[] { new ListViewItem.ListViewSubItem(item, "File"), new ListViewItem.ListViewSubItem(item, file.LastAccessTime.ToShortDateString())};
-                   item.SubItems.AddRange(subItems);
-                   listView1.Items.Add(item);
-               }
+            foreach (DirectoryInfo dir in nodeDirInfo.GetDirectories())
+            {
+                item = new ListViewItem(dir.Name, 0);
+                subItems = new ListViewItem.ListViewSubItem[] { new ListViewItem.ListViewSubItem(item, "Directory"), new ListViewItem.ListViewSubItem(item, dir.LastAccessTime.ToShortDateString()) };
+                item.SubItems.AddRange(subItems);
+                listView1.Items.Add(item);
+            }
+            foreach (FileInfo file in nodeDirInfo.GetFiles())
+            {
+                item = new ListViewItem(file.Name, 1);
+                subItems = new ListViewItem.ListViewSubItem[] { new ListViewItem.ListViewSubItem(item, "File"), new ListViewItem.ListViewSubItem(item, file.LastAccessTime.ToShortDateString()) };
+                item.SubItems.AddRange(subItems);
+                listView1.Items.Add(item);
+            }
 
-               listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-           }
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
 
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -379,72 +345,68 @@ namespace WindowsFormsApp5
 
         }
 
-      
-       
 
-       /* public BizContacts()
+
+
+        /* public BizContacts()
+         {
+             InitializeComponent();
+             refreshdata();
+         }*/
+
+
+
+
+
+
+        /* private void btnAdd_Click(object sender, EventArgs e)
+         {
+             SqlCommand command;//declares a new sql command object
+             //field names in the table
+             string insert = @"insert into BizContacts(Beslut, Beslutsdatum, Insatskategori, Beslutsfattare, Organisation, Orsak, Anteckningar)
+
+                               values(@Beslut, @Beslutsdatum, @Insatskategori, @Beslutsfattare, @Organisation, @Orsak, @Notes)"; //parameter names
+             using (conn = new SqlConnection(connString)) //using allows disposing of low level resources
+             {
+                 try
+                 {
+                     conn.Open(); //open the connection
+                     command = new SqlCommand(insert, conn);//create the new sql command object
+                     command.Parameters.AddWithValue(@"Beslut", cboBeslut.Text);
+                     command.Parameters.AddWithValue(@"Beslutsdatum", dateTimePicker2.Value.Date); //read value from form and save to table
+                     command.Parameters.AddWithValue(@"Insatskategori", cboInsatsK.Text);
+                     command.Parameters.AddWithValue(@"Beslutsfattare", cboBeslutsfattare.Text);
+                     command.Parameters.AddWithValue(@"Organisation", txtOrganisation.Text);
+                     command.Parameters.AddWithValue(@"Orsak", cboOrsak.Text);
+                     command.Parameters.AddWithValue(@"Notes", txtNotes.Text);
+                     /*  if(!(String.IsNullOrWhiteSpace(txtOrganisation.Text)) && !(cboOrganisation.Items.Contains(txtOrganisation.Text.ToString())))
+                       cboOrganisation.Items.Add(txtOrganisation.Text.ToString()); */
+
+
+        /*System.Object[] ItemObject = new System.Object[50];
+        for (int i = 0; i < ItemObject.Count(); i++)
         {
-            InitializeComponent();
-            refreshdata();
-        }*/
-
-
-            
-
-     
-
-       /* private void btnAdd_Click(object sender, EventArgs e)
-        {
-            SqlCommand command;//declares a new sql command object
-            //field names in the table
-            string insert = @"insert into BizContacts(Beslut, Beslutsdatum, Insatskategori, Beslutsfattare, Organisation, Orsak, Anteckningar)
-            
-                              values(@Beslut, @Beslutsdatum, @Insatskategori, @Beslutsfattare, @Organisation, @Orsak, @Notes)"; //parameter names
-
-            using (conn = new SqlConnection(connString)) //using allows disposing of low level resources
-            {
-                try
-                {
-                    conn.Open(); //open the connection
-                    command = new SqlCommand(insert, conn);//create the new sql command object
-                    command.Parameters.AddWithValue(@"Beslut", cboBeslut.Text);
-                    command.Parameters.AddWithValue(@"Beslutsdatum", dateTimePicker2.Value.Date); //read value from form and save to table
-                    command.Parameters.AddWithValue(@"Insatskategori", cboInsatsK.Text);
-                    command.Parameters.AddWithValue(@"Beslutsfattare", cboBeslutsfattare.Text);
-                    command.Parameters.AddWithValue(@"Organisation", txtOrganisation.Text);
-                    command.Parameters.AddWithValue(@"Orsak", cboOrsak.Text);
-                    command.Parameters.AddWithValue(@"Notes", txtNotes.Text);
-
-                    /*  if(!(String.IsNullOrWhiteSpace(txtOrganisation.Text)) && !(cboOrganisation.Items.Contains(txtOrganisation.Text.ToString())))
-                      cboOrganisation.Items.Add(txtOrganisation.Text.ToString()); */
-
-
-                    /*System.Object[] ItemObject = new System.Object[50];
-                    for (int i = 0; i < ItemObject.Count(); i++)
-                    {
-                        ItemObject[i] = txtOrganisation.Text.ToString();
-                    }
-                    cboOrganisation.Items.AddRange(ItemObject);*/
+            ItemObject[i] = txtOrganisation.Text.ToString();
+        }
+        cboOrganisation.Items.AddRange(ItemObject);*/
 
 
 
-                    /* if (dlgOpenImage.FileName != "") //check whether file name is not empty
-                         command.Parameters.AddWithValue(@"Image", File.ReadAllBytes(dlgOpenImage.FileName));//convert images to bytes for saving
-                     else
-                         command.Parameters.Add("@Image", SqlDbType.VarBinary).Value = DBNull.Value;//Save null to database
-                    command.ExecuteNonQuery();//push stuff into the table
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message); //If ther is something wrong, show the user a message
-                }
-
-            }
-
-            GetData(selectionStatement);
-            refreshdata();
-            dataGridView1.Update(); //Redraws the data grid view so the new record is visible on the bottom
-        } */
+        /* if (dlgOpenImage.FileName != "") //check whether file name is not empty
+             command.Parameters.AddWithValue(@"Image", File.ReadAllBytes(dlgOpenImage.FileName));//convert images to bytes for saving
+         else
+             command.Parameters.Add("@Image", SqlDbType.VarBinary).Value = DBNull.Value;//Save null to database
+        command.ExecuteNonQuery();//push stuff into the table
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show(ex.Message); //If ther is something wrong, show the user a message
+    }
+}
+GetData(selectionStatement);
+refreshdata();
+dataGridView1.Update(); //Redraws the data grid view so the new record is visible on the bottom
+} */
 
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -467,7 +429,7 @@ namespace WindowsFormsApp5
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
-        {         
+        {
 
             switch (txtSearch.Text)  //(cboSearch.SelectedItem.ToString())//present because we have a combo box
             {
@@ -490,7 +452,6 @@ namespace WindowsFormsApp5
              if (dlgOpenImage.ShowDialog() == DialogResult.OK) //use if in case user cancels getting image and FileName is blank
                 // dlgOpenImage.ShowDialog(); //show box for selecting image from drive
              pictureBox1.Load(dlgOpenImage.FileName); //loads image from drive using the file name property of the dialog box
-
          }*/
 
         /*private void pictureBox1_DoubleClick(object sender, EventArgs e)
@@ -648,7 +609,7 @@ namespace WindowsFormsApp5
 
         }
 
-       
+
 
         private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -816,9 +777,9 @@ namespace WindowsFormsApp5
         {
             SqlCommand command;//declares a new sql command object
             //field names in the table
-            string insert = @"insert into BizContacts(Beslut, Beslutsdatum, Insatskategori, Beslutsfattare, Organisation, Orsak, Anteckningar)
+            string insert = @"insert into BizContacts(Personnummer, Förnamn, Efternamn, Beslut, Beslutsdatum, Insatskategori, Beslutsfattare, Organisation, Orsak, Anteckningar)
             
-                              values(@Beslut, @Beslutsdatum, @Insatskategori, @Beslutsfattare, @Organisation, @Orsak, @Notes)"; //parameter names
+                              values(@Personnummer, @Förnamn, @Efternamn, @Beslut, @Beslutsdatum, @Insatskategori, @Beslutsfattare, @Organisation, @Orsak, @Notes)"; //parameter names
 
             using (conn = new SqlConnection(connString)) //using allows disposing of low level resources
             {
@@ -826,7 +787,9 @@ namespace WindowsFormsApp5
                 {
                     conn.Open(); //open the connection
                     command = new SqlCommand(insert, conn);//create the new sql command object
-                    command.Parameters.AddWithValue(@"Beslut", cboBeslut.Text);
+                    command.Parameters.AddWithValue(@"Personnummer", txtPersonnummer.Text);
+                    command.Parameters.AddWithValue(@"Förnamn", txtFörnamn.Text);
+                    command.Parameters.AddWithValue(@"Efternamn", txtEfternamn.Text);
                     command.Parameters.AddWithValue(@"Beslutsdatum", dateTimePicker2.Value.Date); //read value from form and save to table
                     command.Parameters.AddWithValue(@"Insatskategori", cboInsatsK.Text);
                     command.Parameters.AddWithValue(@"Beslutsfattare", cboBeslutsfattare.Text);
@@ -836,7 +799,7 @@ namespace WindowsFormsApp5
 
                     /*  if(!(String.IsNullOrWhiteSpace(txtOrganisation.Text)) && !(cboOrganisation.Items.Contains(txtOrganisation.Text.ToString())))
                       cboOrganisation.Items.Add(txtOrganisation.Text.ToString()); */
-
+                        
 
                     /*System.Object[] ItemObject = new System.Object[50];
                     for (int i = 0; i < ItemObject.Count(); i++)
@@ -870,14 +833,15 @@ namespace WindowsFormsApp5
             btnAdd_Click(sender, e);
         }
 
+       
+
 
 
         /* private void label1_Click(object sender, EventArgs e)
         {
-
         }*/
     }
 
 
-    
+
 }

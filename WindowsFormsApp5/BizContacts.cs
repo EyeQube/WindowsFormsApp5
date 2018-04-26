@@ -100,16 +100,15 @@ namespace WindowsFormsApp5
                 MessageBox.Show(ex.Message);//show a useful message to the user of the program
             }
 
-
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             SqlCommand command;//declares a new sql command object
             //field names in the table
-            string insert = @"insert into BizContacts(Beslut, Beslutsdatum, Insatskategori, Beslutsfattare, Organisation, Orsak, Anteckningar)
+            string insert = @"insert into BizContacts(Personnummer, Förnamn, Efternamn, Beslut, Beslutsdatum, Insatskategori, Beslutsfattare, Organisation, Orsak, Anteckningar)
             
-                              values(@Beslut, @Beslutsdatum, @Insatskategori, @Beslutsfattare, @Organisation, @Orsak, @Notes)"; //parameter names
+                              values(@Personnummer, @Förnamn, @Efternamn, @Beslut, @Beslutsdatum, @Insatskategori, @Beslutsfattare, @Organisation, @Orsak, @Notes)"; //parameter names
 
             using (conn = new SqlConnection(connString)) //using allows disposing of low level resources
             {
@@ -117,6 +116,9 @@ namespace WindowsFormsApp5
                 {
                     conn.Open(); //open the connection
                     command = new SqlCommand(insert, conn);//create the new sql command object
+                    command.Parameters.AddWithValue(@"Personnummer", txtPersonnummer.Text);
+                    command.Parameters.AddWithValue(@"Förnamn", txtFörnamn.Text);
+                    command.Parameters.AddWithValue(@"Efternamn", txtEfternamn.Text);
                     command.Parameters.AddWithValue(@"Beslut", cboBeslut.Text);
                     command.Parameters.AddWithValue(@"Beslutsdatum", dateTimePicker2.Value.Date); //read value from form and save to table
                     command.Parameters.AddWithValue(@"Insatskategori", cboInsatsK.Text);
