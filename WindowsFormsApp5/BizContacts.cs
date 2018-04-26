@@ -539,10 +539,20 @@ namespace WindowsFormsApp5
 
         private void btnDataGridView1_CellEndEdit(object sender, MouseEventArgs e)
         {
-            dataGridView1.ReadOnly = false;
-            dataGridView1.RowTemplate.ReadOnly = false;
+             try
+            {
+                dataGridView1.ReadOnly = false;
+                dataGridView1.RowTemplate.ReadOnly = false;
 
-            dataGridView1.Columns[0].ReadOnly = true;          
+            dataGridView1.Columns[0].ReadOnly = true;
+               
+                  // dataGridView1.CurrentCell.ReadOnly = true;
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("ID kan ej redigeras");
+            } 
+
         }
 
 

@@ -409,25 +409,6 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
 } */
 
 
-        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
-            dataAdapter.UpdateCommand = commandBuilder.GetUpdateCommand();//get the update command
-            try
-            {
-                bindingSource1.EndEdit();//updates the table that is in memory in our program
-                dataAdapter.Update(table);//actually updates the data base
-                MessageBox.Show("Update Successfull");//confirms to user update is saved 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message); //show message to the user
-            }
-
-            refreshdata();
-            dataGridView1.Update(); //Redraws the data grid view so the new record is visible on the bottom
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
@@ -629,6 +610,8 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
             int n;
             bool isNumeric = int.TryParse(txtSearch.Text.ToLower(), out n);
 
+            // string org = cboOrganisation.Text.ToString().ToLower().Trim();
+
 
             if (isNumeric == true && String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
             {
@@ -648,18 +631,23 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
 
             else if (String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()) && !String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()))
             {
-                GetData("select * from BizContacts where lower(förnamn) like '%" + txtSearch.Text.ToLower() + "%'");
+                GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
             }
 
-            else if (!String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()) && String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
-            {
-                GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToString().ToLower() + "%'");
-            }
+            /* else if (!String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()) && String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
+             {
+                 GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToString().ToLower() + "%'");
+             } */
 
-            else
-                GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToString().ToLower() +
-                         "%'and lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() + "%'"
-                         );
+            else if (String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()) && !String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
+                GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() +
+                "%'and len(organisation) like '%" + cboOrganisation.Text.ToString().Length + "%'");
+
+            //dataGridView1.Update();
+            /* else 
+                 GetData("select * from BizContacts where lower(förnamn) like '%" + txtSearch.Text.ToLower() + "%'"); */
+
+            //  GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
 
 
         }
@@ -828,12 +816,65 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
             dataGridView1.Update(); //Redraws the data grid view so the new record is visible on the bottom
         }
 
-        private void btnAdd_Click(object sender, DataGridViewRowEventArgs e)
+
+        private void btnDataGridView1_CellEndEdit(object sender, MouseEventArgs e)
         {
-            btnAdd_Click(sender, e);
+            try
+            {
+                dataGridView1.ReadOnly = false;
+                dataGridView1.RowTemplate.ReadOnly = false;
+
+                dataGridView1.Columns[0].ReadOnly = true;
+
+                // dataGridView1.CurrentCell.ReadOnly = true;
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("ID kan ej redigeras");
+            }
         }
 
-       
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.ReadOnly = false;
+
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+            dataAdapter.UpdateCommand = commandBuilder.GetUpdateCommand();//get the update command
+            try
+            {
+                bindingSource1.EndEdit();//updates the table that is in memory in our program
+                dataAdapter.Update(table);//actually updates the data base
+                //MessageBox.Show("Update Successfull");//confirms to user update is saved 
+            }
+            catch (Exception ex)
+            {
+                dataGridView1.CurrentCell.ErrorText = "Personnummer och beslutsdatum måste vara ifyllda";
+                //MessageBox.Show(ex.Message); //show message to the user
+
+            }
+
+            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowTemplate.ReadOnly = true;
+            refreshdata();
+            dataGridView1.Update(); //Redraws the data grid view so the new record is visible on the bottom
+
+            if (dataGridView1.ReadOnly == true && String.IsNullOrWhiteSpace(dataGridView1.CurrentCell.ErrorText))
+            {
+                MessageBox.Show("Update Successfull");
+            }
+
+        }
+
+
+
+        /* private void showSuccess(object sender, DataGridViewCellEventArgs e)
+         {
+             if (dataGridView1.ReadOnly == false && String.IsNullOrWhiteSpace(dataGridView1.CurrentCell.ErrorText))
+             {
+                 MessageBox.Show("Update Successfull");
+             }
+         }*/
 
 
 
