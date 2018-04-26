@@ -440,31 +440,13 @@ namespace WindowsFormsApp5
         }
 
 
-
         private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //if (cboOrganisation.SelectedItem.ToString().ToLower() == "alla organisationer")
-            //    GetData("select * from BizContacts");
-
-            if (String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
-                GetData("select * from BizContacts");
-            else
-            {
-                //GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() + "%'");
-                GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() +
-                        "%'and lower(efternamn) like '%" + txtSearch.Text.ToString().ToLower() + "%'"
-                    );
-            }
-
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
 
             int n;
             bool isNumeric = int.TryParse(txtSearch.Text.ToLower(), out n);
+
+            // string org = cboOrganisation.Text.ToString().ToLower().Trim();
 
 
             if (isNumeric == true && String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
@@ -485,19 +467,64 @@ namespace WindowsFormsApp5
 
             else if (String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()) && !String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()))
             {
-                GetData("select * from BizContacts where lower(förnamn) like '%" + txtSearch.Text.ToLower() + "%'");
+                GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
             }
 
-            else if (!String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()) && String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
+            /* else if (!String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()) && String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
+             {
+                 GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToString().ToLower() + "%'");
+             } */
+
+            else if (String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()) && !String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
+                GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() +
+                "%'and len(organisation) like '%" + cboOrganisation.Text.ToString().Length + "%'");
+
+            //dataGridView1.Update();
+            /* else 
+                 GetData("select * from BizContacts where lower(förnamn) like '%" + txtSearch.Text.ToLower() + "%'"); */
+
+            //  GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+            int n;
+            bool isNumeric = int.TryParse(txtSearch.Text.ToLower(), out n);
+
+           // string org = cboOrganisation.Text.ToString().ToLower().Trim();
+
+
+            if (isNumeric == true && String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
+            {
+                GetData("select * from BizContacts where lower(personnummer) like '%" + txtSearch.Text.ToString().ToLower() + "%'");
+            }
+
+            else if (isNumeric == true && !String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
+            {
+                GetData("select * from BizContacts where lower(personnummer) like '%" + txtSearch.Text.ToString().ToLower() +
+                         "%'and lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() + "%'");
+            }
+
+            else if (String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()) && String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()))
+            {
+                GetData("select * from BizContacts");
+            }
+
+            else if (String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()) && !String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()))
+            {
+                GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
+            }
+
+           /* else if (!String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()) && String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
             {
                 GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToString().ToLower() + "%'");
-            }
+            } */
 
-            else
-                GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToString().ToLower() +
-                         "%'and lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() + "%'"
-                         );
-
+            else if (String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()) && !String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
+                GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() +
+                "%'and len(organisation) like '%" + cboOrganisation.Text.ToString().Length + "%'");
 
             //dataGridView1.Update();
             /* else 
@@ -508,16 +535,12 @@ namespace WindowsFormsApp5
         }
 
 
-
-
         private void btnDataGridView1_CellEndEdit(object sender, MouseEventArgs e)
         {
             dataGridView1.ReadOnly = false;
             dataGridView1.RowTemplate.ReadOnly = false;
 
-            dataGridView1.Columns[0].ReadOnly = true;
-
-           
+            dataGridView1.Columns[0].ReadOnly = true;          
         }
 
 
@@ -531,7 +554,7 @@ namespace WindowsFormsApp5
             {
                 bindingSource1.EndEdit();//updates the table that is in memory in our program
                 dataAdapter.Update(table);//actually updates the data base
-                MessageBox.Show("Update Successfull");//confirms to user update is saved 
+                //MessageBox.Show("Update Successfull");//confirms to user update is saved 
             }
             catch (Exception ex)
             {
@@ -540,14 +563,21 @@ namespace WindowsFormsApp5
 
             }
 
-            dataGridView1.Columns[0].ReadOnly = false;
+            dataGridView1.Columns[0].ReadOnly = true;
             dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.ReadOnly = true;
-            //refreshdata();
+            refreshdata();
             dataGridView1.Update(); //Redraws the data grid view so the new record is visible on the bottom
+
         }
 
-        
+        private void show_Success(object sender, DataGridViewCellEventArgs e)
+        {
+           if(dataGridView1.ReadOnly == false && String.IsNullOrWhiteSpace(dataGridView1.CurrentCell.ErrorText))
+            {
+               MessageBox.Show("Update Successfull");
+            }
+        }     
     }
 
     /* private void label1_Click(object sender, EventArgs e)
