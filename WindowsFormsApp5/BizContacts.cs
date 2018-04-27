@@ -36,7 +36,6 @@ namespace WindowsFormsApp5
         public void refreshdata()
         {
             DataRow dr;
-
             DataRow dInsatsK;
             DataRow Beslut;
             DataRow BeslutsFA;
