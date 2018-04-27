@@ -53,7 +53,6 @@
             this.btnSaveToText = new System.Windows.Forms.Button();
             this.btnOpenWord = new System.Windows.Forms.Button();
             this.cboInsatsK = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.cboBeslutsfattare = new System.Windows.Forms.ComboBox();
             this.cboOrsak = new System.Windows.Forms.ComboBox();
@@ -89,8 +88,11 @@
             this.txtFörnamn = new System.Windows.Forms.TextBox();
             this.txtEfternamn = new System.Windows.Forms.TextBox();
             this.txtPersonnummer = new System.Windows.Forms.TextBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label22 = new System.Windows.Forms.Label();
+            this.cboBeslutsdatum = new System.Windows.Forms.DateTimePicker();
+            this.label23 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -245,13 +247,6 @@
             this.cboInsatsK.FormattingEnabled = true;
             resources.ApplyResources(this.cboInsatsK, "cboInsatsK");
             this.cboInsatsK.Name = "cboInsatsK";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.AllowDrop = true;
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            resources.ApplyResources(this.dateTimePicker2, "dateTimePicker2");
-            this.dateTimePicker2.Name = "dateTimePicker2";
             // 
             // dateTimePicker3
             // 
@@ -451,20 +446,41 @@
             resources.ApplyResources(this.txtPersonnummer, "txtPersonnummer");
             this.txtPersonnummer.Name = "txtPersonnummer";
             // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(WindowsFormsApp5.BizContacts);
-            // 
             // label22
             // 
             resources.ApplyResources(this.label22, "label22");
             this.label22.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label22.Name = "label22";
             // 
+            // cboBeslutsdatum
+            // 
+            this.cboBeslutsdatum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            resources.ApplyResources(this.cboBeslutsdatum, "cboBeslutsdatum");
+            this.cboBeslutsdatum.Name = "cboBeslutsdatum";
+            // 
+            // label23
+            // 
+            resources.ApplyResources(this.label23, "label23");
+            this.label23.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label23.Name = "label23";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            resources.ApplyResources(this.dateTimePicker1, "dateTimePicker1");
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(WindowsFormsApp5.BizContacts);
+            // 
             // BizContacts
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.cboBeslutsdatum);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.txtPersonnummer);
             this.Controls.Add(this.txtEfternamn);
@@ -500,7 +516,6 @@
             this.Controls.Add(this.cboOrsak);
             this.Controls.Add(this.cboBeslutsfattare);
             this.Controls.Add(this.dateTimePicker3);
-            this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.cboInsatsK);
             this.Controls.Add(this.btnOpenWord);
             this.Controls.Add(this.btnSaveToText);
@@ -556,7 +571,6 @@
         private System.Windows.Forms.Button btnSaveToText;
         private System.Windows.Forms.Button btnOpenWord;
         private System.Windows.Forms.ComboBox cboInsatsK;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.ComboBox cboBeslutsfattare;
         private System.Windows.Forms.ComboBox cboOrsak;
@@ -593,5 +607,8 @@
         private System.Windows.Forms.TextBox txtEfternamn;
         private System.Windows.Forms.TextBox txtPersonnummer;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.DateTimePicker cboBeslutsdatum;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
