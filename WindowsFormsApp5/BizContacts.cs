@@ -45,6 +45,7 @@ namespace WindowsFormsApp5
 
             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-V4R7G9G\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             con.Open();
+
             SqlCommand cmd = new SqlCommand("SELECT * FROM BizContacts WHERE ID IN(SELECT MIN(ID) FROM BizContacts GROUP BY Organisation)", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             System.Data.DataTable dt = new System.Data.DataTable();
@@ -71,7 +72,7 @@ namespace WindowsFormsApp5
 
             cboInsatsK.ValueMember = "ID";
             cboInsatsK.DisplayMember = "Insatskategori";
-            cboInsatsK.DataSource = dt;
+            cboInsatsK.DataSource = di;
 
 
 
@@ -86,23 +87,24 @@ namespace WindowsFormsApp5
 
             cboBeslut.ValueMember = "ID";
             cboBeslut.DisplayMember = "Beslut";
-            cboBeslut.DataSource = dt;
+            cboBeslut.DataSource = db;
 
 
-          /*System.Data.DataTable dbe = new System.Data.DataTable();
-            sda.Fill(dbe);
-                                                                            
-            dr = dbe.NewRow();
-            dr.ItemArray = new object[] { 0, "Beslutsdatum" };
-            dbe.Rows.InsertAt(dr, 0);
+            /*System.Data.DataTable dbe = new System.Data.DataTable();
+              sda.Fill(dbe);
 
-            cboBeslutsdatum.ValueChanged = "ID";
-            cboBeslutsdatum.DisplayMember = "Beslutsdatum";
-            cboBeslutsdatum.DataSource = dbe; */
+              dr = dbe.NewRow();
+              dr.ItemArray = new object[] { 0, "Beslutsdatum" };
+              dbe.Rows.InsertAt(dr, 0);
 
+              cboBeslutsdatum.ValueChanged = "ID";
+              cboBeslutsdatum.DisplayMember = "Beslutsdatum";
+              cboBeslutsdatum.DataSource = dbe; */
 
+            SqlCommand Besfat = new SqlCommand("SELECT * FROM BizContacts WHERE ID IN(SELECT MIN(ID) FROM BizContacts GROUP BY Beslutsfattare)", con);
+            SqlDataAdapter Besfa = new SqlDataAdapter(Besfat);
             System.Data.DataTable dbf = new System.Data.DataTable();
-            sda.Fill(dbf);
+            Besfa.Fill(dbf);
 
             BeslutsFA = dbf.NewRow();
             BeslutsFA.ItemArray = new object[] { 0, "Beslutsfattare" };
@@ -114,9 +116,10 @@ namespace WindowsFormsApp5
 
 
 
-
+            SqlCommand Orsaka = new SqlCommand("SELECT * FROM BizContacts WHERE ID IN(SELECT MIN(ID) FROM BizContacts GROUP BY Orsak)", con);
+            SqlDataAdapter Orsa = new SqlDataAdapter(Orsaka);
             System.Data.DataTable ors = new System.Data.DataTable();
-            sda.Fill(ors);
+            Orsa.Fill(ors);
 
             Orsak = ors.NewRow();
             Orsak.ItemArray = new object[] { 0, "Orsak" };
@@ -124,7 +127,7 @@ namespace WindowsFormsApp5
 
             cboOrsak.ValueMember = "ID";
             cboOrsak.DisplayMember = "Orsak";
-            cboOrsak.DataSource = dbf;
+            cboOrsak.DataSource = ors;
 
                                                                
 
