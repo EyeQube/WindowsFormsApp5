@@ -35,7 +35,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.cboOrganisation = new System.Windows.Forms.ComboBox();
             this.txtNotes = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -84,13 +83,14 @@
             this.label18 = new System.Windows.Forms.Label();
             this.txtOrganisation = new System.Windows.Forms.TextBox();
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.txtFörnamn = new System.Windows.Forms.TextBox();
             this.txtEfternamn = new System.Windows.Forms.TextBox();
             this.txtPersonnummer = new System.Windows.Forms.TextBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -137,14 +137,6 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnDataGridView1_CellEndEdit);
-            // 
-            // btnSearch
-            // 
-            resources.ApplyResources(this.btnSearch, "btnSearch");
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            this.btnSearch.MouseHover += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // cboOrganisation
             // 
@@ -426,10 +418,6 @@
             resources.ApplyResources(this.txtOrganisation, "txtOrganisation");
             this.txtOrganisation.Name = "txtOrganisation";
             // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(WindowsFormsApp5.BizContacts);
-            // 
             // label19
             // 
             resources.ApplyResources(this.label19, "label19");
@@ -463,10 +451,21 @@
             resources.ApplyResources(this.txtPersonnummer, "txtPersonnummer");
             this.txtPersonnummer.Name = "txtPersonnummer";
             // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(WindowsFormsApp5.BizContacts);
+            // 
+            // label22
+            // 
+            resources.ApplyResources(this.label22, "label22");
+            this.label22.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label22.Name = "label22";
+            // 
             // BizContacts
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.txtPersonnummer);
             this.Controls.Add(this.txtEfternamn);
             this.Controls.Add(this.txtFörnamn);
@@ -510,7 +509,6 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.cboOrganisation);
             this.Controls.Add(this.txtNotes);
             this.Controls.Add(this.label13);
@@ -539,7 +537,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox cboOrganisation;
         private System.Windows.Forms.TextBox txtNotes;
         private System.Windows.Forms.Label label13;
@@ -595,5 +592,6 @@
         private System.Windows.Forms.TextBox txtFörnamn;
         private System.Windows.Forms.TextBox txtEfternamn;
         private System.Windows.Forms.TextBox txtPersonnummer;
+        private System.Windows.Forms.Label label22;
     }
 }

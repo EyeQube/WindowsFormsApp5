@@ -72,7 +72,7 @@ namespace WindowsFormsApp5
             //The argument is a string that represents an sql query
             //select * from BizContacts means select all the data from the biz contacts table
 
-            
+            dataGridView1.Columns[0].Visible = false;
 
             GetData(selectionStatement);
         }
@@ -86,6 +86,9 @@ namespace WindowsFormsApp5
                 table.Locale = System.Globalization.CultureInfo.InvariantCulture;
                 dataAdapter.Fill(table); //fill the data table
                 bindingSource1.DataSource = table; //set the data source on the binding source to the table
+
+                
+
                 //dataGridView1.RowTemplate.ReadOnly = false;
 
                 //dataGridView1.Columns[0].ReadOnly = true; //this helps prevent the idfield from being changed
@@ -99,6 +102,8 @@ namespace WindowsFormsApp5
             {
                 MessageBox.Show(ex.Message);//show a useful message to the user of the program
             }
+
+            
 
         }
 

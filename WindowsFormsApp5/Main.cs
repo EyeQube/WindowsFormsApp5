@@ -27,6 +27,7 @@ namespace WindowsFormsApp5
         string selectionStatement = "Select * from BizContacts";
         //string selectionOrg = "select * from BizContacts where lower(organisation)";
 
+       
 
         public Main()
         {
@@ -38,6 +39,8 @@ namespace WindowsFormsApp5
 
             refreshdata();
             refresh();
+
+           // dataGridView1.Columns[0].Visible = false;
         }
 
 
@@ -63,7 +66,7 @@ namespace WindowsFormsApp5
             cboOrganisation.DisplayMember = "Organisation";
             cboOrganisation.DataSource = dt;
 
-
+           
             // con.Close();
         }
 
@@ -73,6 +76,8 @@ namespace WindowsFormsApp5
             refreshdata();
 
             dataGridView1.DataSource = bindingSource1; //sets the source of the data to be displayed in the grid view
+
+          //  dataGridView1.Columns[0].Visible = false;
 
             // cboOrganisation.SelectedIndex = 0; //first item in combobox is selected when the form loads
 
@@ -92,6 +97,8 @@ namespace WindowsFormsApp5
         public void refresh()
         {
             dataGridView1.DataSource = bindingSource1; //sets the source of the data to be displayed in the grid view
+
+           // dataGridView1.Columns[0].Visible = false;
 
             // cboOrganisation.SelectedIndex = 0; //first item in combobox is selected when the form loads
 
@@ -154,7 +161,7 @@ namespace WindowsFormsApp5
                 MessageBox.Show(ex.Message);//show a useful message to the user of the program
             }
 
-
+            dataGridView1.Columns[0].Visible = false;
         }
 
 
@@ -778,6 +785,7 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
                     command.Parameters.AddWithValue(@"Personnummer", txtPersonnummer.Text);
                     command.Parameters.AddWithValue(@"Förnamn", txtFörnamn.Text);
                     command.Parameters.AddWithValue(@"Efternamn", txtEfternamn.Text);
+                    command.Parameters.AddWithValue(@"Beslut", cboBeslut.Text);
                     command.Parameters.AddWithValue(@"Beslutsdatum", dateTimePicker2.Value.Date); //read value from form and save to table
                     command.Parameters.AddWithValue(@"Insatskategori", cboInsatsK.Text);
                     command.Parameters.AddWithValue(@"Beslutsfattare", cboBeslutsfattare.Text);

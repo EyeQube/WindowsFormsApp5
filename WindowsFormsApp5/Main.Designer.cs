@@ -129,7 +129,6 @@ namespace WindowsFormsApp5
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.cboOrganisation = new System.Windows.Forms.ComboBox();
             this.txtNotes = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -156,6 +155,7 @@ namespace WindowsFormsApp5
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.label9 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -191,7 +191,7 @@ namespace WindowsFormsApp5
             this.menuStrip1.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.menuStrip1.Size = new System.Drawing.Size(1409, 21);
+            this.menuStrip1.Size = new System.Drawing.Size(1546, 21);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -284,8 +284,8 @@ namespace WindowsFormsApp5
             // 
             this.splitContainer1.Panel2.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(1409, 735);
-            this.splitContainer1.SplitterDistance = 343;
+            this.splitContainer1.Size = new System.Drawing.Size(1546, 735);
+            this.splitContainer1.SplitterDistance = 376;
             this.splitContainer1.TabIndex = 2;
             // 
             // label2
@@ -308,7 +308,7 @@ namespace WindowsFormsApp5
             this.button6.Location = new System.Drawing.Point(0, 707);
             this.button6.Margin = new System.Windows.Forms.Padding(0);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(343, 28);
+            this.button6.Size = new System.Drawing.Size(376, 28);
             this.button6.TabIndex = 13;
             this.button6.Text = "Handläggare";
             this.button6.UseVisualStyleBackColor = false;
@@ -321,7 +321,7 @@ namespace WindowsFormsApp5
             this.button5.Location = new System.Drawing.Point(0, 675);
             this.button5.Margin = new System.Windows.Forms.Padding(0);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(343, 32);
+            this.button5.Size = new System.Drawing.Size(376, 32);
             this.button5.TabIndex = 12;
             this.button5.Text = "Mina Sidor";
             this.button5.UseVisualStyleBackColor = false;
@@ -334,7 +334,7 @@ namespace WindowsFormsApp5
             this.button4.Location = new System.Drawing.Point(0, 649);
             this.button4.Margin = new System.Windows.Forms.Padding(0);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(343, 27);
+            this.button4.Size = new System.Drawing.Size(376, 27);
             this.button4.TabIndex = 11;
             this.button4.Text = "Mina Brukare";
             this.button4.UseVisualStyleBackColor = false;
@@ -349,7 +349,7 @@ namespace WindowsFormsApp5
             this.button3.Location = new System.Drawing.Point(0, 617);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(343, 32);
+            this.button3.Size = new System.Drawing.Size(376, 32);
             this.button3.TabIndex = 10;
             this.button3.Text = "Mina Ärenden";
             this.button3.UseVisualStyleBackColor = false;
@@ -425,7 +425,7 @@ namespace WindowsFormsApp5
             this.toolStripButton15});
             this.toolStrip3.Location = new System.Drawing.Point(0, 25);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(343, 25);
+            this.toolStrip3.Size = new System.Drawing.Size(376, 25);
             this.toolStrip3.TabIndex = 2;
             this.toolStrip3.Text = "toolStrip3";
             // 
@@ -496,7 +496,7 @@ namespace WindowsFormsApp5
             // 
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(343, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(376, 25);
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -510,7 +510,7 @@ namespace WindowsFormsApp5
             this.treeView1.Location = new System.Drawing.Point(0, 96);
             this.treeView1.Name = "treeView1";
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(343, 639);
+            this.treeView1.Size = new System.Drawing.Size(376, 639);
             this.treeView1.TabIndex = 0;
             // 
             // imageList1
@@ -531,7 +531,7 @@ namespace WindowsFormsApp5
             this.tabControl1.Location = new System.Drawing.Point(2, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1060, 792);
+            this.tabControl1.Size = new System.Drawing.Size(1164, 792);
             this.tabControl1.TabIndex = 1;
             this.tabControl1.Click += new System.EventHandler(this.cboSearch_SelectedIndexChanged);
             // 
@@ -547,7 +547,7 @@ namespace WindowsFormsApp5
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1052, 766);
+            this.tabPage1.Size = new System.Drawing.Size(1156, 766);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Aktuellt";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -630,7 +630,7 @@ namespace WindowsFormsApp5
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1052, 766);
+            this.tabPage6.Size = new System.Drawing.Size(1156, 766);
             this.tabPage6.TabIndex = 6;
             this.tabPage6.Text = "Beslut";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -650,7 +650,7 @@ namespace WindowsFormsApp5
             this.tabBeslut.Location = new System.Drawing.Point(0, 0);
             this.tabBeslut.Name = "tabBeslut";
             this.tabBeslut.SelectedIndex = 0;
-            this.tabBeslut.Size = new System.Drawing.Size(1056, 688);
+            this.tabBeslut.Size = new System.Drawing.Size(1160, 688);
             this.tabBeslut.TabIndex = 0;
             // 
             // tabPage3
@@ -658,7 +658,7 @@ namespace WindowsFormsApp5
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1048, 662);
+            this.tabPage3.Size = new System.Drawing.Size(1152, 662);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Aktualisering";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -668,7 +668,7 @@ namespace WindowsFormsApp5
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1048, 662);
+            this.tabPage4.Size = new System.Drawing.Size(1152, 662);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Innehållsförteckning";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -678,7 +678,7 @@ namespace WindowsFormsApp5
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1048, 662);
+            this.tabPage5.Size = new System.Drawing.Size(1152, 662);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Utredning";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -688,7 +688,7 @@ namespace WindowsFormsApp5
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1048, 662);
+            this.tabPage7.Size = new System.Drawing.Size(1152, 662);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Dokumentation";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -698,7 +698,7 @@ namespace WindowsFormsApp5
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1048, 662);
+            this.tabPage8.Size = new System.Drawing.Size(1152, 662);
             this.tabPage8.TabIndex = 4;
             this.tabPage8.Text = "Samtycke";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -708,7 +708,7 @@ namespace WindowsFormsApp5
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(1048, 662);
+            this.tabPage9.Size = new System.Drawing.Size(1152, 662);
             this.tabPage9.TabIndex = 5;
             this.tabPage9.Text = "Insatser";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -719,7 +719,7 @@ namespace WindowsFormsApp5
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(1048, 662);
+            this.tabPage10.Size = new System.Drawing.Size(1152, 662);
             this.tabPage10.TabIndex = 6;
             this.tabPage10.Text = "Beslut";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -735,12 +735,13 @@ namespace WindowsFormsApp5
             this.tabBeslut3.Location = new System.Drawing.Point(-4, 0);
             this.tabBeslut3.Name = "tabBeslut3";
             this.tabBeslut3.SelectedIndex = 0;
-            this.tabBeslut3.Size = new System.Drawing.Size(1063, 675);
+            this.tabBeslut3.Size = new System.Drawing.Size(1167, 675);
             this.tabBeslut3.TabIndex = 0;
             // 
             // tabPage11
             // 
             this.tabPage11.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage11.Controls.Add(this.label9);
             this.tabPage11.Controls.Add(this.txtEfternamn);
             this.tabPage11.Controls.Add(this.txtFörnamn);
             this.tabPage11.Controls.Add(this.txtPersonnummer);
@@ -783,7 +784,6 @@ namespace WindowsFormsApp5
             this.tabPage11.Controls.Add(this.btnDelete);
             this.tabPage11.Controls.Add(this.btnAdd);
             this.tabPage11.Controls.Add(this.btnEdit);
-            this.tabPage11.Controls.Add(this.btnSearch);
             this.tabPage11.Controls.Add(this.cboOrganisation);
             this.tabPage11.Controls.Add(this.txtNotes);
             this.tabPage11.Controls.Add(this.label13);
@@ -799,7 +799,7 @@ namespace WindowsFormsApp5
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(1055, 649);
+            this.tabPage11.Size = new System.Drawing.Size(1159, 649);
             this.tabPage11.TabIndex = 0;
             this.tabPage11.Text = "Beslut";
             this.tabPage11.MouseEnter += new System.EventHandler(this.tabPage11_MouseHover);
@@ -880,7 +880,7 @@ namespace WindowsFormsApp5
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(542, 583);
+            this.button7.Location = new System.Drawing.Point(569, 597);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(100, 23);
             this.button7.TabIndex = 152;
@@ -891,7 +891,7 @@ namespace WindowsFormsApp5
             // 
             this.comboBox6.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(435, 556);
+            this.comboBox6.Location = new System.Drawing.Point(462, 570);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(207, 21);
             this.comboBox6.TabIndex = 151;
@@ -900,7 +900,7 @@ namespace WindowsFormsApp5
             // 
             this.comboBox5.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(541, 529);
+            this.comboBox5.Location = new System.Drawing.Point(568, 543);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(101, 21);
             this.comboBox5.TabIndex = 150;
@@ -910,7 +910,7 @@ namespace WindowsFormsApp5
             // 
             this.comboBox4.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(541, 500);
+            this.comboBox4.Location = new System.Drawing.Point(568, 514);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(101, 21);
             this.comboBox4.TabIndex = 149;
@@ -920,7 +920,7 @@ namespace WindowsFormsApp5
             // 
             this.comboBox3.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(541, 469);
+            this.comboBox3.Location = new System.Drawing.Point(568, 483);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(101, 21);
             this.comboBox3.TabIndex = 148;
@@ -930,7 +930,7 @@ namespace WindowsFormsApp5
             // 
             this.comboBox2.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(541, 441);
+            this.comboBox2.Location = new System.Drawing.Point(568, 455);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(101, 21);
             this.comboBox2.TabIndex = 147;
@@ -940,7 +940,7 @@ namespace WindowsFormsApp5
             // 
             this.comboBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(541, 411);
+            this.comboBox1.Location = new System.Drawing.Point(568, 425);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(101, 21);
             this.comboBox1.TabIndex = 146;
@@ -948,35 +948,35 @@ namespace WindowsFormsApp5
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(435, 530);
+            this.textBox5.Location = new System.Drawing.Point(462, 544);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 145;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(435, 501);
+            this.textBox4.Location = new System.Drawing.Point(462, 515);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 144;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(435, 470);
+            this.textBox6.Location = new System.Drawing.Point(462, 484);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 143;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(435, 442);
+            this.textBox7.Location = new System.Drawing.Point(462, 456);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 142;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(435, 412);
+            this.textBox8.Location = new System.Drawing.Point(462, 426);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 20);
             this.textBox8.TabIndex = 141;
@@ -984,7 +984,7 @@ namespace WindowsFormsApp5
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(399, 559);
+            this.label17.Location = new System.Drawing.Point(426, 573);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(29, 13);
             this.label17.TabIndex = 140;
@@ -993,7 +993,7 @@ namespace WindowsFormsApp5
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(389, 533);
+            this.label16.Location = new System.Drawing.Point(416, 547);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(40, 13);
             this.label16.TabIndex = 139;
@@ -1002,7 +1002,7 @@ namespace WindowsFormsApp5
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(396, 504);
+            this.label15.Location = new System.Drawing.Point(423, 518);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(32, 13);
             this.label15.TabIndex = 138;
@@ -1011,7 +1011,7 @@ namespace WindowsFormsApp5
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(392, 473);
+            this.label14.Location = new System.Drawing.Point(419, 487);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(37, 13);
             this.label14.TabIndex = 137;
@@ -1020,7 +1020,7 @@ namespace WindowsFormsApp5
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(399, 445);
+            this.label12.Location = new System.Drawing.Point(426, 459);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(31, 13);
             this.label12.TabIndex = 136;
@@ -1029,7 +1029,7 @@ namespace WindowsFormsApp5
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(388, 415);
+            this.label11.Location = new System.Drawing.Point(415, 429);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 13);
             this.label11.TabIndex = 135;
@@ -1038,7 +1038,7 @@ namespace WindowsFormsApp5
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(394, 356);
+            this.checkBox2.Location = new System.Drawing.Point(462, 357);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(200, 17);
             this.checkBox2.TabIndex = 134;
@@ -1050,7 +1050,7 @@ namespace WindowsFormsApp5
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(394, 321);
+            this.checkBox1.Location = new System.Drawing.Point(462, 322);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(114, 17);
             this.checkBox1.TabIndex = 133;
@@ -1071,7 +1071,7 @@ namespace WindowsFormsApp5
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label3.Location = new System.Drawing.Point(581, 25);
+            this.label3.Location = new System.Drawing.Point(632, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(167, 16);
             this.label3.TabIndex = 130;
@@ -1124,27 +1124,27 @@ namespace WindowsFormsApp5
             // 
             // btnOpenWord
             // 
-            this.btnOpenWord.Location = new System.Drawing.Point(16, 579);
+            this.btnOpenWord.Location = new System.Drawing.Point(1011, 201);
             this.btnOpenWord.Name = "btnOpenWord";
-            this.btnOpenWord.Size = new System.Drawing.Size(120, 23);
+            this.btnOpenWord.Size = new System.Drawing.Size(133, 30);
             this.btnOpenWord.TabIndex = 124;
             this.btnOpenWord.Text = "Öppna i Word";
             this.btnOpenWord.UseVisualStyleBackColor = true;
             // 
             // btnSaveToText
             // 
-            this.btnSaveToText.Location = new System.Drawing.Point(214, 579);
+            this.btnSaveToText.Location = new System.Drawing.Point(1011, 129);
             this.btnSaveToText.Name = "btnSaveToText";
-            this.btnSaveToText.Size = new System.Drawing.Size(123, 23);
+            this.btnSaveToText.Size = new System.Drawing.Size(133, 30);
             this.btnSaveToText.TabIndex = 123;
             this.btnSaveToText.Text = "Spara i textfil";
             this.btnSaveToText.UseVisualStyleBackColor = true;
             // 
             // btnExportOpen
             // 
-            this.btnExportOpen.Location = new System.Drawing.Point(16, 608);
+            this.btnExportOpen.Location = new System.Drawing.Point(1011, 165);
             this.btnExportOpen.Name = "btnExportOpen";
-            this.btnExportOpen.Size = new System.Drawing.Size(321, 23);
+            this.btnExportOpen.Size = new System.Drawing.Size(133, 30);
             this.btnExportOpen.TabIndex = 122;
             this.btnExportOpen.Text = "Exportera/Öppna i Excel";
             this.btnExportOpen.UseVisualStyleBackColor = true;
@@ -1154,7 +1154,7 @@ namespace WindowsFormsApp5
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(394, 56);
+            this.dataGridView1.Location = new System.Drawing.Point(427, 56);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1165,15 +1165,15 @@ namespace WindowsFormsApp5
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Size = new System.Drawing.Size(533, 195);
+            this.dataGridView1.Size = new System.Drawing.Size(566, 175);
             this.dataGridView1.TabIndex = 121;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(946, 185);
+            this.btnDelete.Location = new System.Drawing.Point(1011, 93);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(133, 30);
             this.btnDelete.TabIndex = 120;
             this.btnDelete.Text = "Ta bort";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -1181,49 +1181,41 @@ namespace WindowsFormsApp5
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(946, 99);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(15, 571);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(118, 43);
             this.btnAdd.TabIndex = 119;
-            this.btnAdd.Text = "Lägg till";
+            this.btnAdd.Text = "Lägg till person";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(946, 141);
+            this.btnEdit.Location = new System.Drawing.Point(1011, 56);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.Size = new System.Drawing.Size(133, 30);
             this.btnEdit.TabIndex = 118;
             this.btnEdit.Text = "Redigera";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnDataGridView1_CellEndEdit);
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(584, 255);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(58, 23);
-            this.btnSearch.TabIndex = 117;
-            this.btnSearch.Text = "Sök";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
             // cboOrganisation
             // 
             this.cboOrganisation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboOrganisation.FormattingEnabled = true;
-            this.cboOrganisation.Location = new System.Drawing.Point(772, 255);
+            this.cboOrganisation.Location = new System.Drawing.Point(805, 241);
             this.cboOrganisation.Name = "cboOrganisation";
-            this.cboOrganisation.Size = new System.Drawing.Size(155, 21);
+            this.cboOrganisation.Size = new System.Drawing.Size(188, 21);
             this.cboOrganisation.TabIndex = 116;
             this.cboOrganisation.Text = "Organisation";
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(15, 441);
+            this.txtNotes.Location = new System.Drawing.Point(17, 429);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(322, 132);
+            this.txtNotes.Size = new System.Drawing.Size(320, 120);
             this.txtNotes.TabIndex = 115;
             // 
             // label13
@@ -1231,7 +1223,7 @@ namespace WindowsFormsApp5
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label13.Location = new System.Drawing.Point(13, 412);
+            this.label13.Location = new System.Drawing.Point(13, 406);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(103, 20);
             this.label13.TabIndex = 114;
@@ -1239,9 +1231,9 @@ namespace WindowsFormsApp5
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(429, 256);
+            this.txtSearch.Location = new System.Drawing.Point(462, 241);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(149, 20);
+            this.txtSearch.Size = new System.Drawing.Size(200, 20);
             this.txtSearch.TabIndex = 113;
             this.txtSearch.TextChanged += new System.EventHandler(this.tabPage11_MouseHover);
             // 
@@ -1250,7 +1242,7 @@ namespace WindowsFormsApp5
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label10.Location = new System.Drawing.Point(391, 259);
+            this.label10.Location = new System.Drawing.Point(424, 243);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(32, 16);
             this.label10.TabIndex = 112;
@@ -1294,7 +1286,7 @@ namespace WindowsFormsApp5
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label7.Location = new System.Drawing.Point(682, 258);
+            this.label7.Location = new System.Drawing.Point(715, 243);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 16);
             this.label7.TabIndex = 108;
@@ -1338,7 +1330,7 @@ namespace WindowsFormsApp5
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(1055, 649);
+            this.tabPage12.Size = new System.Drawing.Size(1159, 649);
             this.tabPage12.TabIndex = 1;
             this.tabPage12.Text = "Beslutsmeddelande";
             this.tabPage12.UseVisualStyleBackColor = true;
@@ -1348,7 +1340,7 @@ namespace WindowsFormsApp5
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage13.Size = new System.Drawing.Size(1055, 649);
+            this.tabPage13.Size = new System.Drawing.Size(1159, 649);
             this.tabPage13.TabIndex = 2;
             this.tabPage13.Text = "Delgivning";
             this.tabPage13.UseVisualStyleBackColor = true;
@@ -1359,7 +1351,7 @@ namespace WindowsFormsApp5
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1052, 766);
+            this.tabPage2.Size = new System.Drawing.Size(1156, 766);
             this.tabPage2.TabIndex = 7;
             this.tabPage2.Text = "Kataloger/filer";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1375,7 +1367,7 @@ namespace WindowsFormsApp5
             this.listView1.LargeImageList = this.imageList1;
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1038, 584);
+            this.listView1.Size = new System.Drawing.Size(1142, 584);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -1466,9 +1458,20 @@ namespace WindowsFormsApp5
             this.toolStripButton8});
             this.toolStrip1.Location = new System.Drawing.Point(0, 21);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1409, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1546, 25);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            this.label9.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label9.Location = new System.Drawing.Point(460, 264);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(124, 13);
+            this.label9.TabIndex = 161;
+            this.label9.Text = "Ex: Personnummer/namn";
             // 
             // bindingSource1
             // 
@@ -1479,7 +1482,7 @@ namespace WindowsFormsApp5
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1409, 756);
+            this.ClientSize = new System.Drawing.Size(1546, 756);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
@@ -1625,7 +1628,6 @@ namespace WindowsFormsApp5
         private Button btnDelete;
         private Button btnAdd;
         private Button btnEdit;
-        private Button btnSearch;
         private ComboBox cboOrganisation;
         private TextBox txtNotes;
         private Label label13;
@@ -1644,6 +1646,7 @@ namespace WindowsFormsApp5
         private Label labelPersonN;
         private Label LabelFNamn;
         private Label LabelEfternamn;
+        private Label label9;
     }
 }
 
