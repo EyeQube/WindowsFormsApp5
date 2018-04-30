@@ -18,7 +18,7 @@ namespace WindowsFormsApp5
 {
     public partial class BizContacts : Form
     {
-        string connString = @"Data Source=DESKTOP-V4R7G9G\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        string connString = @"Data Source=SAK\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         SqlDataAdapter dataAdapter; //this object here allows us to build the connection between the program and the database
         System.Data.DataTable table;//table to hold the information so we can fill the datagrid view
@@ -42,7 +42,7 @@ namespace WindowsFormsApp5
             DataRow Orsak;
           
 
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-V4R7G9G\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            SqlConnection con = new SqlConnection(@"Data Source=SAK\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             con.Open();
 
             SqlCommand cmd = new SqlCommand("SELECT * FROM BizContacts WHERE ID IN(SELECT MIN(ID) FROM BizContacts GROUP BY Organisation)", con);
@@ -202,7 +202,7 @@ namespace WindowsFormsApp5
                     command.Parameters.AddWithValue(@"Förnamn", txtFörnamn.Text);
                     command.Parameters.AddWithValue(@"Efternamn", txtEfternamn.Text);
                     command.Parameters.AddWithValue(@"Beslut", cboBeslut.Text);
-                    command.Parameters.AddWithValue(@"Beslutsdatum", cboBeslutsdatum.Value.Date); //read value from form and save to table
+                    command.Parameters.AddWithValue(@"Beslutsdatum", dtpBeslutsdatum.Value.Date); //read value from form and save to table
                     command.Parameters.AddWithValue(@"Insatskategori", cboInsatsK.Text);
                     command.Parameters.AddWithValue(@"Beslutsfattare", cboBeslutsfattare.Text);
                     command.Parameters.AddWithValue(@"Organisation", txtOrganisation.Text);
@@ -527,20 +527,63 @@ namespace WindowsFormsApp5
         private void cboSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            int n;
-            bool isNumeric = int.TryParse(txtSearch.Text.ToLower(), out n);
+            //txtSearch.Text = "19301116-3842";
+
+            string txtt = txtSearch.Text;
+            string brex1 = "";
+            string re = "";
+            string er = "";
+
+            if (txtSearch.Text.Length >= 7)
+            {
+                re = txtt.Substring(6, 1);
+
+            }
+            if (txtSearch.Text.Length >= 9)
+            {
+                er = txtt.Substring(8, 1);
+            }
+
+
+            /* int h;
+             bool isNum = int.TryParse(re, out h);
+
+             int year = 0;
+             if(isNum == true)
+             {
+                 year = Convert.ToInt32(re);
+             } */
+
+
+            if (txtt.Length >= 9 && txtt.Length <= 13 && er == "-" && re != "-")
+            {
+                brex1 = txtt.Remove(8, 1);
+
+            }
+            else if (re == "-")//(txtt.Length >= 7 && txtt.Length <= 11 && re == "-")
+            {
+                brex1 = txtt.Remove(6, 1);
+            }
+            else
+            {
+                brex1 = txtSearch.Text;
+            }
+
+            long n;
+            bool isNumeric = long.TryParse(brex1, out n);
 
             // string org = cboOrganisation.Text.ToString().ToLower().Trim();
 
 
             if (isNumeric == true && String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
             {
-                GetData("select * from BizContacts where lower(personnummer) like '%" + txtSearch.Text.ToString().ToLower() + "%'");
-            }
 
+                GetData("select * from BizContacts where replace(personnummer,'-','') like '%" + brex1 + "%'");
+
+            }
             else if (isNumeric == true && !String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
             {
-                GetData("select * from BizContacts where lower(personnummer) like '%" + txtSearch.Text.ToString().ToLower() +
+                GetData("select * from BizContacts where replace(personnummer,'-','') like '%" + brex1 +
                          "%'and lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() + "%'");
             }
 
@@ -563,31 +606,91 @@ namespace WindowsFormsApp5
                 GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() +
                 "%'and len(organisation) like '%" + cboOrganisation.Text.ToString().Length + "%'");
 
+            else if (!String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()) && !String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
+            {
+                GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() +
+                "%'and lower(organisation) like '%" + cboOrganisation.Text.ToString() +
+                "%'and len(organisation) like '%" + cboOrganisation.Text.ToString().Length + "%'");
+
+            }
+            else if (!String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()) && !String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
+            {
+                GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() +
+                "%'and lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() +
+                "%'and len(organisation) like '%" + cboOrganisation.Text.ToString().ToLower().Length + "%'");
+
+            }
             //dataGridView1.Update();
             /* else 
                  GetData("select * from BizContacts where lower(förnamn) like '%" + txtSearch.Text.ToLower() + "%'"); */
 
             //  GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
 
+
+
+
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
 
-            int n;
-            bool isNumeric = int.TryParse(txtSearch.Text.ToLower(), out n);
+            //txtSearch.Text = "19301116-3842";
 
-           // string org = cboOrganisation.Text.ToString().ToLower().Trim();
+            string txtt = txtSearch.Text;
+            string brex1 = "";
+            string re = "";
+            string er = "";
+
+            if (txtSearch.Text.Length >= 7)
+            {
+                re = txtt.Substring(6, 1);
+
+            }
+            if (txtSearch.Text.Length >= 9)
+            {
+                er = txtt.Substring(8, 1);
+            }
+
+
+            /* int h;
+             bool isNum = int.TryParse(re, out h);
+
+             int year = 0;
+             if(isNum == true)
+             {
+                 year = Convert.ToInt32(re);
+             } */
+
+
+            if (txtt.Length >= 9 && txtt.Length <= 13 && er == "-" && re != "-")
+            {
+                brex1 = txtt.Remove(8, 1);
+
+            }
+            else if (re == "-")//(txtt.Length >= 7 && txtt.Length <= 11 && re == "-")
+            {
+                brex1 = txtt.Remove(6, 1);
+            }
+            else
+            {
+                brex1 = txtSearch.Text;
+            }
+
+            long n;
+            bool isNumeric = long.TryParse(brex1, out n);
+
+            // string org = cboOrganisation.Text.ToString().ToLower().Trim();
 
 
             if (isNumeric == true && String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
             {
-                GetData("select * from BizContacts where lower(personnummer) like '%" + txtSearch.Text.ToString().ToLower() + "%'");
-            }
 
+                GetData("select * from BizContacts where replace(personnummer,'-','') like '%" + brex1 + "%'");
+
+            }
             else if (isNumeric == true && !String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
             {
-                GetData("select * from BizContacts where lower(personnummer) like '%" + txtSearch.Text.ToString().ToLower() +
+                GetData("select * from BizContacts where replace(personnummer,'-','') like '%" + brex1 +
                          "%'and lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() + "%'");
             }
 
@@ -601,20 +704,29 @@ namespace WindowsFormsApp5
                 GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
             }
 
-           /* else if (!String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()) && String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
-            {
-                GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToString().ToLower() + "%'");
-            } */
+            /* else if (!String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()) && String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
+             {
+                 GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToString().ToLower() + "%'");
+             } */
 
             else if (String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()) && !String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
                 GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() +
                 "%'and len(organisation) like '%" + cboOrganisation.Text.ToString().Length + "%'");
 
+            else if (!String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()) && !String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
+            {
+                GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() +
+                "%'and lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() +
+                "%'and len(organisation) like '%" + cboOrganisation.Text.ToString().ToLower().Length + "%'");
+
+            }
             //dataGridView1.Update();
             /* else 
                  GetData("select * from BizContacts where lower(förnamn) like '%" + txtSearch.Text.ToLower() + "%'"); */
 
             //  GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
+
+
 
         }
 

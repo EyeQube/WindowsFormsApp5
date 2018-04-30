@@ -1632,27 +1632,6 @@
   <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="cboBeslutsdatum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>197, 240</value>
-  </data>
-  <data name="cboBeslutsdatum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 20</value>
-  </data>
-  <data name="cboBeslutsdatum.TabIndex" type="System.Int32, mscorlib">
-    <value>163</value>
-  </data>
-  <data name="&gt;&gt;cboBeslutsdatum.Name" xml:space="preserve">
-    <value>cboBeslutsdatum</value>
-  </data>
-  <data name="&gt;&gt;cboBeslutsdatum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cboBeslutsdatum.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cboBeslutsdatum.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="label23.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1684,7 +1663,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label23.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="dateTimePicker1.Location" type="System.Drawing.Point, System.Drawing">
     <value>197, 273</value>
@@ -1705,11 +1684,32 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dateTimePicker1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="dtpBeslutsdatum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>197, 240</value>
+  </data>
+  <data name="dtpBeslutsdatum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 20</value>
+  </data>
+  <data name="dtpBeslutsdatum.TabIndex" type="System.Int32, mscorlib">
+    <value>166</value>
+  </data>
+  <data name="&gt;&gt;dtpBeslutsdatum.Name" xml:space="preserve">
+    <value>dtpBeslutsdatum</value>
+  </data>
+  <data name="&gt;&gt;dtpBeslutsdatum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtpBeslutsdatum.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dtpBeslutsdatum.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1754,9 +1754,6 @@
         AAD///AA/w/wAP4H8AD+A/AA+APwAPAAcADwADAA4AAwAMAAEADAABAAgAAQAIAAEACAABAAgAAQAIAA
         EACAABAAwAAQAOAgMAD8+vAA///wAA==
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

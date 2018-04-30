@@ -89,10 +89,10 @@
             this.txtEfternamn = new System.Windows.Forms.TextBox();
             this.txtPersonnummer = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.cboBeslutsdatum = new System.Windows.Forms.DateTimePicker();
             this.label23 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dtpBeslutsdatum = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -452,12 +452,6 @@
             this.label22.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label22.Name = "label22";
             // 
-            // cboBeslutsdatum
-            // 
-            this.cboBeslutsdatum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            resources.ApplyResources(this.cboBeslutsdatum, "cboBeslutsdatum");
-            this.cboBeslutsdatum.Name = "cboBeslutsdatum";
-            // 
             // label23
             // 
             resources.ApplyResources(this.label23, "label23");
@@ -474,13 +468,19 @@
             // 
             this.bindingSource1.DataSource = typeof(WindowsFormsApp5.BizContacts);
             // 
+            // dtpBeslutsdatum
+            // 
+            this.dtpBeslutsdatum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            resources.ApplyResources(this.dtpBeslutsdatum, "dtpBeslutsdatum");
+            this.dtpBeslutsdatum.Name = "dtpBeslutsdatum";
+            // 
             // BizContacts
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dtpBeslutsdatum);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label23);
-            this.Controls.Add(this.cboBeslutsdatum);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.txtPersonnummer);
             this.Controls.Add(this.txtEfternamn);
@@ -607,8 +607,8 @@
         private System.Windows.Forms.TextBox txtEfternamn;
         private System.Windows.Forms.TextBox txtPersonnummer;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.DateTimePicker cboBeslutsdatum;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpBeslutsdatum;
     }
 }
