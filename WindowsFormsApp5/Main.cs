@@ -19,7 +19,7 @@ namespace WindowsFormsApp5
 {
     public partial class Main : Form
     {
-        string connString = @"Data Source=SAK\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        string connString = @"Data Source=DESKTOP-V4R7G9G\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         SqlDataAdapter dataAdapter; //this object here allows us to build the connection between the program and the database
         System.Data.DataTable table;//table to hold the information so we can fill the datagrid view
@@ -56,7 +56,7 @@ namespace WindowsFormsApp5
             DataRow Orsak;
 
 
-            SqlConnection con = new SqlConnection(@"Data Source=SAK\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-V4R7G9G\SQLEXPRESS;Initial Catalog=AdressBook;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             con.Open();
 
             SqlCommand cmd = new SqlCommand("SELECT * FROM BizContacts WHERE ID IN(SELECT MIN(ID) FROM BizContacts GROUP BY Organisation)", con);
@@ -249,7 +249,7 @@ namespace WindowsFormsApp5
         {
             TreeNode rootNode;
 
-            DirectoryInfo info = new DirectoryInfo(@"C:\Users\bitoreq_sattar\source\repos\WindowsFormsApp5\WindowsFormsApp5\Mina Brukare"); //../..");
+            DirectoryInfo info = new DirectoryInfo(@"C:\Users\bitoreq_sattar\source\repos\Vidly\Vidly\WindowsFormsApp5\WindowsFormsApp5\Mina Brukare"); //../..");
             if (info.Exists)
             {
                 rootNode = new TreeNode(info.Name);
@@ -1015,6 +1015,11 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
 
             //  GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
 
+
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
 
         }
 
