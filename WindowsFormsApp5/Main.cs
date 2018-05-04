@@ -670,13 +670,7 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
             }
         }
 
-        private void tabPage11_MouseHover(object sender, EventArgs e)
-        {
-            filtering(txtSearch.Text);
-            
-
-        } 
-
+       
         private void btnDelete_Click(object sender, MouseEventArgs e)
         {
             DataGridViewRow row = dataGridView1.CurrentCell.OwningRow; //grab a reference to the current row
@@ -858,11 +852,12 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
             {
                 MessageBox.Show("ID kan ej redigeras");
             }
+
         }
 
-        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+          private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView1.ReadOnly = false;
+            //dataGridView1.ReadOnly = false;
 
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
             dataAdapter.UpdateCommand = commandBuilder.GetUpdateCommand();//get the update command
@@ -879,23 +874,47 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
 
             }
 
-            dataGridView1.Columns[0].ReadOnly = true;
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.ReadOnly = true;
-            refreshdata();
-            dataGridView1.Update(); //Redraws the data grid view so the new record is visible on the bottom
 
-            if (dataGridView1.ReadOnly == true && String.IsNullOrWhiteSpace(dataGridView1.CurrentCell.ErrorText))
+         //   DataGridViewCellEventArgs r = new DataGridViewCellEventArgs(dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex);
+
+         //     show_Success(this, e);
+
+            // dataGridView1.Columns[0].ReadOnly = true;
+            // dataGridView1.ReadOnly = true;
+            // dataGridView1.RowTemplate.ReadOnly = true;
+            // refreshdata();
+            // dataGridView1.Update(); //Redraws the data grid view so the new record is visible on the bottom
+
+        } 
+
+        private void show_Success(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (dataGridView1.ReadOnly == false && String.IsNullOrWhiteSpace(dataGridView1.CurrentCell.ErrorText))
             {
                 MessageBox.Show("Update Successfull");
             }
 
+            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowTemplate.ReadOnly = true;
         }
+
+
+        private void tabPage11_MouseHover(object sender, EventArgs e)
+        {
+            filtering(txtSearch.Text);
+
+           // DataGridViewCellEventArgs r = new DataGridViewCellEventArgs(dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex);
+
+           // show_Success(this, r);
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
 
-            dataGridView1.Update();
+            //dataGridView1.Update();
 
             string s = textBox2.Text;
             string a = textBox3.Text;
@@ -1094,10 +1113,76 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
 
         }
 
-        private void Main_Load(object sender, EventArgs e)
+        private void dataGridView1_CellEndEdit(object sender, EventArgs e)
         {
 
         }
+
+        private void btnDataGridView1_CellEndEdit(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridView1.ReadOnly = false;
+                dataGridView1.RowTemplate.ReadOnly = false;
+
+                dataGridView1.Columns[0].ReadOnly = true;
+
+                // dataGridView1.CurrentCell.ReadOnly = true;
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("ID kan ej redigeras");
+            }
+
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //dataGridView1.ReadOnly = false;
+
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+            dataAdapter.UpdateCommand = commandBuilder.GetUpdateCommand();//get the update command
+            try
+            {
+                bindingSource1.EndEdit();//updates the table that is in memory in our program
+                dataAdapter.Update(table);//actually updates the data base
+                //MessageBox.Show("Update Successfull");//confirms to user update is saved 
+            }
+            catch (Exception ex)
+            {
+                dataGridView1.CurrentCell.ErrorText = "Personnummer och beslutsdatum måste vara ifyllda";
+                //MessageBox.Show(ex.Message); //show message to the user
+
+            }
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, KeyPressEventArgs e)
+        {
+           // dataGridView1.ReadOnly = false;
+
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+            dataAdapter.UpdateCommand = commandBuilder.GetUpdateCommand();//get the update command
+            try
+            {
+                bindingSource1.EndEdit();//updates the table that is in memory in our program
+                dataAdapter.Update(table);//actually updates the data base
+                //MessageBox.Show("Update Successfull");//confirms to user update is saved 
+            }
+            catch (Exception ex)
+            {
+                dataGridView1.CurrentCell.ErrorText = "Personnummer och beslutsdatum måste vara ifyllda";
+                //MessageBox.Show(ex.Message); //show message to the user
+
+            }
+        }
+
+
+
+        /* private void Main_Load(object sender, EventArgs e)
+         {
+
+         }*/
+
 
 
 

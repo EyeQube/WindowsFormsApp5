@@ -556,72 +556,111 @@ namespace WindowsFormsApp5
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView1.ReadOnly = false;
+                dataGridView1.ReadOnly = false;
+        
 
-            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
-            dataAdapter.UpdateCommand = commandBuilder.GetUpdateCommand();//get the update command
-            try
-            {
-                bindingSource1.EndEdit();//updates the table that is in memory in our program
-                dataAdapter.Update(table);//actually updates the data base
-                //MessageBox.Show("Update Successfull");//confirms to user update is saved 
-            }
-            catch (Exception ex)
-            {
-                dataGridView1.CurrentCell.ErrorText = "Personnummer och beslutsdatum måste vara ifyllda";
-                //MessageBox.Show(ex.Message); //show message to the user
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+                dataAdapter.UpdateCommand = commandBuilder.GetUpdateCommand();//get the update command
+                try
+                {
+                    bindingSource1.EndEdit();//updates the table that is in memory in our program
+                    dataAdapter.Update(table);//actually updates the data base
+                                              //MessageBox.Show("Update Successfull");//confirms to user update is saved 
+                }
+                catch (Exception ex)
+                {
+                    dataGridView1.CurrentCell.ErrorText = "Personnummer och beslutsdatum måste vara ifyllda";
+                    //MessageBox.Show(ex.Message); //show message to the user
 
-            }
+                }
+
+               /* dataGridView1.Columns[0].ReadOnly = true;
+                dataGridView1.ReadOnly = true;
+                dataGridView1.RowTemplate.ReadOnly = true; */
+
+                //refreshdata();
+                //dataGridView1.Update(); //Redraws the data grid view so the new record is visible on the bottom
+        }
+
+
+        private void show_Success(object sender, DataGridViewCellEventArgs e)
+          {
+              if (dataGridView1.ReadOnly == false && String.IsNullOrWhiteSpace(dataGridView1.CurrentCell.ErrorText))
+              {
+                 MessageBox.Show("Update Successfull");
+              }
 
             dataGridView1.Columns[0].ReadOnly = true;
             dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.ReadOnly = true;
-            refreshdata();
-            dataGridView1.Update(); //Redraws the data grid view so the new record is visible on the bottom
 
-        }
+          } 
 
-        private void show_Success(object sender, DataGridViewCellEventArgs e)
+       /* private void show_Success(object sender, EventArgs e)
         {
-           if(dataGridView1.ReadOnly == false && String.IsNullOrWhiteSpace(dataGridView1.CurrentCell.ErrorText))
+            if (dataGridView1.ReadOnly == false && String.IsNullOrWhiteSpace(dataGridView1.CurrentCell.ErrorText))
             {
-               MessageBox.Show("Update Successfull");
-            }
-        }
+                MessageBox.Show("Update Successfull");
+            } 
+
+            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowTemplate.ReadOnly = true;
+        } */
+
+        /* private void show_Success(object sender, EventArgs e)
+         {
+             if (dataGridView1.ReadOnly == false && String.IsNullOrWhiteSpace(dataGridView1.CurrentCell.ErrorText))
+             {
+                 MessageBox.Show("Update Successfull");
+             }
+         } */
+
+        /*  private void show_Success(object sender, EventArgs e)
+          {
+              if (dataGridView1.ReadOnly == false && String.IsNullOrWhiteSpace(dataGridView1.CurrentCell.ErrorText))
+              {
+                  MessageBox.Show("Update Successfull");
+              }
+
+              dataGridView1.Columns[0].ReadOnly = true;
+              dataGridView1.ReadOnly = true;
+              dataGridView1.RowTemplate.ReadOnly = true;
+          } */
 
 
         private void filtering(string textSearch)
-        {
-            // txtSearch.Text = "193901257246";
+          {
+              // txtSearch.Text = "193901257246";
 
-            string txtt = txtSearch.Text;
-            string brex1 = "";
-            // string re = "";
-            string er = "";
+              string txtt = txtSearch.Text;
+              string brex1 = "";
+              // string re = "";
+              string er = "";
 
-            /*  if (txtSearch.Text.Length >= 7)
-              {
-                  re = txtt.Substring(6, 1);
+              /*  if (txtSearch.Text.Length >= 7)
+                {
+                    re = txtt.Substring(6, 1);
 
-              }
-              if (txtSearch.Text.Length >= 9)
-              {
-                  er = txtt.Substring(8, 1);
-              }*/
-
-
-            /* int h;
-             bool isNum = int.TryParse(re, out h);
-
-             int year = 0;
-             if(isNum == true)
-             {
-                 year = Convert.ToInt32(re);
-             } */
+                }
+                if (txtSearch.Text.Length >= 9)
+                {
+                    er = txtt.Substring(8, 1);
+                }*/
 
 
-            /////////////////////////////////////////////////////////
-            int i = 0;
+        /* int h;
+         bool isNum = int.TryParse(re, out h);
+
+         int year = 0;
+         if(isNum == true)
+         {
+             year = Convert.ToInt32(re);
+         } */
+
+
+        /////////////////////////////////////////////////////////
+        int i = 0;
             int s = 0;
             foreach (var m in txtt)
             {
@@ -630,9 +669,10 @@ namespace WindowsFormsApp5
                     if (m == '-' && ((txtSearch.Text.Length >= 8 && i == 8) || (txtSearch.Text.Length >= 6 && i == 6)))
                     {
                         er = txtt.Substring(i, 1);
+
                     }
 
-                    s = i;
+                      s = i;
 
                     txtt = txtt.Remove(i, 1);
 
@@ -766,8 +806,7 @@ namespace WindowsFormsApp5
 
         }
 
-
-
+        
     }
 
     /* private void label1_Click(object sender, EventArgs e)

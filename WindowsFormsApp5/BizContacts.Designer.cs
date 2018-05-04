@@ -91,8 +91,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dtpBeslutsdatum = new System.Windows.Forms.DateTimePicker();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -117,7 +117,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
-            this.dataGridView1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.show_Success);
+            this.dataGridView1.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.show_Success);
             // 
             // btnDelete
             // 
@@ -464,15 +464,15 @@
             resources.ApplyResources(this.dateTimePicker1, "dateTimePicker1");
             this.dateTimePicker1.Name = "dateTimePicker1";
             // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(WindowsFormsApp5.BizContacts);
-            // 
             // dtpBeslutsdatum
             // 
             this.dtpBeslutsdatum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             resources.ApplyResources(this.dtpBeslutsdatum, "dtpBeslutsdatum");
             this.dtpBeslutsdatum.Name = "dtpBeslutsdatum";
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(WindowsFormsApp5.BizContacts);
             // 
             // BizContacts
             // 

@@ -803,8 +803,6 @@ namespace WindowsFormsApp5
             this.tabPage11.Size = new System.Drawing.Size(1159, 649);
             this.tabPage11.TabIndex = 0;
             this.tabPage11.Text = "Beslut";
-            this.tabPage11.MouseEnter += new System.EventHandler(this.tabPage11_MouseHover);
-            this.tabPage11.MouseLeave += new System.EventHandler(this.tabPage11_MouseHover);
             this.tabPage11.MouseHover += new System.EventHandler(this.tabPage11_MouseHover);
             // 
             // label9
@@ -1179,7 +1177,9 @@ namespace WindowsFormsApp5
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Size = new System.Drawing.Size(566, 175);
             this.dataGridView1.TabIndex = 121;
-            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellEndEdit);
+            this.dataGridView1.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.show_Success);
+            this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_CellEndEdit);
             // 
             // btnDelete
             // 
@@ -1490,7 +1490,6 @@ namespace WindowsFormsApp5
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "Stödsystem, Vård och Omsorg - Robin Bitoreq";
-            this.Load += new System.EventHandler(this.Main_Load);
             this.MdiChildActivate += new System.EventHandler(this.businessToolStripMenuItem_Click);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
