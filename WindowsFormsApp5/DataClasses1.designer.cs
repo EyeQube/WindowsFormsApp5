@@ -82,31 +82,27 @@ namespace WindowsFormsApp5
 		
 		private int _ID;
 		
-		private System.DateTime _Date_Added;
+		private System.DateTime _Beslutsdatum;
 		
-		private string _Company;
+		private string _Personnummer;
 		
-		private string _Website;
+		private string _Förnamn;
 		
-		private string _Title;
+		private string _Efternamn;
 		
-		private string _First_Name;
+		private string _Insatskategori;
 		
-		private string _Last_Name;
+		private string _Beslut;
 		
-		private string _City;
+		private string _Beslutsfattare;
 		
-		private string _State;
+		private string _Organisation;
 		
-		private string _Postal_Code;
+		private string _Orsak;
 		
-		private string _Email;
+		private string _Anteckningar;
 		
-		private string _Mobile;
-		
-		private string _Notes;
-		
-		private string _Address;
+		private System.Data.Linq.Binary _Foto;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -114,40 +110,36 @@ namespace WindowsFormsApp5
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnDate_AddedChanging(System.DateTime value);
-    partial void OnDate_AddedChanged();
-    partial void OnCompanyChanging(string value);
-    partial void OnCompanyChanged();
-    partial void OnWebsiteChanging(string value);
-    partial void OnWebsiteChanged();
-    partial void OnTitleChanging(string value);
-    partial void OnTitleChanged();
-    partial void OnFirst_NameChanging(string value);
-    partial void OnFirst_NameChanged();
-    partial void OnLast_NameChanging(string value);
-    partial void OnLast_NameChanged();
-    partial void OnCityChanging(string value);
-    partial void OnCityChanged();
-    partial void OnStateChanging(string value);
-    partial void OnStateChanged();
-    partial void OnPostal_CodeChanging(string value);
-    partial void OnPostal_CodeChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnMobileChanging(string value);
-    partial void OnMobileChanged();
-    partial void OnNotesChanging(string value);
-    partial void OnNotesChanged();
-    partial void OnAddressChanging(string value);
-    partial void OnAddressChanged();
+    partial void OnBeslutsdatumChanging(System.DateTime value);
+    partial void OnBeslutsdatumChanged();
+    partial void OnPersonnummerChanging(string value);
+    partial void OnPersonnummerChanged();
+    partial void OnFörnamnChanging(string value);
+    partial void OnFörnamnChanged();
+    partial void OnEfternamnChanging(string value);
+    partial void OnEfternamnChanged();
+    partial void OnInsatskategoriChanging(string value);
+    partial void OnInsatskategoriChanged();
+    partial void OnBeslutChanging(string value);
+    partial void OnBeslutChanged();
+    partial void OnBeslutsfattareChanging(string value);
+    partial void OnBeslutsfattareChanged();
+    partial void OnOrganisationChanging(string value);
+    partial void OnOrganisationChanged();
+    partial void OnOrsakChanging(string value);
+    partial void OnOrsakChanged();
+    partial void OnAnteckningarChanging(string value);
+    partial void OnAnteckningarChanged();
+    partial void OnFotoChanging(System.Data.Linq.Binary value);
+    partial void OnFotoChanged();
     #endregion
 		
-		public BizContact()
+		/*public BizContact()
 		{
 			OnCreated();
-		}
+		}*/
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int ID
 		{
 			get
@@ -167,262 +159,222 @@ namespace WindowsFormsApp5
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date_Added", DbType="DateTime NOT NULL")]
-		public System.DateTime Date_Added
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Beslutsdatum", DbType="DateTime NOT NULL")]
+		public System.DateTime Beslutsdatum
 		{
 			get
 			{
-				return this._Date_Added;
+				return this._Beslutsdatum;
 			}
 			set
 			{
-				if ((this._Date_Added != value))
+				if ((this._Beslutsdatum != value))
 				{
-					this.OnDate_AddedChanging(value);
+					this.OnBeslutsdatumChanging(value);
 					this.SendPropertyChanging();
-					this._Date_Added = value;
-					this.SendPropertyChanged("Date_Added");
-					this.OnDate_AddedChanged();
+					this._Beslutsdatum = value;
+					this.SendPropertyChanged("Beslutsdatum");
+					this.OnBeslutsdatumChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Company", DbType="NVarChar(200)")]
-		public string Company
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Personnummer", DbType="VarChar(13)")]
+		public string Personnummer
 		{
 			get
 			{
-				return this._Company;
+				return this._Personnummer;
 			}
 			set
 			{
-				if ((this._Company != value))
+				if ((this._Personnummer != value))
 				{
-					this.OnCompanyChanging(value);
+					this.OnPersonnummerChanging(value);
 					this.SendPropertyChanging();
-					this._Company = value;
-					this.SendPropertyChanged("Company");
-					this.OnCompanyChanged();
+					this._Personnummer = value;
+					this.SendPropertyChanged("Personnummer");
+					this.OnPersonnummerChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Website", DbType="VarChar(MAX)")]
-		public string Website
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Förnamn", DbType="NVarChar(100)")]
+		public string Förnamn
 		{
 			get
 			{
-				return this._Website;
+				return this._Förnamn;
 			}
 			set
 			{
-				if ((this._Website != value))
+				if ((this._Förnamn != value))
 				{
-					this.OnWebsiteChanging(value);
+					this.OnFörnamnChanging(value);
 					this.SendPropertyChanging();
-					this._Website = value;
-					this.SendPropertyChanged("Website");
-					this.OnWebsiteChanged();
+					this._Förnamn = value;
+					this.SendPropertyChanged("Förnamn");
+					this.OnFörnamnChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="NVarChar(100)")]
-		public string Title
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Efternamn", DbType="NVarChar(100)")]
+		public string Efternamn
 		{
 			get
 			{
-				return this._Title;
+				return this._Efternamn;
 			}
 			set
 			{
-				if ((this._Title != value))
+				if ((this._Efternamn != value))
 				{
-					this.OnTitleChanging(value);
+					this.OnEfternamnChanging(value);
 					this.SendPropertyChanging();
-					this._Title = value;
-					this.SendPropertyChanged("Title");
-					this.OnTitleChanged();
+					this._Efternamn = value;
+					this.SendPropertyChanged("Efternamn");
+					this.OnEfternamnChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_First_Name", DbType="NVarChar(100)")]
-		public string First_Name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Insatskategori", DbType="NVarChar(100)")]
+		public string Insatskategori
 		{
 			get
 			{
-				return this._First_Name;
+				return this._Insatskategori;
 			}
 			set
 			{
-				if ((this._First_Name != value))
+				if ((this._Insatskategori != value))
 				{
-					this.OnFirst_NameChanging(value);
+					this.OnInsatskategoriChanging(value);
 					this.SendPropertyChanging();
-					this._First_Name = value;
-					this.SendPropertyChanged("First_Name");
-					this.OnFirst_NameChanged();
+					this._Insatskategori = value;
+					this.SendPropertyChanged("Insatskategori");
+					this.OnInsatskategoriChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Last_Name", DbType="NVarChar(100)")]
-		public string Last_Name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Beslut", DbType="NVarChar(100)")]
+		public string Beslut
 		{
 			get
 			{
-				return this._Last_Name;
+				return this._Beslut;
 			}
 			set
 			{
-				if ((this._Last_Name != value))
+				if ((this._Beslut != value))
 				{
-					this.OnLast_NameChanging(value);
+					this.OnBeslutChanging(value);
 					this.SendPropertyChanging();
-					this._Last_Name = value;
-					this.SendPropertyChanged("Last_Name");
-					this.OnLast_NameChanged();
+					this._Beslut = value;
+					this.SendPropertyChanged("Beslut");
+					this.OnBeslutChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="NVarChar(100)")]
-		public string City
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Beslutsfattare", DbType="NVarChar(100)")]
+		public string Beslutsfattare
 		{
 			get
 			{
-				return this._City;
+				return this._Beslutsfattare;
 			}
 			set
 			{
-				if ((this._City != value))
+				if ((this._Beslutsfattare != value))
 				{
-					this.OnCityChanging(value);
+					this.OnBeslutsfattareChanging(value);
 					this.SendPropertyChanging();
-					this._City = value;
-					this.SendPropertyChanged("City");
-					this.OnCityChanged();
+					this._Beslutsfattare = value;
+					this.SendPropertyChanged("Beslutsfattare");
+					this.OnBeslutsfattareChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="NVarChar(100)")]
-		public string State
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Organisation", DbType="NVarChar(100)")]
+		public string Organisation
 		{
 			get
 			{
-				return this._State;
+				return this._Organisation;
 			}
 			set
 			{
-				if ((this._State != value))
+				if ((this._Organisation != value))
 				{
-					this.OnStateChanging(value);
+					this.OnOrganisationChanging(value);
 					this.SendPropertyChanging();
-					this._State = value;
-					this.SendPropertyChanged("State");
-					this.OnStateChanged();
+					this._Organisation = value;
+					this.SendPropertyChanged("Organisation");
+					this.OnOrganisationChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Postal_Code", DbType="NVarChar(100)")]
-		public string Postal_Code
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Orsak", DbType="NVarChar(100)")]
+		public string Orsak
 		{
 			get
 			{
-				return this._Postal_Code;
+				return this._Orsak;
 			}
 			set
 			{
-				if ((this._Postal_Code != value))
+				if ((this._Orsak != value))
 				{
-					this.OnPostal_CodeChanging(value);
+					this.OnOrsakChanging(value);
 					this.SendPropertyChanging();
-					this._Postal_Code = value;
-					this.SendPropertyChanged("Postal_Code");
-					this.OnPostal_CodeChanged();
+					this._Orsak = value;
+					this.SendPropertyChanged("Orsak");
+					this.OnOrsakChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(320)")]
-		public string Email
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Anteckningar", DbType="NVarChar(1000)")]
+		public string Anteckningar
 		{
 			get
 			{
-				return this._Email;
+				return this._Anteckningar;
 			}
 			set
 			{
-				if ((this._Email != value))
+				if ((this._Anteckningar != value))
 				{
-					this.OnEmailChanging(value);
+					this.OnAnteckningarChanging(value);
 					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
+					this._Anteckningar = value;
+					this.SendPropertyChanged("Anteckningar");
+					this.OnAnteckningarChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobile", DbType="VarChar(50)")]
-		public string Mobile
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Foto", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Foto
 		{
 			get
 			{
-				return this._Mobile;
+				return this._Foto;
 			}
 			set
 			{
-				if ((this._Mobile != value))
+				if ((this._Foto != value))
 				{
-					this.OnMobileChanging(value);
+					this.OnFotoChanging(value);
 					this.SendPropertyChanging();
-					this._Mobile = value;
-					this.SendPropertyChanged("Mobile");
-					this.OnMobileChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Notes", DbType="NVarChar(1000)")]
-		public string Notes
-		{
-			get
-			{
-				return this._Notes;
-			}
-			set
-			{
-				if ((this._Notes != value))
-				{
-					this.OnNotesChanging(value);
-					this.SendPropertyChanging();
-					this._Notes = value;
-					this.SendPropertyChanged("Notes");
-					this.OnNotesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", CanBeNull=false)]
-		public string Address
-		{
-			get
-			{
-				return this._Address;
-			}
-			set
-			{
-				if ((this._Address != value))
-				{
-					this.OnAddressChanging(value);
-					this.SendPropertyChanging();
-					this._Address = value;
-					this.SendPropertyChanged("Address");
-					this.OnAddressChanged();
+					this._Foto = value;
+					this.SendPropertyChanged("Foto");
+					this.OnFotoChanged();
 				}
 			}
 		}

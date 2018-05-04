@@ -29,438 +29,517 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BizContacts));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.cboSearch = new System.Windows.Forms.ComboBox();
+            this.cboOrganisation = new System.Windows.Forms.ComboBox();
             this.txtNotes = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtMobile = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtWebsite = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtCompany = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtPostalCode = new System.Windows.Forms.TextBox();
-            this.txtState = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtCity = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtLName = new System.Windows.Forms.Label();
-            this.txtFName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnGetImage = new System.Windows.Forms.Button();
             this.dlgOpenImage = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.btnExportOpen = new System.Windows.Forms.Button();
             this.btnSaveToText = new System.Windows.Forms.Button();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnOpenWord = new System.Windows.Forms.Button();
+            this.cboInsatsK = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.cboBeslutsfattare = new System.Windows.Forms.ComboBox();
+            this.cboOrsak = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cboBeslut = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtOrganisation = new System.Windows.Forms.TextBox();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtFörnamn = new System.Windows.Forms.TextBox();
+            this.txtEfternamn = new System.Windows.Forms.TextBox();
+            this.txtPersonnummer = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dtpBeslutsdatum = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(63, 513);
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(873, 178);
-            this.dataGridView1.TabIndex = 66;
+            this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
+            this.dataGridView1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.show_Success);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(861, 421);
+            resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 65;
-            this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(779, 420);
+            resources.ApplyResources(this.btnAdd, "btnAdd");
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 64;
-            this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(697, 421);
+            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 63;
-            this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnDataGridView1_CellEndEdit);
             // 
-            // btnSearch
+            // cboOrganisation
             // 
-            this.btnSearch.Location = new System.Drawing.Point(622, 421);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(69, 23);
-            this.btnSearch.TabIndex = 62;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // cboSearch
-            // 
-            this.cboSearch.FormattingEnabled = true;
-            this.cboSearch.Items.AddRange(new object[] {
-            "First Name",
-            "Last Name",
-            "Company"});
-            this.cboSearch.Location = new System.Drawing.Point(465, 423);
-            this.cboSearch.Name = "cboSearch";
-            this.cboSearch.Size = new System.Drawing.Size(150, 21);
-            this.cboSearch.TabIndex = 61;
+            resources.ApplyResources(this.cboOrganisation, "cboOrganisation");
+            this.cboOrganisation.FormattingEnabled = true;
+            this.cboOrganisation.Name = "cboOrganisation";
+            this.cboOrganisation.SelectedIndexChanged += new System.EventHandler(this.cboSearch_SelectedIndexChanged);
+            this.cboOrganisation.MouseEnter += new System.EventHandler(this.txtSearch_TextChanged);
+            this.cboOrganisation.MouseLeave += new System.EventHandler(this.txtSearch_TextChanged);
+            this.cboOrganisation.MouseHover += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(622, 146);
-            this.txtNotes.Multiline = true;
+            resources.ApplyResources(this.txtNotes, "txtNotes");
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(225, 57);
-            this.txtNotes.TabIndex = 60;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(622, 104);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(225, 20);
-            this.dateTimePicker1.TabIndex = 59;
+            this.txtNotes.TextChanged += new System.EventHandler(this.txtNotes_TextChanged);
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(506, 147);
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(55, 20);
-            this.label13.TabIndex = 58;
-            this.label13.Text = "Notes:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(506, 105);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(109, 20);
-            this.label12.TabIndex = 57;
-            this.label12.Text = "Date Entered:";
-            // 
-            // txtMobile
-            // 
-            this.txtMobile.Location = new System.Drawing.Point(622, 56);
-            this.txtMobile.Name = "txtMobile";
-            this.txtMobile.Size = new System.Drawing.Size(225, 20);
-            this.txtMobile.TabIndex = 56;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(506, 57);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 20);
-            this.label11.TabIndex = 55;
-            this.label11.Text = "Mobile:";
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(197, 424);
+            resources.ApplyResources(this.txtSearch, "txtSearch");
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(244, 20);
-            this.txtSearch.TabIndex = 54;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.MouseEnter += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.MouseLeave += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.MouseHover += new System.EventHandler(this.txtNotes_TextChanged);
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(59, 425);
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 20);
-            this.label10.TabIndex = 53;
-            this.label10.Text = "Search:";
-            // 
-            // txtWebsite
-            // 
-            this.txtWebsite.Location = new System.Drawing.Point(197, 381);
-            this.txtWebsite.Name = "txtWebsite";
-            this.txtWebsite.Size = new System.Drawing.Size(244, 20);
-            this.txtWebsite.TabIndex = 52;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(59, 382);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 20);
-            this.label9.TabIndex = 51;
-            this.label9.Text = "Website:";
-            // 
-            // txtCompany
-            // 
-            this.txtCompany.Location = new System.Drawing.Point(197, 340);
-            this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(244, 20);
-            this.txtCompany.TabIndex = 50;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(58, 340);
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 20);
-            this.label8.TabIndex = 49;
-            this.label8.Text = "Company:";
-            // 
-            // txtPostalCode
-            // 
-            this.txtPostalCode.Location = new System.Drawing.Point(197, 299);
-            this.txtPostalCode.Name = "txtPostalCode";
-            this.txtPostalCode.Size = new System.Drawing.Size(244, 20);
-            this.txtPostalCode.TabIndex = 48;
-            // 
-            // txtState
-            // 
-            this.txtState.Location = new System.Drawing.Point(197, 260);
-            this.txtState.Name = "txtState";
-            this.txtState.Size = new System.Drawing.Size(244, 20);
-            this.txtState.TabIndex = 47;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(58, 260);
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 20);
-            this.label6.TabIndex = 46;
-            this.label6.Text = "State:";
-            // 
-            // txtCity
-            // 
-            this.txtCity.Location = new System.Drawing.Point(197, 221);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(244, 20);
-            this.txtCity.TabIndex = 45;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(58, 221);
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 20);
-            this.label5.TabIndex = 44;
-            this.label5.Text = "City:";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(59, 300);
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 20);
-            this.label7.TabIndex = 43;
-            this.label7.Text = "Postal Code:";
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Location = new System.Drawing.Point(197, 183);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(244, 20);
-            this.txtAddress.TabIndex = 42;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(58, 183);
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 20);
-            this.label4.TabIndex = 41;
-            this.label4.Text = "Address:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(197, 141);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(244, 20);
-            this.textBox1.TabIndex = 40;
-            // 
-            // txtLName
-            // 
-            this.txtLName.AutoSize = true;
-            this.txtLName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLName.Location = new System.Drawing.Point(59, 141);
-            this.txtLName.Name = "txtLName";
-            this.txtLName.Size = new System.Drawing.Size(90, 20);
-            this.txtLName.TabIndex = 39;
-            this.txtLName.Text = "Last Name:";
-            // 
-            // txtFName
-            // 
-            this.txtFName.Location = new System.Drawing.Point(197, 99);
-            this.txtFName.Name = "txtFName";
-            this.txtFName.Size = new System.Drawing.Size(244, 20);
-            this.txtFName.TabIndex = 38;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(59, 99);
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 20);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "First Name:";
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.Location = new System.Drawing.Point(197, 57);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(244, 20);
-            this.txtTitle.TabIndex = 36;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(59, 57);
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 20);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Title:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(622, 230);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(225, 148);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 67;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
-            // 
-            // btnGetImage
-            // 
-            this.btnGetImage.Location = new System.Drawing.Point(510, 230);
-            this.btnGetImage.Name = "btnGetImage";
-            this.btnGetImage.Size = new System.Drawing.Size(75, 23);
-            this.btnGetImage.TabIndex = 68;
-            this.btnGetImage.Text = "Get Picture";
-            this.btnGetImage.UseVisualStyleBackColor = true;
-            this.btnGetImage.Click += new System.EventHandler(this.btnGetImage_Click);
             // 
             // saveFileDialog1
             // 
-            this.saveFileDialog1.Filter = "Excel Files (*.xlsx)|*.xlsx|Text Files (*.txt)|*.txt|Word Files (*.docx)|*.docx";
+            resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
             // 
             // btnExportOpen
             // 
-            this.btnExportOpen.Location = new System.Drawing.Point(861, 146);
+            resources.ApplyResources(this.btnExportOpen, "btnExportOpen");
             this.btnExportOpen.Name = "btnExportOpen";
-            this.btnExportOpen.Size = new System.Drawing.Size(75, 23);
-            this.btnExportOpen.TabIndex = 69;
-            this.btnExportOpen.Text = "Export/Open Excel";
             this.btnExportOpen.UseVisualStyleBackColor = true;
-            this.btnExportOpen.Click += new System.EventHandler(this.btnExportOpen_Click);
             // 
             // btnSaveToText
             // 
-            this.btnSaveToText.Location = new System.Drawing.Point(861, 179);
+            resources.ApplyResources(this.btnSaveToText, "btnSaveToText");
             this.btnSaveToText.Name = "btnSaveToText";
-            this.btnSaveToText.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveToText.TabIndex = 70;
-            this.btnSaveToText.Text = "Save To Text";
             this.btnSaveToText.UseVisualStyleBackColor = true;
             this.btnSaveToText.Click += new System.EventHandler(this.btnSaveToText_Click);
+            // 
+            // btnOpenWord
+            // 
+            resources.ApplyResources(this.btnOpenWord, "btnOpenWord");
+            this.btnOpenWord.Name = "btnOpenWord";
+            this.btnOpenWord.UseVisualStyleBackColor = true;
+            // 
+            // cboInsatsK
+            // 
+            this.cboInsatsK.FormattingEnabled = true;
+            resources.ApplyResources(this.cboInsatsK, "cboInsatsK");
+            this.cboInsatsK.Name = "cboInsatsK";
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            resources.ApplyResources(this.dateTimePicker3, "dateTimePicker3");
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            // 
+            // cboBeslutsfattare
+            // 
+            this.cboBeslutsfattare.FormattingEnabled = true;
+            this.cboBeslutsfattare.Items.AddRange(new object[] {
+            resources.GetString("cboBeslutsfattare.Items")});
+            resources.ApplyResources(this.cboBeslutsfattare, "cboBeslutsfattare");
+            this.cboBeslutsfattare.Name = "cboBeslutsfattare";
+            // 
+            // cboOrsak
+            // 
+            this.cboOrsak.FormattingEnabled = true;
+            resources.ApplyResources(this.cboOrsak, "cboOrsak");
+            this.cboOrsak.Name = "cboOrsak";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label3.Name = "label3";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
+            // 
+            // cboBeslut
+            // 
+            this.cboBeslut.FormattingEnabled = true;
+            resources.ApplyResources(this.cboBeslut, "cboBeslut");
+            this.cboBeslut.Name = "cboBeslut";
+            // 
+            // checkBox1
+            // 
+            resources.ApplyResources(this.checkBox1, "checkBox1");
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            resources.ApplyResources(this.checkBox2, "checkBox2");
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
+            // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.Name = "label12";
+            // 
+            // label14
+            // 
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
+            // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.Name = "label15";
+            // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.Name = "label16";
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
+            // 
+            // textBox1
+            // 
+            resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.Name = "textBox1";
+            // 
+            // textBox2
+            // 
+            resources.ApplyResources(this.textBox2, "textBox2");
+            this.textBox2.Name = "textBox2";
+            // 
+            // textBox3
+            // 
+            resources.ApplyResources(this.textBox3, "textBox3");
+            this.textBox3.Name = "textBox3";
+            // 
+            // textBox4
+            // 
+            resources.ApplyResources(this.textBox4, "textBox4");
+            this.textBox4.Name = "textBox4";
+            // 
+            // textBox5
+            // 
+            resources.ApplyResources(this.textBox5, "textBox5");
+            this.textBox5.Name = "textBox5";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.Menu;
+            this.comboBox1.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.Name = "comboBox1";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.SystemColors.Menu;
+            this.comboBox2.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox2, "comboBox2");
+            this.comboBox2.Name = "comboBox2";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.BackColor = System.Drawing.SystemColors.Menu;
+            this.comboBox3.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox3, "comboBox3");
+            this.comboBox3.Name = "comboBox3";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.BackColor = System.Drawing.SystemColors.Menu;
+            this.comboBox4.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox4, "comboBox4");
+            this.comboBox4.Name = "comboBox4";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.BackColor = System.Drawing.SystemColors.Menu;
+            this.comboBox5.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox5, "comboBox5");
+            this.comboBox5.Name = "comboBox5";
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.BackColor = System.Drawing.SystemColors.Menu;
+            this.comboBox6.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox6, "comboBox6");
+            this.comboBox6.Name = "comboBox6";
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            resources.ApplyResources(this.label18, "label18");
+            this.label18.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label18.Name = "label18";
+            // 
+            // txtOrganisation
+            // 
+            resources.ApplyResources(this.txtOrganisation, "txtOrganisation");
+            this.txtOrganisation.Name = "txtOrganisation";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label19.Name = "label19";
+            // 
+            // label20
+            // 
+            resources.ApplyResources(this.label20, "label20");
+            this.label20.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label20.Name = "label20";
+            // 
+            // label21
+            // 
+            resources.ApplyResources(this.label21, "label21");
+            this.label21.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label21.Name = "label21";
+            // 
+            // txtFörnamn
+            // 
+            resources.ApplyResources(this.txtFörnamn, "txtFörnamn");
+            this.txtFörnamn.Name = "txtFörnamn";
+            // 
+            // txtEfternamn
+            // 
+            resources.ApplyResources(this.txtEfternamn, "txtEfternamn");
+            this.txtEfternamn.Name = "txtEfternamn";
+            // 
+            // txtPersonnummer
+            // 
+            resources.ApplyResources(this.txtPersonnummer, "txtPersonnummer");
+            this.txtPersonnummer.Name = "txtPersonnummer";
+            // 
+            // label22
+            // 
+            resources.ApplyResources(this.label22, "label22");
+            this.label22.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label22.Name = "label22";
+            // 
+            // label23
+            // 
+            resources.ApplyResources(this.label23, "label23");
+            this.label23.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label23.Name = "label23";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            resources.ApplyResources(this.dateTimePicker1, "dateTimePicker1");
+            this.dateTimePicker1.Name = "dateTimePicker1";
             // 
             // bindingSource1
             // 
             this.bindingSource1.DataSource = typeof(WindowsFormsApp5.BizContacts);
             // 
-            // btnOpenWord
+            // dtpBeslutsdatum
             // 
-            this.btnOpenWord.Location = new System.Drawing.Point(943, 147);
-            this.btnOpenWord.Name = "btnOpenWord";
-            this.btnOpenWord.Size = new System.Drawing.Size(85, 23);
-            this.btnOpenWord.TabIndex = 71;
-            this.btnOpenWord.Text = "Open In Word";
-            this.btnOpenWord.UseVisualStyleBackColor = true;
-            this.btnOpenWord.Click += new System.EventHandler(this.btnOpenWord_Click);
+            this.dtpBeslutsdatum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            resources.ApplyResources(this.dtpBeslutsdatum, "dtpBeslutsdatum");
+            this.dtpBeslutsdatum.Name = "dtpBeslutsdatum";
             // 
             // BizContacts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1145, 757);
+            this.Controls.Add(this.dtpBeslutsdatum);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.txtPersonnummer);
+            this.Controls.Add(this.txtEfternamn);
+            this.Controls.Add(this.txtFörnamn);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.txtOrganisation);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBox6);
+            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cboBeslut);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cboOrsak);
+            this.Controls.Add(this.cboBeslutsfattare);
+            this.Controls.Add(this.dateTimePicker3);
+            this.Controls.Add(this.cboInsatsK);
             this.Controls.Add(this.btnOpenWord);
             this.Controls.Add(this.btnSaveToText);
             this.Controls.Add(this.btnExportOpen);
-            this.Controls.Add(this.btnGetImage);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.cboSearch);
+            this.Controls.Add(this.cboOrganisation);
             this.Controls.Add(this.txtNotes);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtMobile);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtWebsite);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtCompany);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtPostalCode);
-            this.Controls.Add(this.txtState);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtCity);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtLName);
-            this.Controls.Add(this.txtFName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label1);
             this.Name = "BizContacts";
-            this.Text = "BizContacts";
             this.Load += new System.EventHandler(this.BizContacts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -473,41 +552,63 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.ComboBox cboSearch;
+        private System.Windows.Forms.ComboBox cboOrganisation;
         private System.Windows.Forms.TextBox txtNotes;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtMobile;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtWebsite;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtCompany;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtPostalCode;
-        private System.Windows.Forms.TextBox txtState;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label txtLName;
-        private System.Windows.Forms.TextBox txtFName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnGetImage;
         private System.Windows.Forms.OpenFileDialog dlgOpenImage;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button btnExportOpen;
         private System.Windows.Forms.Button btnSaveToText;
         private System.Windows.Forms.Button btnOpenWord;
+        private System.Windows.Forms.ComboBox cboInsatsK;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.ComboBox cboBeslutsfattare;
+        private System.Windows.Forms.ComboBox cboOrsak;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cboBeslut;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtOrganisation;
+        private System.Windows.Forms.BindingSource bindingSource2;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtFörnamn;
+        private System.Windows.Forms.TextBox txtEfternamn;
+        private System.Windows.Forms.TextBox txtPersonnummer;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpBeslutsdatum;
     }
 }
