@@ -592,22 +592,22 @@ namespace WindowsFormsApp5
 
         private void filtering(string textSearch)
         {
-            //txtSearch.Text = "19301116-3842";
+            // txtSearch.Text = "193901257246";
 
             string txtt = txtSearch.Text;
             string brex1 = "";
-            string re = "";
+            // string re = "";
             string er = "";
 
-            if (txtSearch.Text.Length >= 7)
-            {
-                re = txtt.Substring(6, 1);
+            /*  if (txtSearch.Text.Length >= 7)
+              {
+                  re = txtt.Substring(6, 1);
 
-            }
-            if (txtSearch.Text.Length >= 9)
-            {
-                er = txtt.Substring(8, 1);
-            }
+              }
+              if (txtSearch.Text.Length >= 9)
+              {
+                  er = txtt.Substring(8, 1);
+              }*/
 
 
             /* int h;
@@ -620,19 +620,47 @@ namespace WindowsFormsApp5
              } */
 
 
-            if (txtt.Length >= 9 && txtt.Length <= 13 && er == "-" && re != "-")
+            /////////////////////////////////////////////////////////
+            int i = 0;
+            int s = 0;
+            foreach (var m in txtt)
             {
-                brex1 = txtt.Remove(8, 1);
+                if (m == '-' || m == ' ')
+                {
+                    if (m == '-' && ((txtSearch.Text.Length >= 8 && i == 8) || (txtSearch.Text.Length >= 6 && i == 6)))
+                    {
+                        er = txtt.Substring(i, 1);
+                    }
 
+                    s = i;
+
+                    txtt = txtt.Remove(i, 1);
+
+                    i--;
+                }
+
+                i++;
             }
-            else if (re == "-")//(txtt.Length >= 7 && txtt.Length <= 11 && re == "-")
-            {
-                brex1 = txtt.Remove(6, 1);
-            }
-            else
-            {
-                brex1 = txtSearch.Text;
-            }
+
+            //s = txtSearch.Text.Length - (s + 1);
+
+            brex1 = txtt;
+
+            //////////////////////////////////////////////////////////
+
+            /*  if (txtt.Length >= 9 && txtt.Length <= 13 && er == "-" && re != "-")
+              {
+                  brex1 = txtt.Remove(8, 1);
+
+              }
+              else if (re == "-")//(txtt.Length >= 7 && txtt.Length <= 11 && re == "-")
+              {
+                  brex1 = txtt.Remove(6, 1);
+              }
+              else
+              {
+                  brex1 = txtSearch.Text;
+              } */
 
             long n;
             bool isNumeric = long.TryParse(brex1, out n);
@@ -640,10 +668,23 @@ namespace WindowsFormsApp5
             // string org = cboOrganisation.Text.ToString().ToLower().Trim();
 
 
+
             if (isNumeric == true && String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
             {
 
                 GetData("select * from BizContacts where replace(personnummer,'-','') like '%" + brex1 + "%'");
+
+
+                /* if (String.IsNullOrWhiteSpace(ter) && ter.Length != 10 && ter.Length != 12)
+                 {
+                     label9.ForeColor = Color.Red;
+                     label9.Text = "OBS! Ofullständig personnummer i sökrutan";
+                 }
+                 else
+                 {
+                     label9.ForeColor = Color.DarkBlue;
+                     label9.Text = "Ex: Personnummer/namn";
+                 } */
 
             }
             else if (isNumeric == true && !String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
@@ -685,6 +726,42 @@ namespace WindowsFormsApp5
                  GetData("select * from BizContacts where lower(förnamn) like '%" + txtSearch.Text.ToLower() + "%'"); */
 
             //  GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
+
+
+            if (txtSearch.Text.Length >= 10 && txtSearch.Text.Length <= 13 && isNumeric == true) //|| (er != "-" && (txtSearch.Text.Length == 10 || txtSearch.Text.Length == 12)))
+            {
+                if (er == "" && ((brex1.Length == 12) || (brex1.Length == 10)))
+                {
+                    label22.ForeColor = Color.Red;
+                    label22.Text = "OBS! Bindestreck saknas.";
+                }
+                else if (er == "-" && ((s == 8 && txtSearch.Text.Length == 13) || (s == 6 && textSearch.Length == 11)))
+                {
+                    label22.ForeColor = Color.DarkBlue;
+                    label22.Text = "Ex: Personnummer/namn";
+                }
+                else
+                {
+                    label22.ForeColor = Color.Red;
+                    label22.Text = "OBS! Ofullständig personnummer i sökrutan";
+                }
+
+            }
+            /* else if(((txtSearch.Text.Length >= 7 && s != 6 && s != 0) || (txtSearch.Text.Length >= 9 && s != 8)) && isNumeric == true)
+             {
+                 label9.ForeColor = Color.Red;
+                 label9.Text = "OBS! Bindestreck saknas.";
+             } */
+            else if (!String.IsNullOrWhiteSpace(brex1) && isNumeric == true)
+            {
+                label22.ForeColor = Color.Red;
+                label22.Text = "OBS! Ofullständig personnummer i sökrutan";
+            }
+            else
+            {
+                label22.ForeColor = Color.DarkBlue;
+                label22.Text = "Ex: Personnummer/namn";
+            }
 
 
         }
