@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>F2FA5CAF77B30F8F824E30B92A21AF5EAFF6EEF5</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>EC8556E082789AC7E0DB8D02B726CD4F90D34B8C</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>WindowsFormsApp5_TemporaryKey.pfx</ManifestKeyFile>

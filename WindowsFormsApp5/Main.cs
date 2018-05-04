@@ -249,7 +249,7 @@ namespace WindowsFormsApp5
         {
             TreeNode rootNode;
 
-            DirectoryInfo info = new DirectoryInfo(@"C:\Users\bitoreq_sattar\source\repos\Vidly\Vidly\WindowsFormsApp5\WindowsFormsApp5\Mina Brukare"); //../..");
+            DirectoryInfo info = new DirectoryInfo(@"C:\Users\bitoreq_sattar\source\repos\WindowsFormsApp5\WindowsFormsApp5\Mina Brukare"); //../..");
             if (info.Exists)
             {
                 rootNode = new TreeNode(info.Name);
