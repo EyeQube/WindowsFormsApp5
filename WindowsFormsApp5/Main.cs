@@ -1011,8 +1011,8 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
 
             txtSearch.Text = s + a;
 
-            if (a.Length >= 6 && a.Length <= 11)
-            {
+       //     if (a.Length >= 6 && a.Length <= 11)
+        //    {
                 
 
                 if (dataGridView1.RowCount > 2 || txtSearch.Text.Length < 2)
@@ -1041,7 +1041,7 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
                     cboOrsak.Text = row.Cells["Orsak"].Value.ToString();
                     dateTimePicker2.Text = row.Cells["Beslutsdatum"].Value.ToString();
                 }       
-            }
+         //   }
             else
             {
                 txtPersonnummer.Text = "";
