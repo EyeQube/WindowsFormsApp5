@@ -1179,6 +1179,7 @@ namespace WindowsFormsApp5
             this.dataGridView1.TabIndex = 121;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.show_Success);
+            this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_CellEndEdit);
             // 
             // btnDelete

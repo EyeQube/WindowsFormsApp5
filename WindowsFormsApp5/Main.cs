@@ -892,8 +892,25 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
 
             if (dataGridView1.ReadOnly == false && String.IsNullOrWhiteSpace(dataGridView1.CurrentCell.ErrorText))
             {
+
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+                dataAdapter.UpdateCommand = commandBuilder.GetUpdateCommand();//get the update command
+                try
+                {
+                    bindingSource1.EndEdit();//updates the table that is in memory in our program
+                    dataAdapter.Update(table);//actually updates the data base
+                                              //MessageBox.Show("Update Successfull");//confirms to user update is saved 
+                }
+                catch (Exception ex)
+                {
+                    dataGridView1.CurrentCell.ErrorText = "Personnummer och beslutsdatum måste vara ifyllda";
+                    //MessageBox.Show(ex.Message); //show message to the user
+
+                }
+
                 MessageBox.Show("Update Successfull");
             }
+
 
             dataGridView1.Columns[0].ReadOnly = true;
             dataGridView1.ReadOnly = true;
@@ -1156,10 +1173,28 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
             }
         }
 
-        private void dataGridView1_CellEndEdit(object sender, KeyPressEventArgs e)
+         private void dataGridView1_CellEndEdit(object sender, KeyPressEventArgs e)
         {
            // dataGridView1.ReadOnly = false;
 
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+            dataAdapter.UpdateCommand = commandBuilder.GetUpdateCommand();//get the update command
+            try
+            {
+                bindingSource1.EndEdit();//updates the table that is in memory in our program
+                dataAdapter.Update(table);//actually updates the data base
+                //MessageBox.Show("Update Successfull");//confirms to user update is saved 
+            }
+            catch (Exception ex)
+            {
+                dataGridView1.CurrentCell.ErrorText = "Personnummer och beslutsdatum måste vara ifyllda";
+                //MessageBox.Show(ex.Message); //show message to the user
+
+            }
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, KeyEventArgs e)
+        {
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
             dataAdapter.UpdateCommand = commandBuilder.GetUpdateCommand();//get the update command
             try
