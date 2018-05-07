@@ -651,7 +651,36 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            filtering(txtSearch.Text);
+          filtering(txtSearch.Text);
+
+         /* if(dataGridView1.CurrentCell.OwningRow != null)
+            {
+                DataGridViewRow row = dataGridView1.CurrentCell.OwningRow;
+
+                
+                    txtPersonnummer.Text = row.Cells["Personnummer"].Value.ToString();
+                    txtFörnamn.Text = row.Cells["Förnamn"].Value.ToString();
+                    txtEfternamn.Text = row.Cells["Efternamn"].Value.ToString();
+                    txtOrganisation.Text = row.Cells["Organisation"].Value.ToString();
+                    cboBeslut.Text = row.Cells["Beslut"].Value.ToString();
+                    cboBeslutsfattare.Text = row.Cells["Beslutsfattare"].Value.ToString();
+                    cboInsatsK.Text = row.Cells["Insatskategori"].Value.ToString();
+                    cboOrsak.Text = row.Cells["Orsak"].Value.ToString();
+                    dateTimePicker2.Text = row.Cells["Beslutsdatum"].Value.ToString();
+            }
+            else
+            {
+                txtPersonnummer.Text = "";
+                txtFörnamn.Text = "";
+                txtEfternamn.Text = "";
+                txtOrganisation.Text = "";
+                cboBeslut.Text = "";
+                cboBeslutsfattare.Text = "";
+                cboInsatsK.Text = "";
+                cboOrsak.Text = "";
+                dateTimePicker2.Text = "";
+            } */
+           
 
         }
 
@@ -920,11 +949,55 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
 
         private void tabPage11_MouseHover(object sender, EventArgs e)
         {
+
             filtering(txtSearch.Text);
 
-           // DataGridViewCellEventArgs r = new DataGridViewCellEventArgs(dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex);
 
-           // show_Success(this, r);
+           // if(dataGridView1.RowCount == 1)
+
+            if (dataGridView1.RowCount > 2 || txtSearch.Text.Length < 2)
+            {
+                txtPersonnummer.Text = "";
+                txtFörnamn.Text = "";
+                txtEfternamn.Text = "";
+                txtOrganisation.Text = "";
+                cboBeslut.Text = "";
+                cboBeslutsfattare.Text = "";
+                cboInsatsK.Text = "";
+                cboOrsak.Text = "";
+                dateTimePicker2.Text = "";
+            }
+            else if(dataGridView1.CurrentCell != null)
+            {               
+                DataGridViewRow row = dataGridView1.CurrentCell.OwningRow;
+
+                txtPersonnummer.Text = row.Cells["Personnummer"].Value.ToString();
+                txtFörnamn.Text = row.Cells["Förnamn"].Value.ToString();
+                txtEfternamn.Text = row.Cells["Efternamn"].Value.ToString();
+                txtOrganisation.Text = row.Cells["Organisation"].Value.ToString();
+                cboBeslut.Text = row.Cells["Beslut"].Value.ToString();
+                cboBeslutsfattare.Text = row.Cells["Beslutsfattare"].Value.ToString();
+                cboInsatsK.Text = row.Cells["Insatskategori"].Value.ToString();
+                cboOrsak.Text = row.Cells["Orsak"].Value.ToString();
+                dateTimePicker2.Text = row.Cells["Beslutsdatum"].Value.ToString();
+            }
+            else
+            {
+                txtPersonnummer.Text = "";
+                txtFörnamn.Text = "";
+                txtEfternamn.Text = "";
+                txtOrganisation.Text = "";
+                cboBeslut.Text = "";
+                cboBeslutsfattare.Text = "";
+                cboInsatsK.Text = "";
+                cboOrsak.Text = "";
+                dateTimePicker2.Text = "";
+            }
+
+
+            // DataGridViewCellEventArgs r = new DataGridViewCellEventArgs(dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex);
+
+            // show_Success(this, r);
         }
 
 
@@ -936,56 +1009,63 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
             string s = textBox2.Text;
             string a = textBox3.Text;
 
-            if(a.Length >= 6 && a.Length <= 11)
+            txtSearch.Text = s + a;
+
+            if (a.Length >= 6 && a.Length <= 11)
             {
-                txtSearch.Text = s + a;
+                
 
-                ////////////////////////////////////////////////////////////////////////
+                if (dataGridView1.RowCount > 2 || txtSearch.Text.Length < 2)
+                {
+                    txtPersonnummer.Text = "";
+                    txtFörnamn.Text = "";
+                    txtEfternamn.Text = "";
+                    txtOrganisation.Text = "";
+                    cboBeslut.Text = "";
+                    cboBeslutsfattare.Text = "";
+                    cboInsatsK.Text = "";
+                    cboOrsak.Text = "";
+                    dateTimePicker2.Text = "";
+                }
+                else if (dataGridView1.CurrentCell != null)
+                {
+                    DataGridViewRow row = dataGridView1.CurrentCell.OwningRow;
 
-
-
-                DataGridViewRow row = dataGridView1.CurrentCell.OwningRow;
-
-                //string value = row.Cells["ID"].Value.ToString();//grab the value from the id field of the selected record
-                string fname = row.Cells["Förnamn"].Value.ToString();//grab the value from the name field of the selected record
-
-                txtPersonnummer.Text = row.Cells["Personnummer"].Value.ToString();
-                txtFörnamn.Text = row.Cells["Förnamn"].Value.ToString();
-                txtEfternamn.Text = row.Cells["Efternamn"].Value.ToString();
-                txtOrganisation.Text = row.Cells["Organisation"].Value.ToString();
-                cboBeslut.Text = row.Cells["Beslut"].Value.ToString();
-                cboBeslutsfattare.Text = row.Cells["Beslutsfattare"].Value.ToString();
-                cboInsatsK.Text = row.Cells["Insatskategori"].Value.ToString();
-                cboOrsak.Text = row.Cells["Orsak"].Value.ToString();
-                dateTimePicker2.Text = row.Cells["Beslutsdatum"].Value.ToString();
-
-                // cboBeslut.ValueMember = row.Cells["Personnummer"].Value.ToString();
-                // string lname = row.Cells["Efternamn"].Value.ToString();//grab the value from the last name field of the selected record
-
-                // string org = row.Cells["Organisation"].Value.ToString();
-
-
-
-                /////////////////////////////////////////////////////////////////////////
-
-                tabControl1.SelectTab(1);
-                tabBeslut.SelectTab(6);
-                tabBeslut3.SelectTab(0);
+                    txtPersonnummer.Text = row.Cells["Personnummer"].Value.ToString();
+                    txtFörnamn.Text = row.Cells["Förnamn"].Value.ToString();
+                    txtEfternamn.Text = row.Cells["Efternamn"].Value.ToString();
+                    txtOrganisation.Text = row.Cells["Organisation"].Value.ToString();
+                    cboBeslut.Text = row.Cells["Beslut"].Value.ToString();
+                    cboBeslutsfattare.Text = row.Cells["Beslutsfattare"].Value.ToString();
+                    cboInsatsK.Text = row.Cells["Insatskategori"].Value.ToString();
+                    cboOrsak.Text = row.Cells["Orsak"].Value.ToString();
+                    dateTimePicker2.Text = row.Cells["Beslutsdatum"].Value.ToString();
+                }       
             }
             else
             {
-                txtSearch.Text = "";
+                txtPersonnummer.Text = "";
+                txtFörnamn.Text = "";
+                txtEfternamn.Text = "";
+                txtOrganisation.Text = "";
+                cboBeslut.Text = "";
+                cboBeslutsfattare.Text = "";
+                cboInsatsK.Text = "";
+                cboOrsak.Text = "";
+                dateTimePicker2.Text = "";
+            }
 
-                tabControl1.SelectTab(1);
-                tabBeslut.SelectTab(6);
-                tabBeslut3.SelectTab(0);
-            }         
+            tabControl1.SelectTab(1);
+            tabBeslut.SelectTab(6);
+            tabBeslut3.SelectTab(0);
         }
 
 
         private void filtering(string textSearch)
         {
-           // txtSearch.Text = "193901257246";
+            // txtSearch.Text = "193901257246";
+
+            
 
             string txtt = txtSearch.Text;
             string brex1 = "";
@@ -1068,32 +1148,24 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
                 GetData("select * from BizContacts where replace(personnummer,'-','') like '%" + brex1 + "%'");
 
 
-               /* if (String.IsNullOrWhiteSpace(ter) && ter.Length != 10 && ter.Length != 12)
-                {
-                    label9.ForeColor = Color.Red;
-                    label9.Text = "OBS! Ofullständig personnummer i sökrutan";
-                }
-                else
-                {
-                    label9.ForeColor = Color.DarkBlue;
-                    label9.Text = "Ex: Personnummer/namn";
-                } */
-
             }
             else if (isNumeric == true && !String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
             {
                 GetData("select * from BizContacts where replace(personnummer,'-','') like '%" + brex1 +
                          "%'and lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() + "%'");
+
             }
 
             else if (String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()) && String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()))
             {
                 GetData("select * from BizContacts");
+
             }
 
             else if (String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()) && !String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()))
             {
                 GetData("select * from BizContacts where lower(efternamn) like '%" + txtSearch.Text.ToLower() + "%'");
+              
             }
 
             /* else if (!String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()) && String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
@@ -1105,6 +1177,7 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
             {
                 GetData("select * from BizContacts where lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() +
                  "%'and len(organisation) like '%" + cboOrganisation.Text.ToString().Length + "%'");
+               
             }
 
             else if (!String.IsNullOrWhiteSpace(txtSearch.Text.ToString().ToLower()) && !String.IsNullOrWhiteSpace(cboOrganisation.Text.ToString().ToLower()))
@@ -1113,6 +1186,7 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
                 "%'and lower(organisation) like '%" + cboOrganisation.Text.ToString().ToLower() +
                 "%'and len(organisation) like '%" + cboOrganisation.Text.ToString().ToLower().Length + "%'");
 
+                
             }
             //dataGridView1.Update();
             /* else 
@@ -1154,7 +1228,8 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
             {
                 label9.ForeColor = Color.DarkBlue;
                 label9.Text = "Ex: Personnummer/namn";
-            } 
+            }
+
 
         }
 
