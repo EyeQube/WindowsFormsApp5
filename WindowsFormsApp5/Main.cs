@@ -940,6 +940,34 @@ dataGridView1.Update(); //Redraws the data grid view so the new record is visibl
             {
                 txtSearch.Text = s + a;
 
+                ////////////////////////////////////////////////////////////////////////
+
+
+
+                DataGridViewRow row = dataGridView1.CurrentCell.OwningRow;
+
+                //string value = row.Cells["ID"].Value.ToString();//grab the value from the id field of the selected record
+                string fname = row.Cells["Förnamn"].Value.ToString();//grab the value from the name field of the selected record
+
+                txtPersonnummer.Text = row.Cells["Personnummer"].Value.ToString();
+                txtFörnamn.Text = row.Cells["Förnamn"].Value.ToString();
+                txtEfternamn.Text = row.Cells["Efternamn"].Value.ToString();
+                txtOrganisation.Text = row.Cells["Organisation"].Value.ToString();
+                cboBeslut.Text = row.Cells["Beslut"].Value.ToString();
+                cboBeslutsfattare.Text = row.Cells["Beslutsfattare"].Value.ToString();
+                cboInsatsK.Text = row.Cells["Insatskategori"].Value.ToString();
+                cboOrsak.Text = row.Cells["Orsak"].Value.ToString();
+                dateTimePicker2.Text = row.Cells["Beslutsdatum"].Value.ToString();
+
+                // cboBeslut.ValueMember = row.Cells["Personnummer"].Value.ToString();
+                // string lname = row.Cells["Efternamn"].Value.ToString();//grab the value from the last name field of the selected record
+
+                // string org = row.Cells["Organisation"].Value.ToString();
+
+
+
+                /////////////////////////////////////////////////////////////////////////
+
                 tabControl1.SelectTab(1);
                 tabBeslut.SelectTab(6);
                 tabBeslut3.SelectTab(0);
