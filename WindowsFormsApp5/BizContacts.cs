@@ -804,6 +804,46 @@ namespace WindowsFormsApp5
             }
 
 
+            if (dataGridView1.RowCount > 2 || txtSearch.Text.Length < 2)
+            {
+                txtPersonnummer.Text = "";
+                txtFörnamn.Text = "";
+                txtEfternamn.Text = "";
+                txtOrganisation.Text = "";
+                cboBeslut.Text = "";
+                cboBeslutsfattare.Text = "";
+                cboInsatsK.Text = "";
+                cboOrsak.Text = "";
+                dtpBeslutsdatum.Text = "";
+            }
+            else if (dataGridView1.CurrentCell != null)
+            {
+                DataGridViewRow row = dataGridView1.CurrentCell.OwningRow;
+
+                txtPersonnummer.Text = row.Cells["Personnummer"].Value.ToString();
+                txtFörnamn.Text = row.Cells["Förnamn"].Value.ToString();
+                txtEfternamn.Text = row.Cells["Efternamn"].Value.ToString();
+                txtOrganisation.Text = row.Cells["Organisation"].Value.ToString();
+                cboBeslut.Text = row.Cells["Beslut"].Value.ToString();
+                cboBeslutsfattare.Text = row.Cells["Beslutsfattare"].Value.ToString();
+                cboInsatsK.Text = row.Cells["Insatskategori"].Value.ToString();
+                cboOrsak.Text = row.Cells["Orsak"].Value.ToString();
+                dtpBeslutsdatum.Text = row.Cells["Beslutsdatum"].Value.ToString();
+            }
+            else
+            {
+                txtPersonnummer.Text = "";
+                txtFörnamn.Text = "";
+                txtEfternamn.Text = "";
+                txtOrganisation.Text = "";
+                cboBeslut.Text = "";
+                cboBeslutsfattare.Text = "";
+                cboInsatsK.Text = "";
+                cboOrsak.Text = "";
+                dtpBeslutsdatum.Text = "";
+            }
+
+
         }
 
         
